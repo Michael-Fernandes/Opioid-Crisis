@@ -1,14 +1,27 @@
 $(document).ready(function() {
   var deleteLog = true;
 
+  document.onreadystatechange = function () {
+  var state = document.readyState
+    if( false){
+      if (state == 'interactive') {
+           document.getElementById('contents').style.visibility="hidden";
+      } else if (state == 'complete') {
+          setTimeout(function(){
+             document.getElementById('interactive');
+             document.getElementById('load').style.visibility="hidden";
+             document.getElementById('fullpage').style.visibility="visible";
+          },1000);
+      }
+    }
+  }
 
   $('#fullpage').fullpage({
     sectionsColor: ['#f6faff', '#FFFFFF', '#F8F8FF', 'fffefc','#f6faff', 'smokeSceen', '#F8F8FF', '#F5F5F5',],
-    //anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thPage', '6thpage', 'lastPage'],
+    anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thPage', '6thpage', 'lastPage'],
     //responsiveWidth: 900,
     autoScrolling: false,
     recordHistory: true,
-
     lazyLoading: false,
     
     scrollOverflow: false,
