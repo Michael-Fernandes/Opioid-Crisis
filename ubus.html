@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--
+Made by Michael Fernandes with the help of of fullpage scroll and animate javascript libraries.
+
+-->
+<html lang='en'>
+	<head>
+	<title> Michael Fernandes | Uncertain Bus </title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
+
+	<meta name="viewport" content="width=device-width"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+	<script src='js/parallax.min.js'></script>
+
+	<link rel="stylesheet" type="text/css" href="css/fullpage.css">
+	<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
+	<script src="js/jquery.fullpage.extensions.min.js"></script>
+
+	<script src="js/para.js"></script>
+	<script src="js/scroll.js"></script>
+
+	<script src="js/transition.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/para.css">
+
+	<link href="css/zoom.css" rel="stylesheet">
+	<script src="js/zoom.js"></script>
+
+	</head>
+
+
+
+<body>
+<header class="animated slow-animation">
+	<div id='header-wrapper'>
+		<a href="default.html"><img src='img/michael_fern.png' alt='Michael Fern'></a>
+		<ul>
+			<a href="blog.html" class="nav-link"><li class="menu-projects">Blog</li></a>
+			<a href="default.html" class="nav-link"><li class="menu-projects">Home</li></a>
+		</ul>
+	</div>
+</header>
+	<div id="load"></div>
+
+	<div id="fullpage">
+
+		<div id="section1" class="section">
+			<div class="content-wrapper">
+				<h1 id="overview-title">
+					Uncertain Bus
+				</h1>
+				<p class="overview" >
+					Even with the help of mobile trip-planning apps, bus riders face a dilema when making the decision of when to leave to catch a bus. Realtime predictions used in trip-planning apps present a prediction of when a bus is most likely to come but, fail to accurately communicate the uncertainity that underlies a point prediction. Although a prediction might present the most likely time of arrival that time is subject to change. Uncertain Bus seeks to better allow public transit riders to understand the unpredictability of bus arrival times. Enabling bus users to make better decisions around realtime transit data.
+				</p>
+			</div>
+		</div>
+
+		<div id="section2" class="section" >
+			<div class="content-wrapper">
+
+				<p class="info">
+					<span class="info-title">Role<br></span>
+					UX Designer
+				</p>
+
+				<p class="info collumn _50">
+					<span class="info-title">Team<br></span>
+					3 Investigating Professors(Informatics, CSE, and HCDE)<br> Two Undergraduate Research Assistants
+				</p>
+
+
+				<p class="info">
+					<span class="info-title">Length<br></span>
+					~1.5 years
+				</p>
+
+				<p class="info">
+					<span class="info-title">Outcome<br></span>
+					The project tested designs of 14 different visualizations and 6 different text representations of Uncertainity on 600+ people to establish which design was best optimized for decision-making. The results we’re reported and submitted to the conference on Human-Factors in Computing Systems (CHI) 2018.
+				</p>
+			</div>
+		</div>
+
+		<div id="section2" class="section" >
+			<div class="content-wrapper">
+				<p class="overview">
+						Uncertain Bus is an ongoing project that seeks to investigate the effect  uncertainity information has on decision making. While working on the project, I took on many roles including front-end developer, data analyst, Design researcher and technical writer. The following focuses on how my role as UX designer led to the sucessful testing of 20 different uncertainity display types.
+				</p>
+			</div>
+		</div>
+
+		<div id="section3" class="section">
+			<div class="content-wrapper">
+				<h2 class="process-title">
+				Problem and Background
+				</h2>
+				<p class="process-exp">
+					Not all predictions made by computers are easy for people to interpret. Understanding the underlying complexity of a prediction made by a computer might help users of the system make more rational decisions. In fact, a range of past work has shown that displaying uncertaininty can improve decision making[<a class="text-link" href="https://www.apa.org/pubs/journals/features/xap-18-1-126.pdf" target="_blank" >ex1</a>, <a class="text-link" href="https://link.springer.com/chapter/10.1007/3-540-35589-8_45" target="_blank" >ex2</a>, <a class="text-link" href="https://link.springer.com/chapter/10.1007/3-540-35589-8_45" target="_blank">ex3</a>, etc].
+					However, communicating the results of the decision in a way that is suitable for in the moment decisions and usable by a wide audience poses a challenge for designers because it is unsure whether uncertainity-displays can be easily intererpreted for decision-making purposes. Nonetheless fields such as such as <a class='text-link' href="http://www.nejm.org/doi/full/10.1056/NEJMp1606402#t=article" target="_blank">healthcare</a>, <a class='text-link' href="http://www.sciencedirect.com/science/article/pii/S0098135400006475" target="_blank">mechanics</a>, and transit all stand to benefit from uncertainity displays. 
+				</p>
+				<p class="process-exp">
+					The Uncertain Bus project expands on past research examining how to best visualize a bus arrival time using a machine learning system. <a class="text-link" href="https://idl.cs.washington.edu/files/2016-WhenIsMyBus-CHI.pdf" target="_blank">Past research</a> established feasibility and design criteria for displaying uncertainity in realtime data. 
+				</p> 
+
+			</div>
+		</div>
+
+		<div id="section4" class="section">
+			<div class="content-wrapper">
+				<img class="cover-img" src="img/ubus/oba_ubus.png">
+				<figcaption>A side by side comparison of OneBuAway(left) and Uncertain Bus(right).</figcaption>
+			</div>
+		</div>
+
+		<div id="section5" class="section">
+			<div class="content-wrapper">
+				<h1 class="process-title">
+					Scenario: Why does this matter?
+				</h1>
+				<div class="process-exp">
+					To illustrate the need to display uncertainity in displays, take the following scenario into account.</br></br>
+
+					>Sara sees that her daily bus route is predicted to arrive in 10 minutes using her favorite trip-planning app. She decides to arrive at the stop in 9 minutes. However in the 9 minutes it takes sara to arrive for the bust a lot can change.</br>
+
+					><i>A bus could come later</i> &#58; a bus may spend an abnormal time at a red light, an increased ridership or a single passenger struggling to find the last quarter in his back pocket could all occur.</br>
+
+					><i>A bus could come earlier</i> &#58; a bus may catch consecutive green lights or there might be less people taking the bus on that particular time than usual. </br>
+
+					>In both situations, Sara's decision is, unknowingly, affected by events out of her control. Sara either spends extra time at a bus stop or misses the bus altogether. Communicating the uncertainity that underlies the situation can benefit people's user experience both riding the bus and using a realtime prediction data.
+				</div>
+			</div>
+		</div>
+
+
+		<!-- ~~~~Summary ~~~~~~
+		
+		<div id="section4" class="section">
+			<div class="content-wrapper">
+				<div id="process-summary">
+					<div id="summary-wrapper">
+						<h3 class='process-subtitle'>The Design</h3>
+						<ul>
+							<li><a class="text-link" href="www.google.com">Building on Past Research</a></li>
+							<li>Modularity</li>
+							<li>Adaption</li>
+							<li>Iteration</li>
+						</ul>
+						<h3 class='process-subtitle'>Test and Improve</h3>
+						<ul>
+							<li>Pilot</li>
+							<li>Intial Results</li>
+							<li>Adjustments</li>
+							<li>Contextualizations</li>
+						</ul>
+						<h3 class='process-subtitle'>The Final Experiment</h3>
+						<ul>
+							<li>Results</li>
+							<li>Take Aways</li>
+						</ul>
+
+						<h3 class='process-subtitle'> The Final Design</h3>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+		<div id="section6" class="section">
+			<div class="content-wrapper">
+				<h2 class='process-title'>
+					Design Goals
+				</h2>
+				<p class="process-exp">
+					The goal of this project was to provide a proof that people can use uncertainity information to make better decisions, specifically around realtime information. To achieve the goal, I set the following design goals:
+				</p>
+
+				<ul>
+					<li>
+						Mantain the look and feel of current Trip Planning apps(<a class="text-link" href="https://lh3.googleusercontent.com/6uNPkhxwDeLiAFPSs8iZgNtrqFv1nUVN2ueGZyByeXWcy0e39JJSnC4mOrFOmZI4An0=h900">OneBusAway</a> was used as a reference).
+					</li>
+					<li>
+						Mantain a <i>glanacable interface</i> that can be used to make in the moment decisions.  
+					</li>
+				</ul>
+				<p class="process-exp">
+					To further understand the context of the design work discussed in this process breakdown, please refer to the <a class="text-link" href="https://drive.google.com/file/d/0B4-9LU1LGdnVYlhBVkMya0l1QjQ/view?usp=sharing" target="_blank">paper</a> submitted for peer review at <a class="text-link" href="https://chi2018.acm.org/" target="_blank">CHI 2018</a>. The following focuses on my role and contributions as a UX designer on the project.
+				</p>
+			</div>
+		</div>
+
+		<div id="section7" class="section">
+			<div class="content-wrapper">
+				<h2 class="process-title">Thinking Modularly</h2>
+				<p class="process-exp">My team and I intially thought we would test 6 disaplys. From this, I  knew my design would have to be interchangable for each display we tested. Designing with a modular mindset ended up being crucial to the final result of the project, in the end over 20 different variations of displays were tested. Having an interchangable design layout allowed for all 20 variations to be easily implemented and tested. </p>
+
+				<p class='process-exp'>For this project, <strong>my design process adapted in an agile way to fit the unique constraints</strong> of designing for a modular system.  Starting my design process by focusing on individual components before piecing the components together was key to the eventual success of the interface.
+				</p>
+			</div>
+		</div>
+
+		<div id="section8" class="section">
+			<div class="content-wrapper">
+				<img class="process-img" src="img/ubus/bus_atoms.png" data-action="zoom">
+				<p class='process-exp spaced'>Since the basic parameters of the interface we're already set, I began by breaking down the larger interface into the necessary pieces I knew the final design would include. These pieces became the building blocks that I <b>fit together, like a puzzle, to find the correct layout</b>. 
+				</p>
+			</div>
+		</div>
+
+		<div id="section9" class="section">
+			<div class="content-wrapper">
+				<img class="process-img" src="img/ubus/row_iterration.png" data-action="zoom">
+				<p class='process-exp'>From the pieces mentioned previosuly, I created rapid iterations of the layout. I choose to use stand in information instead of wire frames because in this situation the layout of information matters, <b>what each informational piece means in the context of the larger interface determined the necessary form</b> of the layout.
+				</p>
+			</div>
+		</div>
+
+		<div id="section10" class='section'>
+			<div class="content-wrapper">
+				<h3 class="process-title">Connecting With Bus Riders</h3>
+				<p class='proces-exp'>
+					Uncertain Bus choose to follow the standard set by the popular trip planning app OneBusAway. We did this because the open sourced code for OBA would allow later stages of the project to adapt the OBA source code for our interface. To engage the users in a similar way established by OBA, I needed to recreate the look, feel and most importantly the information stored on OneBusAway to the Uncertain Bus interface. The challenge here was integrating uncertainty displays into the OneBusAway system while mantaining glancability. I solved this design problem by encoding the information found in OBA directly into the uncertainity visualization it self. Encoding information directly within uncertainity displays created a more cohesive and informationally-rich interface.
+				</p>
+				<img class="process-img" src="img/ubus/new_label.png" data-action="zoom">
+			</div>
+		</div>
+
+		<div id="section11" class='section'>
+			<div class="content-wrapper">
+				<h3 class="process-title">Motion</h3>
+				<p class='proces-exp'>
+					In previous research, bus riders expressed need of making comparisons between multiple routes. To accommodate for this the interface incoperates a motion design that slides the each bus timeline to the right to center a visualization within the interface. This allows bus riders to visually compare routes with realitively similar arrival times. The decision to include this motion came back from a finding in past research that riders compare the arrival times of buses against each other.
+				</p>
+				<img class="process-gif" src="img/ubus/giphy.gif">
+			</div>
+		</div>
+
+		<div id="section12" class='section'>
+			<div class="content-wrapper">
+				<h3 class="process-title">Somethings Just Don't Translate</h3>
+				<p class='proces-exp'>
+					During intial usability tests, I found that some of the Uncertain Bus interface did not make sense to people making decisions with realtime transit data. In particular,  annotations that informed the user on how late or early a bus may come compared to its original scheduled arrival time interfered with decision making. I found late-or-early annotations confused participants as to whether to pay attention to the uncertainity representation or the annotation. Since, in most cases, late annotations don't give an actual indication of the likelihood of a bus coming earlier or later, the annotation and color correspondance that go along with it we're removed from the system. Making for a simpler, more effective interface.
+				</p>
+			</div>
+		</div>
+
+		<div id="section13" class='section'>
+			<div class="content-wrapper">
+				<h3 class="process-title">Result</h3>
+				<p class='proces-exp'>
+					I tested my design throughout the design process with guerilla usability tests(12+ people) and pilot tests(160+ people) of our online experiment. After intial tests, 400+ people participated in our <a class="text-link" href="https://drive.google.com/file/d/0B4-9LU1LGdnVYlhBVkMya0l1QjQ/view?usp=sharing" target="_blank">experiment</a> which asks participants to make decisions on when to leave for a bus based on a given scenario using a randomily assigned version of our interface as their decision-making tool. We used Data analysis using quantiative metrics collected during the experiment to find Dot-Plots allowed people to make the most optimal decision making around when to leave for the bus. 
+				</p>
+			</div>
+		</div>
+
+		<div id="section14" class='section'>
+			<div class="content-wrapper">
+				<h3 class="process-title">Analysis</h3>
+				<p class='proces-exp'>The figure below fits regressions lines that represents the learning curve of decisions average participants made during our experiment. Our results show that not only do Dot-Plots provide for the most accurate decision making, they also provide for the most consistent decision making. <b>Consistent and accurate decisions suggests that Dot-Plots allow for the "best" overall decisions to be made</b>. </p>
+
+				<img class="process-img" src="img/ubus/regression_plots.png" data-action="zoom">
+			</div>
+		</div>
+
+		<div id="section16" class="section">
+			<div class="content-wrapper">
+				<div>
+				<img src="img/ubus/dot20.png" class="process-img" data-action="zoom">
+				</div>
+			</div>
+		</div>
+
+		<div id="section15" class='section'>
+			<div class="content-wrapper">
+				<h3 class="process-title">Final Design and Future Work</h3>
+				<p class='proces-exp'>
+					This work succeeded in showing how uncertainty displays can effectively aid people in making deicisions around realtime predictions. However, to truly understand the effect uncertainity displays have on decision making, more work must be done to see how people's sentiments towards uncertainity displays may change over time. Even though the displays suggested in our work may allow for better decision making, it is unclear how people's behavior when using the displays might change over time. 
+				</p>
+				<p class='proces-exp'>
+					To complete my role with the project, I completed designs based off the data collected from the experiment. I used the finding that Dot Plots allow for the best decision making around realtime transit data to create an interface that spatially accomodates for this particular design. 
+				</p>
+			</div>
+		</div>
+
+		<div id="section16" class="section">
+				<div class="content-wrapper">
+					<h1 class="overview-title">Portfolio</h1>
+
+					<a class="tile-click" href="tongle.html">
+						<div class="portfolio-tile" style="background-image:url('img/tongle/in_context_dark.jpg')">
+								<div class='title-position'>
+									<div class="tile-title"><i>Tongle</i> : User Centered Design for Smart Government.</div>
+								</div>
+						</div>
+					</a>
+
+					<a class="tile-click" href="cookin-aid.html">
+						<div class="portfolio-tile" style="background-image:url('img/caid/tile-caid.png')">
+								<div class='title-position'>
+									<div class="tile-title"><i>CookingAid</i> : A wearable solution built to assist you in messy cooking situations.</div>
+								</div>
+						</div>
+					</a>
+				</div>
+		</div>
+
+	</div>
+</body>
+</html>
