@@ -1,14 +1,16 @@
+/* imported for mobile use */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+
 html {
-    overflow: hidden;
     height: 100%;
 }
 
 body {
-	font-family: 'Roboto', serif;
+	font-family: 'Roboto', sans-serif;
 	height: 100%;
 	margin:0;
 	padding:0;
-    overflow: auto;
+    /*overflow: hidden;*/
     width: 100%;
   }
 
@@ -45,7 +47,17 @@ body {
 .content-wrapper {
 	max-width: 667px;
 }
+.content-wrapper:first-child {
+	margin-top:100px;
+}
 
+.blog-spacer {
+	height:50px;
+	width: 100%;
+}
+h1:first {
+	background-color: black;
+}
 
 .large-wrapper {
 	background-color: #1c2f73;
@@ -104,7 +116,7 @@ body {
 	text-decoration: none;
 	position: static;
 	color: white;
-	font-size: 1.25em;
+	font-size: 1.3em !important;
 	bottom: 0px;
 }
 
@@ -116,10 +128,9 @@ body {
 	text-decoration: none;
 	transition: 0.5s;
 	transition-timing-function: ease-in-out;
-
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: translateZ(0) scale(1.0, 1.0);
-	font-size: 2em;
+	font-size: 1.75em !important;
 }
 .round-button {
 	background-color: white;
@@ -139,12 +150,21 @@ body {
 
 .portfolio-tile {
 	background-size: cover;
+	background-position: center center;
 	border-radius: 2.5px;
 	height: 280px;
 	max-height: 100%;
 	margin: 20px auto 20px auto;
 	max-width: 800px;
 	width: auto;
+}
+
+#bus-tile {
+	opacity: 0.8 !important;
+}
+
+#caid-tile {
+	background-position: 30 center !important;
 }
 
 a:hover, .round-button:hover, .portfolio-tile:hover, #header-wrapper>a>img {
@@ -173,10 +193,10 @@ a:hover, .round-button:hover, .portfolio-tile:hover, #header-wrapper>a>img {
 header {
 	background-color: white;
 	height: 50px;
+	position: fixed;
 	width: 100%;
 	top: 0px;
 	z-index:9;
-	box-shadow: 0px 0px 4px #888888;
 }
 
 .header-wrapper-fix{
@@ -188,8 +208,19 @@ header {
 }
 
 .header-shadow {
-	box-shadow: 0px 0px 8px #888888;
+	box-shadow: 0px 0px 4px #888888;
 }
+
+.header-shadow-off {
+	box-shadow: 0px 0px 4px #FFFFFF;
+}
+
+.header-spacer {
+	height:50px;
+	width: 100%;
+	z-index:-10;
+}
+
 
 .circle-button {
 	background-color: orange;
@@ -288,12 +319,15 @@ header {
 	background-image:url('../img/cards/surgery_assistant.png');
 }
 
-#grid-2 {
-	border-radius: 3px;
+#grid-3 {
 	background-image:url('../img/cards/volunteer.png');
 }
 
-#grid-3 {
+#grid-2 {
+	background-image:url('../img/dots/dots.png');
+}
+
+#grid-4 {
 	background-image:url('../img/cards/cooking.png');
 }
 
@@ -341,6 +375,22 @@ header {
 
 .blog-title {
 	font-weight: bold;
+}
+
+
+/************ Cooking *******/
+
+#yelp-button {
+	background-image:url('../img/cooking/yelp.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #d32323;
+	border-radius: 4px;
+	cursor: pointer;
+	min-height: 35px;
+	max-width: 140px;
+	margin: 20px 0;
 }
 
 /************************** **************************/
@@ -418,10 +468,12 @@ figcaption {
 }
 
 
-#overview-title{
+#overview-title, .overview-title /** todo: fix this **/{
 	font-size: 44px;
 	font-weight: 700;
 	margin-bottom: 0px;
+	line-height: 48px;
+	margin-top: 20px;
 	max-width: 667px;
 }
 
@@ -493,7 +545,34 @@ figcaption {
 	margin-right:auto;
 }
 
+.process-img-2 {
+	max-height: 300px;
+	width: 49%;
+	min-width: 200px;
+}
+
+.process-alternating {
+	width: 100%;
+	margin-bottom: 50px;
+	vertical-align: middle;
+}
+
+.alternating-title {
+	max-height: 100%;
+	vertical-align: middle; /* align vertical */
+	display: inline-block;
+	text-align: center;
+	width: 49%;
+}
+
 @media only screen and (max-width: 500px) {
+	.alternating-title {
+		height: 100%;
+		vertical-align: middle; /* align vertical */
+		display: inline-block;
+		text-align: center;
+		width: 49%;
+	}
 	.iframe-outer {
 		display: absolute;
 	}
@@ -531,7 +610,7 @@ figcaption {
 	font-style: italic;
 }
 
-.process-title {
+.process-title, .alternating-title {
 	font-size: 34px;
 	font-weight: 700;
 	margin-bottom: 0 !important;
@@ -549,6 +628,11 @@ figcaption {
 	margin-right: auto;
 	max-width: 667px;
 	font-size: 18px;
+}
+
+.scenario {
+	margin-top:10px;
+	font-size: 16px;
 }
 
 .process-color {
@@ -571,6 +655,9 @@ figcaption {
 	height: 100%;
 }
 
+.img-spaced{
+	margin: 10%;
+}
 
 .spaced {
 	margin-bottom: 40px;
@@ -637,6 +724,7 @@ figcaption {
 	font-weight: 400;
 	margin: 20px 0 20px;
 	color:orange;
+	padding: 10px 20px 0 20px;
 	margin-left: auto;
 	margin-right: auto;
 }

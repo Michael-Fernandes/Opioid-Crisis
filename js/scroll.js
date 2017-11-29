@@ -5,7 +5,7 @@
   // Hide Header on on scroll down
     var didScroll;
     var lastScrollTop = 0;
-    var delta = 5;
+    var delta = 4;
     var navbarHeight = $('header').outerHeight();
     var PR = window.devicePixelRatio || 1;
 
@@ -24,25 +24,25 @@
         var st = $(this).scrollTop();
         // Make sure they scroll more than delta
         if(Math.abs(lastScrollTop - st) <= delta)
-            return;
-
-        if(st == 0)
-            $('header').css("border-shadow", "none")
+            //return;
 
         if(navbarHeight == undefined)
             navbarHeight = $('header').outerHeight();
-        
 
         // If they scrolled down and are past the navbar, add class .nav-up.
         // This is necessary so you never see what is "behind" the navbar.
         if (st > lastScrollTop){ // Scroll Down
             $('header').css("border-shadow", "none")
-            $('header').removeClass('slideInDown').addClass("slideOutUp");
+            $('header').removeClass('header-shadow-off slideInDown').addClass("slideOutUp");
         } else { // Scroll Up
-            if(st + $(window).height() < $(document).height() && st > $(window).height() || st == 0) {
+            if(st + $(window).height() < $(document).height() && st > $(window).height()) {
                 //$('header').addClass("header-shadow "); //done to avoid transition conflict
-                $('header').removeClass("slideOutUp").addClass('slideInDown ');
+                $('header').removeClass("slideOutUp").addClass('header-shadow slideInDown ');
             }
+        }
+
+        if(st == 0){
+            $('header').removeClass("slideOutUp").addClass('header-shadow-off slideInDown');
         }
         
         lastScrollTop = st;

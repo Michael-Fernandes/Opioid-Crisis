@@ -17,8 +17,8 @@ $(document).ready(function() {
   }
 
   $('#fullpage').fullpage({
-    sectionsColor: ['#f6faff', '#FFFFFF', '#F8F8FF', 'fffefc','#f6faff', 'smokeSceen', '#F8F8FF', '#F5F5F5',],
-    anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thPage', '6thpage', 'lastPage'],
+    sectionsColor: ['#FFFFFF', '#f6faff', '#fcfcfc', 'fffefc','#FFFFFF', '#f6faff', 'smokeSceen', '#F8F8FF', '#F5F5F5',],
+    anchors: ['1stpage', '2ndpage', '3rdPage', '4thpage', '5thpage', '6thpage', '7thpage', '8thpage', '9thpage', '10thpage', '11thpage', '12thpage', '13thpage', '14thpage', '15thpage', '16thpage', '17thpage', '18thpage', '19thpage'],
     //responsiveWidth: 900,
     autoScrolling: false,
     recordHistory: true,
@@ -29,28 +29,4 @@ $(document).ready(function() {
           click: false
      },
   });
-
-
-
-
 });
-
-
-
-/*
-$('#fullpage').fullpage({
-  onSlideLeave: function( anchorLink, index, slideIndex, direction, nextSlideIndex){
-    var leavingSlide = $(this);
-
-    //leaving the first slide of the 2nd Section to the right
-    if(index == 2 && slideIndex == 0 && direction == 'right'){
-      alert("Leaving the fist slide!!");
-    }
-
-    //leaving the 3rd slide of the 2nd Section to the left
-    if(index == 2 && slideIndex == 2 && direction == 'left'){
-      alert("Going to slide 2! ");
-    }
-  }
-});
-*/

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+This space was built by me, Michael Fernandes, to represent myself in both a professional and personal way. 
+
+It would not be possible without the work done by:
+Fullpagescroll.js ~(written by Álvaro Trigo)
+animate.js ~ (written by  Daniel Eden)
+
+Questions: mfern93@gmail.com
+-->
+<html lang='en'>
+	<head>
+	<title> Michael Fernandes | Blog </title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
+
+	<meta name="viewport" content="width=device-width"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<script src='js/parallax.min.js'></script>
+
+	<link rel="stylesheet" type="text/css" href="css/fullpage.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
+	<script src="js/jquery.fullpage.extensions.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<script src="js/para.js"></script>
+	<script src="js/scroll.js"></script>
+
+	<script src="js/transition.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/para.css">
+
+	<link href="css/zoom.css" rel="stylesheet">
+ 	<script src="js/zoom.js"></script>
+ 	<script src="https://d3js.org/d3.v4.min.js"></script>
+ 	<script src="https://d3js.org/d3-ease.v1.min.js"></script>
+
+
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109443170-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-73790222-1');
+	</script>
+
+</head>
+
+<!-- Page specific styling -->
+<style>
+body {
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.axisColor line, .axisColor path{
+  stroke: #a4a4a4;
+}
+.axisColor text {
+  fill: #a4a4a4;
+}
+
+.box {
+  display: block;
+  margin: 0;
+  padding: 0px;
+}
+
+.plot-wrapper {
+  max-width: 500px;
+  margin:50px auto 10px auto;
+}
+.plot {
+	margin-right: -10px;
+}
+  
+#updateButton{
+	position:relative;
+	text-align: left;
+
+}
+</style>
+
+
+
+<body>
+<header class="animated slow-animation">
+	<div id='header-wrapper'>
+		<a href="default.html"><img src='img/michael_fern.png' alt='Michael Fern'></a>
+		<ul>
+			<a href="blog.html" class="nav-link"><li class="menu-projects">Blog</li></a>
+			<a href="default.html" class="nav-link"><li class="menu-projects">Home</li></a>
+		</ul>
+	</div>
+</header>
+	<div class="content-wrapper">
+		<div class="blog-spacer">
+		</div>
+		<h1 class="overview-title">
+			Dotplots for Decision Making
+		</h1>
+		<div class="overview-exp">
+			Making decisions is hard... dot plots can help! Dot plots allow people to make quick decisions based off a data visualization this is easy to understand, quick to preceptually process(dots can be grouped together to be counted) and flexible to display. I made the first(that I am aware of) D3js package that allows data sets to be dynamically visualizaed with a dot plots. See the three example datasets below.
+		</div>
+
+		<div class="plot-wrapper">
+		    <div class="plot">
+		    </div>
+		    <input id="updateButton"
+		    	   class="update"
+		           name="updateButton" 
+		           type="button" 
+		           value="Update"  />
+	  	</div>
+
+	  	<div class='process-exp'>
+	  	<a href="https://gist.github.com/Michael-Fernandes/f02bdf56aa802f5a18bac2d3b2f3665d" class="text-link">View source code written in D3.js</a>
+	  	</div>
+	  	<div>
+	  		<h1 class="process-title">App Prototype: Whats the Deal?</h1>
+	  		<p>To illustrate a use case of a dotplot, I did a quick prototype of an app that helps shoppers make decisions about the deals they find in grocery stores. I designed an interface that allows users to look up grocery items and compare the prices for a particular item in their local area. This app gives value to it's users by helping shoppers make their shopping deicisions.
+	  	</div>
+
+	  	<h1 class="process-title"> Key Path </h1>
+	  	<img class="cover-img" src="img/dots/key_path.png" data-action="zoom">
+	  	<h1 class="process-title">Design Features</h1>
+	  	<img class="cover-img" src="img/dots/location_collection.png" data-action="zoom">
+	  	<img class="cover-img" src="img/dots/data_entry.png" data-action="zoom">
+	  	<img class="cover-img" src="img/dots/data_analytics.png" data-action="zoom">
+	</div>
+
+</body>
+ 	 <script src="js/dot.js"></script>
+
+</html>

@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <!--
-To ensure a custom look and feel, each page on this portfolio is hand coded together by Michael Fernandes. It uses the fullpage scroll and animate javascript libraries. Questions: mfern93@gmail.com
+This space was built by me, Michael Fernandes, to represent myself in both a professional and personal way. 
 
+It would not be possible without the work done by:
+Fullpagescroll.js ~(written by Álvaro Trigo)
+animate.js ~ (written by  Daniel Eden)
+zoom.js ~ (written by Jack Moore)
+
+Questions: mfern93@gmail.com
 -->
 <html lang='en'>
 	<head>
@@ -34,6 +40,16 @@ To ensure a custom look and feel, each page on this portfolio is hand coded toge
 	<link href="css/zoom.css" rel="stylesheet">
 	<script src="js/zoom.js"></script>
 
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109443170-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-73790222-1');
+	</script>
+
+
 	</head>
 
 
@@ -44,7 +60,7 @@ To ensure a custom look and feel, each page on this portfolio is hand coded toge
 		<a href="default.html"><img src='img/michael_fern.png' alt='Michael Fern'></a>
 		<ul>
 			<a href="blog.html" class="nav-link"><li class="menu-projects">Blog</li></a>
-			<a href="default.html" class="nav-link"><li class="menu-projects">Home</li></a>
+			<a href="" class="nav-link"><li class="menu-projects">Home</li></a>
 		</ul>
 	</div>
 </header>
@@ -57,7 +73,7 @@ To ensure a custom look and feel, each page on this portfolio is hand coded toge
 		<div id="welcome-page" class="section">
 			<div class="content-wrapper">
 				<div class="overview welcome-overview">
-				Hi, my name is Michael Fernandes, my friends call me Fern. I am a User Experience Researcher with a knack for converting research findings into actionable design requirements. This is a space that I designed and built myself. Feel free to take a look around. Below are a couple projects that I'm particularly proud of. For more pieces of work, or questions please contact me directly.
+				Hi, my name is Michael Fernandes, my friends call me Fern. I am an User Experience nerd with a knack for picking up new skills quickly. This is a space that I designed and built myself. Feel free to take a look around. Below are a couple projects that I'm particularly proud of. For more pieces of work, or questions please contact me directly.
 				</div>
 
 				<div class="button-container">
@@ -86,6 +102,14 @@ To ensure a custom look and feel, each page on this portfolio is hand coded toge
 				<div class="content-wrapper">
 					<h1 class="overview-title">Work</h1>
 
+					<a class="tile-click" href="ubus.html">
+						<div class="portfolio-tile" id="bus-tile" style="background-image:url('img/ubus/bus_blur.jpg')">
+								<div class='title-position'>
+									<div class="tile-title"><i>Uncertain Bus</i> : User Interface design for smarter decision making.</div>
+								</div>
+						</div>
+					</a>
+
 					<a class="tile-click" href="tongle.html">
 						<div class="portfolio-tile" style="background-image:url('img/tongle/in_context_dark.jpg')">
 								<div class='title-position'>
@@ -94,16 +118,8 @@ To ensure a custom look and feel, each page on this portfolio is hand coded toge
 						</div>
 					</a>
 
-					<a class="tile-click" href="ubus.html">
-						<div class="portfolio-tile" style="background-image:url('img/ubus/bus_blur.jpg')">
-								<div class='title-position'>
-									<div class="tile-title"><i>Uncertain Bus</i> : User Interface design for smarter decision making.</div>
-								</div>
-						</div>
-					</a>
-
 					<a class="tile-click" href="cooking-aid.html">
-						<div class="portfolio-tile" style="background-image:url('img/caid/tile-caid.png')">
+						<div class="portfolio-tile" id="caid-tile" style="background-image:url('img/caid/tile-caid.png')">
 								<div class='title-position'>
 									<div class="tile-title"><i>CookingAid</i> : A wearable solution built to assist you in messy cooking situations.</div>
 								</div>
