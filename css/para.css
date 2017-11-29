@@ -240,6 +240,10 @@ header {
 	text-decoration-style: solid;
 }
 
+.text-link:hover {
+	text-decoration: none;
+}
+
 .reward-wrapper {
 	display:flex;
 	flex-wrap:wrap;
@@ -553,7 +557,7 @@ figcaption {
 
 .process-alternating {
 	width: 100%;
-	margin-bottom: 50px;
+	margin-bottom: 100px;
 	vertical-align: middle;
 }
 
@@ -660,7 +664,7 @@ figcaption {
 }
 
 .spaced {
-	margin-bottom: 40px;
+	margin-bottom: 40px !important;
 }
 
 .margined {
