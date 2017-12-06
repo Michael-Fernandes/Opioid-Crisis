@@ -1,0 +1,223 @@
+<html lang='en'>
+	<head>
+	<title> Michael Fernandes | Blog </title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
+
+	<meta name="viewport" content="width=device-width"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<script src='js/parallax.min.js'></script>
+
+	<link rel="stylesheet" type="text/css" href="css/fullpage.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
+	<script src="js/jquery.fullpage.extensions.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<script src="js/main.js"></script>
+
+	<script src="js/transition.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link href="css/zoom.css" rel="stylesheet">
+ 	<script src="js/zoom.js"></script>
+ 	<script src="https://d3js.org/d3.v4.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://d3js.org/d3-ease.v1.min.js"></script>
+     
+     
+
+
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109443170-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-73790222-1');
+	</script>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<style>
+
+
+body {
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.axisColor line, .axisColor path{
+  stroke: #5d5d5d;
+}
+.axisColor text {
+  fill: #5d5d5d;
+}
+
+
+.list {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+  }
+</style>
+
+<body> 
+</body>
+<script>
+
+var colors = ["grey", "red", "pink", "blue"];
+
+var labels = ["Important Thing 1", "Improtant Thing 2", "Important Thing 3", "Important Thing 4"];
+
+var points = [ ["This box is blue", "Blue is an important color", "Be careful if you think this color looks grey"], ["This box is red", "Red is usually a scary color however, this square is friendly", "If you see this color at a stoplight, please stop."], ["This point is important", "This is a very important point", "This point sums up the importance of this item"], ["This point is important", "This is a very important point", "This point sums up the importance of this item"],
+];
+
+var space = 10,
+    side = 500 - space * 2,
+    labelHeight = 15;
+
+
+//Lets create a svg canvas
+var svgContainer = d3.select("body").append("svg")
+                                      .attr("class", "box")
+                                      .attr("width", side + space + space)
+                                      .attr("height", side + space + space)
+                                    .append("g")
+                                      .attr("transform", "translate(" + space + "," + space + ")");
+var t = d3.transition()
+            .duration(750)
+            .ease(d3.easeLinear);
+
+// Before the animation starts, create your easing function.
+var customElastic = d3.easeElastic.period(0.4);
+
+// During the animation, apply the easing function.
+var tt = customElastic(t);
+
+for(var i = 0; i <= 1; i++){
+  for(var j = 0; j <= 1; j++){
+    var xCorner = i * ( space + side / 2 );
+    var yCorner = j * ( space + side / 2 );
+
+    var g = svgContainer.append('g');
+    var c = colors.pop()
+    g.append("rect")
+                  .attr("x", xCorner)
+                  .attr("y", yCorner)
+                  .attr("width", side / 2)
+                  .attr("height", side / 2)
+                  .attr('original-x', i * ( space + side / 2 ))
+                  .attr('original-y', j * ( space + side / 2 ))
+                  .attr("is-large", "true")
+                  .attr('fill', c)
+                  .attr("square-number", i + j * 2)
+                  .attr("opacity", 1.0)
+                    .on("click", function(){ enlarge(this); });
+
+    g.append("text")
+                  .attr("x", xCorner +  side / 4)
+                  .attr("y", yCorner +  side / 4)
+                  .style("position", "relative")
+                  .style("text-anchor", "middle")
+                  .style("font-size", "12pt")
+                  .style("font-weight", "light")
+                  .style("fill", "white")
+                  .text(labels.pop())
+                  .classed("text", true);
+  }
+}
+
+function enlarge(square){
+  if( d3.select(square).attr("is-large") == "true"){
+    toFront(square);
+    var tt = d3.transition()
+                .duration(350);
+
+    d3.select(square).transition()
+                      .ease(d3.easeCubic)
+                        .duration(600)
+                      .attr("x", 0)
+                      .attr("y", 0)
+                      .attr("width", side + space) 
+                      .attr("height", side + space);
+            
+    d3.select(square.parentNode.childNodes[1]).transition()
+                                              .ease(d3.easeCubic)
+                                                .duration(600)
+                                              .attr("x", 80)
+                                              .attr("y", 40);
+  
+
+    var foreignObj = svgContainer.append("foreignObject")
+                                  .attr("x", 0)
+                                  .attr("y", 40)
+                                  .attr("width", side / 2)
+                                  .attr("color", "white")
+                                  .attr("class", "list")
+                                  .attr("display", "none");
+    
+    var list = points[d3.select(square).attr("square-number")];
+    for(var i = 0; i < list.length; i++){
+      svgContainer.append("text")
+                  .attr("x", 40)
+                  .attr("y", 75 + 40 * (i))
+                  .style("position", "relative")
+                  .style("text-anchor", "left")
+                  .style("font-size", "12pt")
+                  .style("opacity", "0")
+                  .style("font-weight", "light")
+                  .style("fill", "white")
+                  .text(list[i])
+                  .classed("list", true)
+                  .transition()
+                    .duration(2000);
+    }
+
+    d3.selectAll(".list")
+      .transition()
+      .delay(175) // First fade to green.
+        .style("opacity", "1");
+
+    /*var div = foreignObj.append("xhtml:div")
+                        .html(points[d3.select(square).attr("square-number")])  .transition()
+                          .duration(1000)
+                          .attr("display", "block");
+    d3.select('.blue').append(square).transition(t)
+                      .attr("display", "block")
+                      .attr("x", 100)
+                      .attr("y", 100);*/
+
+    d3.select(square).attr("is-large", "false");
+  } else{
+    var originalX = parseInt(d3.select(square).attr("original-x"));
+    var originalY = parseInt(d3.select(square).attr("original-y"));
+
+    d3.selectAll(".list").remove();
+    d3.select(square).transition(t)
+                    .attr("x", originalX)
+                    .attr("y", originalY)
+                    .attr("width", side / 2)
+                    .attr("height", side / 2);
+
+    d3.select(square.parentNode.childNodes[1]).transition(t)
+                                                .attr('x', originalX + side / 4)
+                                                .attr("y", originalY + side / 4)
+
+    d3.select(square).attr("is-large", "true");
+  }
+}
+
+function toFront(square){
+  square.parentNode.parentNode.append(square.parentNode);
+}
+
+</script>

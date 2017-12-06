@@ -19,7 +19,9 @@ var width = $(window).width() > 500 ? 500 : $(window).width() - margin.left - ma
 
 // This data is meant to represent avocado prices, it's made up.
 var datasets = {"avacados" : [0.87,1.12,1.25,1.40,1.50,1.62,1.80,1.85,2.0, 2.11,0.99,1.11,1.22,1.40,1.51,1.65,1.76,1.04,1.10,1.27,1.37,1.49,1.24,1.37,1.14], "scores" : [90, 92, 94, 96, 96, 99, 80, 100, 101, 85, 88, 99, 95 ,93, 92, 91, 74, 90, 93, 92, 96, 88, 89, 87, 88, 89, 90, 92, 88, 86, 86, 85, 84, 83, 82, 81, 97, 97], "destinations" : [10, 12, 11, 10, 13, 14, 12, 11, 10, 11, 13, 14, 15, 17, 15, 13, 10, 11, 12, 13, 14, 15, 11, 12, 13, 14, 15, 16, 17, 12, 12, 12, 20]}
+
 var titles = {"avacado": "Price of Avacados in Seattle ($)", "score": "Scores on Last Midterm (%)", "destination":"Estimated time of Arrival at Destination (mins)"};
+
 var colors = {"score":"teal", "destination":"olivedrab", "avacado":"SteelBlue"}
 
 //Lets create a svg canvas
@@ -30,10 +32,9 @@ svg = d3.select(".plot").append("svg")
             .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-
   //Make generic scale
   var axisScale = d3.scaleLinear()
-    .domain([Infinity, Infinity])
+    .domain([0, 100])
     .range([0, 500 - margin.left - margin.right]);
 
   // Add the x Axis
@@ -111,10 +112,12 @@ svg = d3.select(".plot").append("svg")
     var min = Math.min.apply(null,rawData);
     var max = Math.max.apply(null,rawData);
 
-    var axisSpace = (max - min) / 4;
+    var axisSpace = (max - min) / 2;
 
     axisScale.domain([min - axisSpace, max + axisSpace]);
     axis.scale(axisScale);
+      
+  
     return axisScale;
   }
 
@@ -161,7 +164,7 @@ svg = d3.select(".plot").append("svg")
   function binData(data){
     var binCount = {};
     for(var i = 0; i < data.length; i++){
-      var roundedVal = roundTo(data[i], 0.25);
+      var roundedVal = roundTo(data[i], 0.125);
       if(!(roundedVal in binCount)){
         binCount[roundedVal] = 0;
       }

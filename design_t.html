@@ -1,0 +1,473 @@
+<html lang='en'>
+	<head>
+	<title> Michael Fernandes | Blog </title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
+
+	<meta name="viewport" content="width=device-width"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<script src='js/parallax.min.js'></script>
+
+	<link rel="stylesheet" type="text/css" href="css/fullpage.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
+	<script src="js/jquery.fullpage.extensions.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<script src="js/main.js"></script>
+
+	<script src="js/transition.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link href="css/zoom.css" rel="stylesheet">
+ 	<script src="js/zoom.js"></script>
+ 	<script src="https://d3js.org/d3.v4.min.js"></script>
+ 	<script src="https://d3js.org/d3-ease.v1.min.js"></script>
+
+
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109443170-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-73790222-1');
+	</script>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<style>
+
+text {
+    font-family: sans-serif;
+}
+.t-rect:hover  {
+	fill: #5C8BB9;
+	cursor: pointer;
+	color: blue;
+}
+
+.text:hover {
+	color: white;
+}
+
+.tool-tip {
+	fill: white;
+	font-size: 100pt;
+	background-color: orange;
+}
+
+
+div.tooltip {	
+    position: absolute;			
+    width: auto;					
+    height: auto;					
+    padding: 4px;				
+    font: 12px sans-serif;		
+    background: grey;	
+    border: 0px;		
+    border-radius: 4px;			
+    pointer-events: none;			
+}
+
+.t-chart {
+    display: block;
+    margin: 30px auto 0 auto;
+    width: 600px;
+    max-width: 100%;
+    z-index: -10;
+}
+/* 300 400 700 */
+.skill-title {
+	font-weight: 700;
+}
+header { 
+    background-color: transparent;
+}
+</style>
+<body>
+<header class="animated slow-animation">
+    <div id='header-wrapper'>
+        <a href="default.html"><img src='img/michael_fern.png' alt='Michael Fern'></a>
+        <ul>
+            <a href="blog.html" class="nav-link"><li class="menu-projects">Blog</li></a>
+            <a href="default.html" class="nav-link"><li class="menu-projects">Home</li></a>
+        </ul>
+    </div>
+</header>
+</body>
+<script>
+skills = [	[	{ // Collumn 1
+				 "name": "Design Research",
+				 "val": 75,
+				 "skill_list":["Diary Study", "Financial Incentive Experiments", "Participatory Design", "Co-Design Workshops"]
+				}, {
+				 "name": "User Research",
+				 "val": 90,
+				 "skill_list":["Usability Study", "&#8194;&#8194; Formal", "&#8194;&#8194; Informal", "Interview", "Contextual Inquiry"]
+				},
+				{
+				 "name": "Teaching",
+				 "val": 20,
+				 "skill_list":["Code","Outreach"]
+				}
+			],[ { // Collumn 2
+				 "name": "User-Centered Design",
+				 "val": 225,
+				 "skill_list":["Persona Creation", "Wireframe", "Sketching", "Paper Prototying"]
+				},{
+				 "name": "Information Architecture",
+				 "val": 50,
+				 "skill_list":["Task Flow", "Sitemaps",]
+				},
+			],[ { // Collumn 3
+				 "name": "Interaction Design",
+				 "val": 150,
+				 "skill_list":["Arduino Prototyping", "Rapid Prototying", "Design Patterns"],
+				 "tools":["Adobe Creative Suite", "FramerJS"]
+				}, {
+				 "name": "Prototyping",
+				 "val": 125,
+				 "skill_list":["Framer.JS", "HTML/CSS Prototypes", "Physical Prototyping"]
+				}, 
+			]  ,[ {  // Collumn 4
+				 "name": "Web Development",
+				 "val": 75,
+				 "skill_list":["HTML/CSS", "jQuery"]
+				}, {
+				 "name": "Data Visualization",
+				 "val": 50,
+				 "skill_list":["UI Integration", "D3", "Statistical Representation"]
+				}, {
+				 "name": "Technical Skills",
+				 "val": 20,
+				 "skill_list":["Python", "Java"]
+				}
+			]    
+	    ];
+/*
+var template = [	[	{
+						 "name": "name of skill",
+						 "val": "value(int) of how large the skill will display"
+						 "skill_list":["A", "List", "of", "sub", "skills"]
+						},{
+						 "name": "name of skill",
+						 "val": "value(int) of how large the skill will display",
+						 "skill_list":["A", "List", "of", "sub", "skills"]
+						}
+					]
+	    		];
+*/
+
+$(window).ready(function(){
+
+	// Get the window dimensions including margin
+	var dimensions = getDimensions(skills);
+    
+    // Create div to insert T-chart into
+	var chart = document.createElement("div");
+	chart.className = "t-chart";
+
+   	var div = d3.select("body").append("div")	
+	    .attr("class", "tooltip")				
+        .style("opacity", 0);
+
+	intialize(skills, chart, div);
+
+    // Refenerate on 
+    $(window).resize( function(){
+        generate(skills, chart, div)
+    });
+});
+
+function intialize(skills, chart, div){
+    generate(skills, chart, div);
+
+	$("body").append(chart);
+}
+
+function generate(skills, chart, div){
+	 	d3.select("svg").remove();
+ 		dimensions = getDimensions(skills);
+
+ 		$("#resume").css( {"width": dimensions["width"] / 2, "margin-left": "auto", "margin-right":"auto"} );
+
+ 		var svg = d3.select(chart).append("svg")
+    			.attr("width", dimensions["width"])
+   				.attr("height", dimensions["height"] - 50)
+   				.classed("wordSvg", true);
+
+ 		buildMain(skills, dimensions, div, svg);
+
+}
+
+function buildMain(skills, dimensions, div, svg, wordSvg){
+    var colorLeft = "#ff8c00";
+    var colorRight = "#6b486b";
+    buildLegend(colorLeft, colorRight, svg);
+	var color = d3.scaleLinear()
+   						.domain([0, dimensions["count"] ])
+   						.range(["#ff8c00", "#6b486b"])
+   						//.range(["#6b486b", "#ff8c00"])
+   						.interpolate(d3.interpolateLab); 
+
+
+   	var counter = 0;
+	// For each entry do some stuff
+	for(var i = 0; i < skills.length; i ++){
+		var yPosition = 50;
+		for(var j = 0; j < skills[i].length; j++){
+			buildRect(yPosition, skills[i][j], i, dimensions, counter, div, svg, color);
+			yPosition += skills[i][j]["val"] * dimensions["multiplier"];
+			counter += 1;
+		}
+	}
+
+	placeWords(svg, color, dimensions["width"], dimensions["screen"]);
+}
+
+function buildLegend(leftColor, rightColor, svg) {
+    var width = 100,
+    height = 10;
+    
+    var legend = svg.append("g")
+                    .attr("class", "legend");
+    
+    var gradient = svg.append("defs")
+                    .append("linearGradient")
+                        .attr("id", "gradient")
+                        .attr("x1", "0%")
+                        .attr("y1", "50%")
+                        .attr("x2", "100%")
+                        .attr("y2", "50%")
+                        .attr("spreadMethod", "pad");
+
+    gradient.append("stop")
+        .attr("offset", "0%")
+        .attr("stop-color", leftColor)
+        .attr("stop-opacity", 1);
+
+    gradient.append("stop")
+        .attr("offset", "100%")
+        .attr("stop-color", rightColor)
+        .attr("stop-opacity", 1);
+
+    var label = legend.append("text")
+            .attr("x", 462.5)
+            .attr("y", 580)
+            .style("position", "relative")
+            .style("font-size", "8pt")
+            .style("fill", "black")
+            .html("Research");
+    
+    var label = legend.append("text")
+                .attr("x", 563)
+                .attr("y", 580)
+                .attr("text-anchor", "right")
+                .style("position", "relative")
+                .style("font-size", "8pt")
+                .style("fill", "black")
+                .html("Build");
+
+    legend.append("rect")
+        .attr("width", 125)
+        .attr("height", 15)
+        .attr("x", 462.5)
+        .attr("y", 585)
+        .style("fill", "url(#gradient)");    // append gradient bar
+
+    console.log(d3.selectAll("legend"));
+
+    d3.selectAll("legend")
+        .attr('transform', 'translate( 20, 500)');
+}
+
+function placeWords(svg, color, width, screen){
+	var fs = "1.3em";
+	if(screen > 1){
+		fs = "2.5em";
+	}
+	var label = svg.append("text")
+					.attr("x", width / 8)
+					.attr("y", 30)
+					.style("position", "relative")
+					.style("text-anchor", "middle")
+					.style("font-size", fs)
+					.style("font-weight", "400")
+					.style("fill", color(0))
+					.html("Research")
+					.classed("t-title", true);
+
+	var label = svg.append("text")
+					.attr("x", width / 2)
+					.attr("y", 30)
+					.style("position", "relative")
+					.style("text-anchor", "middle")
+					.style("font-size", fs)
+					.style("font-weight", "400")
+					.style("fill", color(4))
+					.html("Design")
+					.classed("t-title", true);
+
+	var label = svg.append("text")
+					.attr("x", (width * 3 / 4) + width / 8)
+					.attr("y", 30)
+					.style("position", "relative")
+					.style("text-anchor", "middle")
+					.style("font-size", fs)
+					.style("font-weight", "400")
+					.style("fill", color(9))
+					.html("Build")
+					.classed("t-title", true);
+}
+
+function buildRect(yPosition, skill, collumn,  dimensions, counter, div, svg, color){
+	var x = (collumn * dimensions["width"] / 4);
+	var skills = skill["skill_list"];
+	var skills_list = ""
+
+	for(var j = 0; j < skills.length; j++){
+		skills_list += skills[j] + "</br>"
+	}
+	
+	var rectangle = svg.append("rect").attr("x", (x ))
+                                .attr("y", yPosition)
+                                .attr("width", (dimensions["width"] / 4)  )
+                                .attr("height", skill["val"] * dimensions["multiplier"])
+                                .attr("stroke-width", 1)
+                                .attr("stroke", "white")
+                              	.attr("border-radius", 2)
+                              	.attr("rx", 1.5)
+                              	.attr("ry", 1.5)
+						 		.attr("fill", function(){
+						 			return color(counter)
+						 		})
+						 		.attr("link", "#this-link")
+						 		.style("margin", "1px")
+						 		.classed("t-rect", true)
+						 		.on("click", function(){  // click move to area
+						 							console.log(d3.select(this).attr('link'))})
+						 		.on('mouseover', function(){  //
+						 							if(skills_list.length > 0) {
+						 								var left = 0;
+						 								div.transition().duration(250)
+						 									.style("opacity", 1);
+										 				div.html( "<span class='skill-title'>What I can do</span></br>" + skills_list)
+										 					.style("left", (0) + "px")		
+					            							.style("top", (d3.event.pageY - 20) + "px") }
+						 							})
+						 		.on("mousemove", function(){ 
+						 							div.style("top", (event.pageY-10)+"px")
+						 								.style("left",(event.pageX+10)+"px");})
+						 		.on('mouseout', function(){ 
+						 							div.transition().duration(100)
+						 								.style("opacity", 0);	});
+						 	  
+
+	var fs = "12px"
+	var ls = 0.3;
+	if(dimensions["screen"] > 1){
+		fs = "28px"
+		ls = 0.6;
+	}
+
+	word = skill["name"]
+	if(dimensions["width"] < 600 || dimensions["screen"] > 1 || word.length > 22){
+		word = word.split(" ");
+	} else { // not elegant
+		word = [word]
+	}
+	
+	for(var j = 0; j < word.length; j++){
+		var label = svg.append("text")
+					.attr("x", x + dimensions["width"] / 8)
+					.attr("y", yPosition + (parseInt(fs) * (1.25 + j)))
+					.attr('letter-spacing', ls)
+					.style("position", "relative")
+					.style("text-anchor", "middle")
+					.style("font-size", fs)
+					.style("font-weight", "300")
+					.style("fill", "white")
+					.html(word[j])
+					.classed("text", true);
+	}
+}	
+
+function getDimensions(skills) {
+	var dims = calcDimensions();
+
+	var rtrn = findMaxHeight(skills);
+	var multiplier = maxHeightMultiplier( rtrn["maxHeight"], (dims["height"] - 100));
+	return {"width":dims["width"] * dims["screen"], "height":dims["height"] * dims["screen"] + 
+						50, "multiplier": multiplier, "count":rtrn["count"], "screen":dims["screen"]};
+}
+
+function calcDimensions(){
+	var width = 600;
+	var screenWidth = window.innerWidth;
+
+	var screen = 1;
+	if($("#mobile").css("display") == "inline"){
+		screen = 1.60;
+	}
+
+	if (screenWidth < 625){
+		smallFont = "";
+		width = window.innerWidth - 25;
+	} 
+
+	var screenHeight = window.innerHeight * screen;
+
+
+	var height = 600 * screen;
+	if (screenHeight < 600){
+		height = screenHeight * screen - 100;
+	} else if( screenHeight * screen < 400){
+		height = 350;
+	}
+	return {"width": width,"height": height, "screen":screen};
+
+}
+// Returns the ratio which all heights should be configured with to fit screen
+function maxHeightMultiplier(maxHeight, height){
+	return height / maxHeight;
+}
+
+//Finds the max height of any collumn in t=chart
+function findMaxHeight(skills){
+	var maxHeight = 0; // Max height to be returned
+
+	var count = 0; // Counts how many skills are being used
+	for(var j = 0; j < skills.length; j++){
+		var height = 0;
+		for(var k = 0; k < skills[j].length; k++){
+			count += 1;
+			height += skills[j][k]["val"]
+		}
+		if(height > maxHeight){
+			maxHeight = height;
+		}
+	}
+	var rtrn = {"maxHeight": maxHeight, "count":count};
+	return rtrn;
+}
+
+//Removes t-chart components
+function resetGraph(){
+	d3.selectAll("rect").remove();
+ 	d3.selectAll(".t-title").remove();
+}
+
+//Generates a random color on RGB scale
+function getRandomColor(){
+	return 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+}
+</script>
+</html>
