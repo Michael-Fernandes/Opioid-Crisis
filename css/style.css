@@ -1,18 +1,49 @@
 /* imported for mobile use */
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+@import url(https://fonts.googleapis.com/css?family=Gentium+Basic:400,500,700|Open+Sans:400,600);
 
 html {
     height: 100%;
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
+	color: #3F3F3F;
+	font-family: 'Open Sans', sans-serif;
 	height: 100%;
 	margin:0;
 	padding:0;
     /*overflow: hidden;*/
     width: 100%;
   }
+
+ /*  blog */
+ .fix-fix{
+  position:static;
+}
+
+.blog-welcome {
+  position:static !important;
+  width: 100%;
+  text-align: center;
+}
+
+.process-exp, .overview-exp{
+	line-height: 150% !important;
+}
+
+#overview-title {
+	line-height: 120%;
+}
+
+
+.overview, .process-exp {
+	font-family: 'Gentium Basic';
+	line-height: 130%;
+}
+
+
+#grid-1 {
+	background-image:url(img/cards/cooking.png);
+}
 
 ::selection{
 	background-color: #70DBDB;
@@ -32,6 +63,9 @@ body {
 /*/////Width //////*/
 #header-wrapper, .content-wrapper, #blog-wrapper {
 	padding: 0 10px 0 10px;
+}
+
+.warddrobe, #header-wrapper, .content-wrapper, #blog-wrapper, .button-container, .overview, .cover-img,.cover-img-long, .cover-width-img, .cover-height, .iframe-wrapper, .iframe-phone, .iframe-prototype, .half-img  {
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -55,6 +89,7 @@ body {
 	height:50px;
 	width: 100%;
 }
+
 h1:first {
 	background-color: black;
 }
@@ -69,13 +104,62 @@ h1:first {
 
 /******* Index *********/
 #welcome-page {
-    background: #ffa500; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#ffa500, #E59400); /* For Safari 5.1 to 6.0 */
+    background: white; /* For browsers that do not support gradients */
+	color: black;
+}
+
+#holder {
+	background: -webkit-linear-gradient(#ffa500, #E59400); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(#ffa500, #E59400); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#ffa500, #E59400); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#ffa500, #E59400); /* Standard syntax */
+}
 
-    color: white;
+/* welcome slide */
+.welcome-overview {
+	font-family: "Open Sans";
+}
+
+.full-name, .ux-name{
+	letter-spacing: 1.5px;
+}
+.full-name {
+	font-size: 32pt;
+	line-height: 30pt;
+}
+.ux-name {
+	color: #fca500;
+	font-size: 20pt;
+	line-height: 100%;
+	font-style:italic;
+}
+
+.welcome-intro {
+	font-size: 14pt;
+	max-width: 400px;
+	margin-top: 100px;
+}
+
+
+.fa-map-marker {
+	font-size: 13pt;
+	color: #fca500;
+	padding: 0 0 0 2.5px;
+	position: relative;
+	top:-5px;
+}
+
+.map-marker-text {
+	color: black;
+	font-family: "open sans";
+	font-size: 12pt;
+	font-weight: 500;
+}
+
+#welcome-city {
+	opacity:0;
+	font-weight: bold;
+	color: orange;
 }
 
 .button-container {
@@ -85,8 +169,6 @@ h1:first {
     display: -webkit-flex;
     display: flex;
     margin: 30px auto 0px auto;
-    margin-left: auto;
-    margin-right:auto;
 	max-width: 400px;
 	align-items: center;
     justify-content: center;
@@ -115,7 +197,7 @@ h1:first {
 	display: inline;
 	text-decoration: none;
 	position: static;
-	color: white;
+	color: black;
 	font-size: 1.3em !important;
 	bottom: 0px;
 }
@@ -151,12 +233,19 @@ h1:first {
 .portfolio-tile {
 	background-size: cover;
 	background-position: center center;
+	box-shadow: 0px 6px 6px darkgrey;	
 	border-radius: 2.5px;
 	height: 280px;
 	max-height: 100%;
-	margin: 20px auto 20px auto;
+	margin: 30px auto 30px auto;
 	max-width: 800px;
 	width: auto;
+}
+
+.portfolio-tile-animate {
+	opacity: 1;
+	-webkit-transition:  0.4s; /* Safari */
+    transition: 0.45s;
 }
 
 #bus-tile {
@@ -167,8 +256,16 @@ h1:first {
 	background-position: 30 center !important;
 }
 
-a:hover, .round-button:hover, .portfolio-tile:hover, #header-wrapper>a>img {
+a:hover, .round-button:hover, .portfolio-tile:hover, #header-wrapper>a>img, .button {
 	cursor: pointer !important;
+}
+
+.button {
+	font-family: "Open Sans", sans-serif;
+}
+
+.tile-title, .overview-title, .process-title, .process-subtitle, .alternating-title {
+	font-family: "Open Sans", sans-serif;
 }
 
 .tile-title {
@@ -230,13 +327,28 @@ header {
 	top: -500px;
 }
 
+.rect-button {
+	border-radius: 2.5px;
+	border: 2.5px solid orange;
+	color: orange;
+	margin: 30px auto 30px auto;
+	max-width: 300px;
+	text-align: center;
+	padding: 10px;	
+}
+
+.rect-button:hover {
+	color: grey;
+}
+
 .tile-click {
 	text-decoration: none;
 }
 
 .text-link {
-	color:orange;
-	text-decoration-style: none;
+	color: black;
+	text-decoration: underline;
+    text-decoration-color: orange;
 }
 
 .text-link:hover {
@@ -274,7 +386,7 @@ header {
 }
 #header-wrapper>ul>a>li {
 	float: right;
-	margin-right: 10%;
+	margin-right: 5%;
 	margin-top: ;
 }
 
@@ -307,6 +419,7 @@ header {
 
 /****** blog *********/
 .box {
+	font-family: "Open Sans";
 	padding: 2.5%;
 	height: 300px;
 	margin-bottom: 50px;
@@ -370,13 +483,15 @@ header {
 }
 
 .gird-label {
+	font-family: "open sans";
 	display: block;
-	padding: 2.5%
+	padding: 2.5%;
 	height: 50px;
 	text-align: justify;
 }
 
 .blog-title {
+	font-family: 'Open Sans';
 	font-weight: bold;
 }
 
@@ -417,12 +532,6 @@ header {
 #section1 .fp-bg{
     background-size: cover;
     background-position: center 80%;
-}
-
-img {
-	max-width: 90%;
-	max-height: 100vh;
-	height: auto;
 }
 
 figcaption {
@@ -481,38 +590,38 @@ figcaption {
 }
 
 .overview {
-	font-size: 20px;
+	font-size: 16pt;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 /*/////// Process //////*/
 .cover-img {
 	display: block;
-	margin-left:auto;
-	margin-right: auto;
 	width: 100%;
 	max-width:100%;
 	height: auto;
 }
 
+.cover-img-long {
+	max-width: 1000px;
+	height: auto;
+	width: 100%;
+}
+
 .cover-width-img {
 	display: block;
-	margin-left:auto;
-	margin-right: auto;
-	width:750px;
+	width: 750px;
 	max-width:100%;
 	padding: 40px 0 40px 0;
 }
 
+
+
 .cover-height {
 	display: block;
-	margin-left:auto;
-	margin-right: auto;
 	max-height: 600px;
 	height: 100%;
-	width: auto:
+	width: auto;
 }
 
 .iframe-outer {
@@ -523,16 +632,12 @@ figcaption {
 	top: -0px;
 	display: block;
   	position: relative;
-  	margin-right: auto;
-  	margin-left: auto;
 }
 
 .iframe-phone {
 	width: auto;
 	height:725px;
 	display: block;
-	margin-left:auto;
-	margin-right:auto;
 	position: relative;
 	z-index: 2;
 }
@@ -541,8 +646,6 @@ figcaption {
 	top: 80px;
 	left: -5px;
 	width: 100%;
-	margin-left:auto;
-	margin-right:auto;
 	display:block;
 	position: absolute;
 	z-index: 2;
@@ -553,8 +656,6 @@ figcaption {
 	height: 400px;
 	max-height:80%;
 	display: inline-block;
-	margin-left:auto;
-	margin-right:auto;
 }
 
 .process-img-2 {
@@ -613,8 +714,9 @@ figcaption {
 		position: absolute;
 		z-index: 2;
 	}
+
 	.overview {
-		font-size:18px;
+		font-size:13pt;
 	}
 }
 
@@ -625,6 +727,7 @@ figcaption {
 .process-title, .alternating-title {
 	font-size: 34px;
 	font-weight: 700;
+	margin-top: 15px;
 	margin-bottom: 0 !important;
 }
 
@@ -642,9 +745,19 @@ figcaption {
 	font-size: 18px;
 }
 
+.small-exp {
+	margin: 15px 0 15px;
+}
+
+.small-ul {
+	list-style-type: disc !important ; 
+	margin: 0 0 25px 25px;
+}
+
 .scenario {
-	margin-top:10px;
+	margin:10px 0 0 20px;
 	font-size: 16px;
+	list-style-type: circle;
 }
 
 .process-color {
@@ -693,8 +806,7 @@ figcaption {
 
 .process-img, .process-gif, .process-img-sm{
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 10px auto 10px auto;
 }
 
 .vertical-layout-img{
@@ -708,7 +820,7 @@ figcaption {
 }
 
 .process-gif {
-	height: auto%;
+	height: auto;
 	width: auto;
 	max-width: 175px;
 }
@@ -736,15 +848,12 @@ figcaption {
 }
 
 .quote {
-	font-size: 18pt;
 	font-weight: 400;
-	margin: 20px 0 20px;
+	font-style: italic;
 	color:orange;
-	padding: 10px 20px 0 20px;
-	margin-left: auto;
-	margin-right: auto;
-}
+	margin: 10px auto 10px auto;
 
+}
 .quote-who {
 	font-size:12pt;
 	font-style: italic;
@@ -765,3 +874,46 @@ figcaption {
 	max-width: 300px;
 }
 
+
+/* Look book stuff */
+.wardrobe>iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.wardrobe {
+	border: 2px solid black;
+	margin: 50px auto 50px auto;
+	padding: 5px;
+	max-width: 1000px;
+	width: 90%;
+	height: 100%;
+	max-height: 90vh;
+}
+
+.process-summary {
+	font-size: 16pt;
+	color: #C1A633;
+	text-align: center;
+}
+
+.mobile {
+	display: none;
+}
+
+.mockup {
+	margin-top: 20px;
+	box-shadow: 2px 3px 5px 2px lightgrey;
+}
+
+@media only screen and (max-width : 400px) {
+	.mobile{
+		display: block;
+		color: orange;
+	}
+
+	.wardrobe {
+		display: none;
+	}
+
+}

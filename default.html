@@ -11,33 +11,23 @@ Questions: mfern93@gmail.com
 -->
 <html lang='en'>
 	<head>
-	<title> Michael Fernandes | Home </title>
+	<title> Michael Fernandes | Portfolio </title>
 	<link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
 
 	<meta name="viewport" content="width=device-width"/>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-	<script src='js/parallax.min.js'></script>
-
-	<link rel="stylesheet" type="text/css" href="css/fullpage.css">
-	<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
-	<script src="js/jquery.fullpage.extensions.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.lazy.min.js"></script>
 
 	<script src="js/main.js"></script>
+	<script src="js/inview.js"></script>
+	
+	<script src="js/combined.min.js"></script>
+	<link href="css/combined.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 
-	<script src="js/transition.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="css/animate.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-
-
-	<link href="css/zoom.css" rel="stylesheet">
-	<script src="js/zoom.js"></script>
+	
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109443170-1"></script>
 	<script>
@@ -56,10 +46,12 @@ Questions: mfern93@gmail.com
 <body>
 <header class="animated slow-animation">
 	<div id='header-wrapper'>
-		<a href="default.html"><img src='img/michael_fern.png' alt='Michael Fern'></a>
 		<ul>
-			<a href="blog.html" class="nav-link"><li class="menu-projects">Blog</li></a>
-			<a href="" class="nav-link"><li class="menu-projects">Home</li></a>
+			<a href="blog" class="nav-link">
+				<li class="menu-projects">Blog</li>
+			</a>
+		
+			  <a href="#portfolio" class="nav-link" onclick="$.fn.fullpage.moveTo();"><li class="menu-projects">Portfolio</li></a>
 		</ul>
 	</div>
 </header>
@@ -72,20 +64,38 @@ Questions: mfern93@gmail.com
 		<div id="welcome-page" class="section">
 			<div class="content-wrapper">
 				<div class="overview welcome-overview">
-				Hi, my name is Michael Fernandes, my friends call me Fern. I am an User Experience nerd with a knack for picking up new skills quickly. This is a space that I designed and built myself. Feel free to take a look around. Below are a couple projects that I'm particularly proud of. For more pieces of work, or questions please contact me directly.
+					<span class="full-name">
+						Michael Fernandes
+					</span>
+					<br>
+					<span class="ux-name">
+							user experience <br/>
+					</span>
+					<i class="fa fa-map-marker" >  <span id="welcome-city-current" class="map-marker-text" >&nbsp; current city</span><span id="welcome-city" class="map-marker-text">&nbsp;Seattle</span></i><br/>
+					
+					<br>
+					</br>
+					<span class="welcome-intro">
+							I design mobile app and data experiences by always placing the user at the center of the process. 
+					</span>
+
+				</br>
+			
+			
+					
 				</div>
 
 				<div class="button-container">
 
-					<a class="text-link" href="https://www.linkedin.com/in/mifern/" target="_blank" alt="LinkedIn Profile" title="LinkedIn">
-						<div class="button-wrapper">
-							<i class="fa fa-linkedin menu-icon" aria-hidden="true" ></i>
-						</div>
-					</a>
-
 					<a href="img/resume.pdf" target="_blank" title="Resume" alt="Resume">
 						<div class="button-wrapper">
 							<i class="fa fa-file-text-o menu-icon" aria-hidden="true" ></i>
+						</div>
+					</a>
+
+					<a class="text-link" href="https://www.linkedin.com/in/mifern/" target="_blank" alt="LinkedIn Profile" title="LinkedIn">
+						<div class="button-wrapper">
+							<i class="fa fa-linkedin menu-icon" aria-hidden="true" ></i>
 						</div>
 					</a>
 				</div>
@@ -98,18 +108,11 @@ Questions: mfern93@gmail.com
 		</div>
 
 		<div id="section2" class="section">
-				<div class="content-wrapper">
-					<h1 class="overview-title">Work</h1>
+				<div class="content-wrapper" id="portfolio">
+					<h1 class="overview-title">Portfolio</h1>
 
-					<a class="tile-click" href="ubus.html">
-						<div class="portfolio-tile" id="bus-tile" style="background-image:url('img/ubus/bus_blur.jpg')">
-								<div class='title-position'>
-									<div class="tile-title"><i>Uncertain Bus</i> : User Interface design for smarter decision making.</div>
-								</div>
-						</div>
-					</a>
 
-					<a class="tile-click" href="tongle.html">
+					<a class="tile-click" href="tongle">
 						<div class="portfolio-tile" style="background-image:url('img/tongle/in_context_dark.jpg')">
 								<div class='title-position'>
 									<div class="tile-title"><i>Tongle</i> : User Centered Design for Smart Government.</div>
@@ -117,15 +120,39 @@ Questions: mfern93@gmail.com
 						</div>
 					</a>
 
-					<a class="tile-click" href="cooking-aid.html">
+					<a class="tile-click" href="ubus">
+						<div class="portfolio-tile" id="bus-tile" style="background-image:url('img/ubus/bus_blur.jpg')">
+								<div class='title-position'>
+									<div class="tile-title"><i>Uncertain Bus</i> : User Interface design for smarter decision making.</div>
+								</div>
+						</div>
+					</a>
+
+					<a class="tile-click" href="cooking-aid">
 						<div class="portfolio-tile" id="caid-tile" style="background-image:url('img/caid/tile-caid.png')">
 								<div class='title-position'>
-									<div class="tile-title"><i>CookingAid</i> : A wearable solution built to assist you in messy cooking situations.</div>
+									<div class="tile-title"><i>CookingAid</i> : A wearable solution built to assist you in sticky cooking situations.</div>
+								</div>
+						</div>
+					</a>
+
+					<a class="tile-click" href="cooking-aid">
+						<div class="portfolio-tile" id="caid-tile" style="background-image:url('img/caid/tile-caid.png')">
+								<div class='title-position'>
+									<div class="tile-title"><i>Lkbk</i> : Rapid prototyping for an ecommerce interactive lookbook.</div>
 								</div>
 						</div>
 					</a>
 				</div>
-		</div>
+
+		</div>			
+	</div>
+	<div class="content-wrapper">
+		<a href="blog.html" class="text link">
+			<div class="rect-button button">
+				View Blog for More
+			</div>
+		</a>
 
 	</div>
 </body>

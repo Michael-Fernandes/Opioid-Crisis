@@ -5,32 +5,20 @@
 
 	<meta name="viewport" content="width=device-width"/>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-	<script src='js/parallax.min.js'></script>
 
-	<link rel="stylesheet" type="text/css" href="css/fullpage.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
-	<script src="js/jquery.fullpage.extensions.min.js"></script>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 	<script src="js/main.js"></script>
+	<script src="js/combined.min.js"></script>
 
-	<script src="js/transition.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/combined.min.css">
 
-	<link href="css/zoom.css" rel="stylesheet">
- 	<script src="js/zoom.js"></script>
- 	<script src="https://d3js.org/d3.v4.min.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <script src="https://d3js.org/d3-ease.v1.min.js"></script>
-     
+  <script src="https://d3js.org/d3-ease.v1.min.js"></script>
+  
      
 
 
@@ -61,6 +49,10 @@ body {
   fill: #5d5d5d;
 }
 
+.d3-container {
+  padding: 0px
+}
+
 
 .list {
   opacity: 1;
@@ -71,37 +63,46 @@ body {
 </style>
 
 <body> 
+    <div id='header-wrapper'>
+        <ul>
+          <a href="blog" class="nav-link"><li class="menu-projects">Blog</li></a>
+          <a href="default" class="nav-link"><li class="menu-projects">Portfolio</li></a>
+        </ul>
+      </div>
+      <div class="content-wrapper d3-container">
+      </div>
 </body>
 <script>
+
+(function(){
+
 
 var colors = ["grey", "red", "pink", "blue"];
 
 var labels = ["Important Thing 1", "Improtant Thing 2", "Important Thing 3", "Important Thing 4"];
 
-var points = [ ["This box is blue", "Blue is an important color", "Be careful if you think this color looks grey"], ["This box is red", "Red is usually a scary color however, this square is friendly", "If you see this color at a stoplight, please stop."], ["This point is important", "This is a very important point", "This point sums up the importance of this item"], ["This point is important", "This is a very important point", "This point sums up the importance of this item"],
-];
+var points = [ ["This box is blue", "Blue is an important color", "Be careful if you think this color looks grey"], ["This box is red", "Red is usually a scary color however, this square is friendly", "If you see this color at a stoplight, please stop."], ["This color is pink", "Also good for holidays other than valintines day", "Very different than red"], ["Grey, grey grey grey.", "The only thing you see in winter", "Also not bad in othershades such as slateGrey"] ];
 
-var space = 10,
-    side = 500 - space * 2,
-    labelHeight = 15;
+var space = 10, labelHeight = 15;
+
+var side = ($(window).width() < 600) ? $(window).width() - space * 3 : 600 - space * 3;
 
 
 //Lets create a svg canvas
-var svgContainer = d3.select("body").append("svg")
-                                      .attr("class", "box")
+var svgContainer = d3.select(".d3-container").append("svg")
                                       .attr("width", side + space + space)
                                       .attr("height", side + space + space)
                                     .append("g")
                                       .attr("transform", "translate(" + space + "," + space + ")");
 var t = d3.transition()
-            .duration(750)
+            .duration(1000)
             .ease(d3.easeLinear);
 
 // Before the animation starts, create your easing function.
 var customElastic = d3.easeElastic.period(0.4);
 
 // During the animation, apply the easing function.
-var tt = customElastic(t);
+var tt = customElastic(100);
 
 for(var i = 0; i <= 1; i++){
   for(var j = 0; j <= 1; j++){
@@ -166,17 +167,17 @@ function enlarge(square){
                                   .attr("display", "none");
     
     var list = points[d3.select(square).attr("square-number")];
-    for(var i = 0; i < list.length; i++){
+    for(var ii = 0; ii < list.length; ii++){
       svgContainer.append("text")
                   .attr("x", 40)
-                  .attr("y", 75 + 40 * (i))
+                  .attr("y", 75 + 40 * (ii))
                   .style("position", "relative")
                   .style("text-anchor", "left")
                   .style("font-size", "12pt")
                   .style("opacity", "0")
                   .style("font-weight", "light")
                   .style("fill", "white")
-                  .text(list[i])
+                  .text(list[ii])
                   .classed("list", true)
                   .transition()
                     .duration(2000);
@@ -188,7 +189,7 @@ function enlarge(square){
         .style("opacity", "1");
 
     /*var div = foreignObj.append("xhtml:div")
-                        .html(points[d3.select(square).attr("square-number")])  .transition()
+                        (points[d3.select(square).attr("square-number")])  .transition()
                           .duration(1000)
                           .attr("display", "block");
     d3.select('.blue').append(square).transition(t)
@@ -219,5 +220,8 @@ function enlarge(square){
 function toFront(square){
   square.parentNode.parentNode.append(square.parentNode);
 }
+
+
+}());
 
 </script>

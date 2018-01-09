@@ -19,22 +19,11 @@ Questions: mfern93@gmail.com
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-	<script src='js/parallax.min.js'></script>
-
-	<link rel="stylesheet" type="text/css" href="css/fullpage.css">
-	<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
-	<script src="js/jquery.fullpage.extensions.min.js"></script>
-
 	<script src="js/main.js"></script>
+	<script src="js/combined.min.js"></script>
 
-	<script src="js/transition.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/combined.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-	<link href="css/zoom.css" rel="stylesheet">
-	<script src="js/zoom.js"></script>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109443170-1"></script>
 	<script>
@@ -53,10 +42,9 @@ Questions: mfern93@gmail.com
 <body>
 <header class="animated slow-animation">
 	<div id='header-wrapper'>
-		<a href="default.html"><img src='img/michael_fern.png' alt='Michael Fern'></a>
 		<ul>
-			<a href="blog.html" class="nav-link"><li class="menu-projects">Blog</li></a>
-			<a href="default.html" class="nav-link"><li class="menu-projects">Home</li></a>
+			<a href="blog" class="nav-link"><li class="menu-projects">Blog</li></a>
+			<a href="default" class="nav-link"><li class="menu-projects">Portfolio</li></a>
 		</ul>
 	</div>
 </header>
@@ -79,11 +67,11 @@ Questions: mfern93@gmail.com
 
 		<div id="section1" class="section">
 			<div class="content-wrapper">
-				<h1 id="process-title">
+				<h1 id="overview-title">
 					Overview
 				</h1>
 				<p class="overview">
-						Sustainability and increased fuel efficiency have caused the conventional way to fund road improvement(a tax on gasoline) to become ineffective at funding infrastructure improvement. A Road Usage Charge, by multiple states, that suggests a road usage charge on cars in proportion to how much it uses public roads. 	I lead a <b>Participatory Design</b> effort to design a mobile app solution for a road usage charge. Using insights and preliminary designs made in participatory design workshops, my team and I designed Tongle, a smart government technology that allows drivers to track their road usage on a per mile basis in order to contribute to a Road Usage Charge. 
+						Increased efforts to make a more sustainable and fuel efficent cars has led to the conventional way for funding road improvement(a tax on gasoline) to become ineffective. Recently, multiple civil agencies have suggested a road usage charge(RUC). I lead a <b>Participatory Design</b> effort to design a mobile app solution for a road usage charge. From insights and preliminary designs made in participatory design workshops, my team and I designed Tongle, a smart government technology that allows drivers to track their road usage on a per mile basis in order to contribute to a Road Usage Charge. 
 				</p>
 
 			</div>
@@ -92,7 +80,7 @@ Questions: mfern93@gmail.com
 		<div id="section2" class="section">
 			<div class="content-wrapper">
 				<div class="video-wrapper">
-					<iframe width="100%" height="320" src="https://www.youtube.com/embed/OKMhZurVVe4" frameborder="0" allowfullscreen="allowfullscreen" class="mb4"></iframe>
+					<iframe width="100%" height="320" data-src="https://www.youtube.com/embed/OKMhZurVVe4" frameborder="0" allowfullscreen="allowfullscreen" class="mb4"></iframe>
 				</div>
 			</div>
 		</div>
@@ -130,8 +118,8 @@ Questions: mfern93@gmail.com
 
 		<div id="section4" class="section">
 			<div class="content-wrapper">
-				<h1 id="process-title">
-					Problem and Background
+				<h1 class="process-title">
+					Problem and Background.
 				</h1>
 				<p class="process-exp">
 					Currently, most states use a tax on gas revenues to pay for road infrastructure projects. Rapid growth of fuel efficent and electric vehicles has made gasoline taxes increasingly inefficent. To solve the funding gap, a road usage charge has been suggested in states such as New York, California, Oregon and Washington. In a road usage charge, drivers pay a "mileage tax" in proportion to how much they use public roads. 
@@ -145,21 +133,23 @@ Questions: mfern93@gmail.com
 
 		<div id="section5" class="section">
 			<div class="content-wrapper">
-				<h1 id="process-title">
+				<h1 class="process-title">
 					Why change?
 				</h1>
-				<img class="process-img" src="img/tongle/gas_tax.jpg" data-action="zoom">
 				<p class="process-exp">
 					Fuel efficent cars such as a Hybird pay siginifcantly less than less fuel efficent vehicles. While the problem has not reached a critical threshold yet, it is one that we will face inevitably in the future.
 				</p>
+
+				<img class="process-img" data-src="img/tongle/gas_tax.jpg" data-action="zoom">
+				
 				
 			</div>
 		</div>
 
 		<div id="section6" class="section">
 			<div class="content-wrapper">
-				<h1 id="overview-title">
-					Why This Project Scared My Team.
+				<h1 class="overview-title">
+					Finding Inspiration.
 				</h1>
 				<p class="process-exp">
 					As a human-centered designer, my team and I were concerned with the impact that a road usage tracking technology would have on end-users. Accurately monitoring road usage and accounting for things like out of state travel, private roads, and non-taxable trips might hurt the autonomy of end-users. A mobile phone road usage system affects <b>privacy</b>(to collect accurate data), <b>inconveniences</b> users, and raises <b>fairness</b> issues. Even before starting, my team and I new that navigating the complex interaction between values was key to the sucess of this project.
@@ -169,10 +159,10 @@ Questions: mfern93@gmail.com
 
 		<div id="section7" class="section">
 			<div class="content-wrapper">
-				<h1 id="overview-title">
-					Choosing Participatory Design
+				<h1 class="overview-title">
+					Choosing Participatory Design.
 				</h1>
-				<img class="process-img" src="img/tongle/pd.png" alt="http://dlrtoolkit.com/participatory-design/">
+				<img class="process-img" data-src="img/tongle/pd.png" alt="http://dlrtoolkit.com/participatory-design/">
 				<p class="process-exp">
 					Participatory Design(PD) is a fundamentally democratic process. PD aims to increase the agency of the eventual end-users. Shifting the focal point of design to center around those being designed for, results in a product which better serves those using it.
 				</p>
@@ -185,23 +175,23 @@ Questions: mfern93@gmail.com
 
 		<div id="section8" class="section">
 			<div class="content-wrapper">
-				<h1 id="proces-title">
-					Process
+				<h1 class="overview-title">
+					Process.
 				</h1>
 				<div class="quote">
-					<i>Design your own tax.</i>
+					<i>Design your own tax</i>
 				</div>
 				<p class="proces-exp">
 					I choose to theme our participatory design process around the tag line "design your own tax". I imagined a process that allowed participants to set up a road usage charge that fit their needs. With my tean, we planned to use an <b>agile methodolgy</b> which deployed alternating sprints of research and design. The cycle would begin with a week in which we focus on research followed by a week where we applied the research. As the project progressed I ended up drawing heavily from the <a class="text-link" href="http://www.vsdesign.org/publications/pdf/non-scan-vsd-and-information-systems.pdf"> Value Sensitive Design</a> as a way <b>to navigate the complex human values</b> that exist in this design problem.
 				</p>
 
-				<img class="process-img" src="img/tongle/process_horizontal.jpg" data-action="zoom">
+				<img class="process-img" data-src="img/tongle/process_horizontal.jpg" data-action="zoom">
 			</div>
 		</div>
 		<div id="section9" class="section">
 			<div class="content-wrapper">
-				<h1 id="proces-title">
-					Participatory Workshop
+				<h1 class="process-title">
+					Participatory Workshop.
 				</h1>
 				<p class="proces-exp">
 					To inform the development of our product, my team and I planned 3 participatory design workshops. During theese workshops we invited the same group of 9 people to share their values, insights and design ideas. 
@@ -209,15 +199,15 @@ Questions: mfern93@gmail.com
 				<p>
 					Together, in each workshop my team led the invited members through a series of acitivites. These acitivites included a wide range of design acitivites ranging from infinity diagraming to mini-design sprints. During, workshops resembled <b>a mix of ethnographic user research and co-design acitivities</b>. For example, in conversation with participants, informals interview skills were used to elicit unbiased data. On the other hand, co-design acitivites allowed users to communicate ideas through design artifacts without our intentionality biasing their products. 
 				</p>
-				<img class="process-img vertical-layout-img" src="img/tongle/participants.png" data-action="zoom">
+				<img class="process-img vertical-layout-img" data-src="img/tongle/participants.png" data-action="zoom">
 
 			</div>
 		</div>
 
 		<div id="section10" class="section">
 			<div class="content-wrapper">
-				<h1 id="proces-title">
-					Sharing Our Intial Findings
+				<h1 class="process-title">
+					Sharing Our Intial Findings.
 				</h1>
 				<p class="process-exp">
 					Using the workshops as a combination of user research and design ideation we conducted analysis on artifacts(such as infinity diagram post-it notes) and recorded notes to conduct analysis. We found a list of key values that participants brought up during workshops. 
@@ -231,7 +221,7 @@ Questions: mfern93@gmail.com
 
 		<div id="section11" class="section">
 			<div class="content-wrapper">
-				<img class="cover-img" src="img/tongle/affinity.jpg">
+				<img class="cover-img" data-src="img/tongle/affinity.jpg">
 				<figcaption>Affinity diagraming my team did to sort data points collected during our workshops. </figcaption>
 			</div>
 		</div>
@@ -239,22 +229,22 @@ Questions: mfern93@gmail.com
 
 		<div id="section12" class="section">
 			<div class="content-wrapper">
-				<h1 id="process-title">
-					 Easing Tensions
+				<h1 class="process-title">
+					 Easing Tensions.
 				</h1>
 				<p class="process-exp">
 					An interesting thing happened when we showed participants the values they ranked as important to a road usage charge. People slected the values using them in groups of two or more to create "value tensions". Tensions empowered participants to <b>evaluate the strengths and weakness of an idea based off values that mattered to them</b>. 
 				</p>
 
-				<img class="process-img-sm spaced" src="img/tongle/tension.png" data-action="zoom">
+				<img class="process-img-sm spaced" data-src="img/tongle/tension.png" data-action="zoom">
 				<figcaption class="caption-small">Examples of some of the more common tensions seens during our workshops.</figcaption>
 			</div>
 		</div>
 
 		<div id="section13" class="section">
 			<div class="content-wrapper">
-				<h1 id="process-title">
-					The Turning Point
+				<h1 class="process-title">
+					The Turning Point.
 				</h1>
 				<p class="process-exp">
 					Participatory design in product development allows researchers and designers to have an intimate understanding of what end users of their product want from the product. For me a major moment in the process was when a of participatory design workshop participant said the following quote to another participant.
@@ -271,8 +261,8 @@ Questions: mfern93@gmail.com
 
 		<div id="section14" class="section">
 			<div class="content-wrapper">
-				<h1 id="process-title">
-					Prototyping for Maximum Feedback
+				<h1 class="process-title">
+					Prototyping for Maximum Feedback.
 				</h1>
 				<p class="process-exp">
 					Our third and final Participtory Design Workshop found us presenting three different designs(in medium fidelity) for evaluation by our paritcipants. We used the feedback and user tests that happened in the third workshop to evaluate the effectiveness of the prototypes.
@@ -287,7 +277,7 @@ Questions: mfern93@gmail.com
 
 		<div id="section15" class="section">
 			<div class="content-wrapper">
-				<h1 id="process-title">
+				<h1 class="process-title">
 					Saying Goodbye to Our Paticipants and Hello To Our Design Sprint...
 				</h1>
 				<p class="process-exp">
@@ -302,13 +292,13 @@ Questions: mfern93@gmail.com
 
 		<div id="section16" class="section">
 			<div class="content-wrapper">
-				<h1 id="process-title">
-					The Architecture 
+				<h1 class="process-title">
+					The Architecture. 
 				</h1>
 				<p class="process-exp">
 					We began our design sprint by making a system state diagram and a sitemap for the mobile application. The system state diagram allowed us to understand the requirements needed for both a mobile phone and external device.
 				</p>
-				<img class="cover-img" src="img/tongle/state-flow.png">
+				<img class="cover-img" data-src="img/tongle/state-flow.png">
 				<figcaption>We used this state flow to explain the dual-solution nature of Tongle-Dongle to our participants. We mantined this same general state flow for our final deliverable.</figcaption>
 			</div>
 		</div>
@@ -316,18 +306,18 @@ Questions: mfern93@gmail.com
 
 		<div id="section17" class="section">
 			<div class="content-wrapper">
-				<h1 id="process-title">
-					Multiple Fidelities 
+				<h1 class="process-title">
+					Multiple Fidelities.
 				</h1>
 				<p class="process-exp">
 					After establishing the basic architecture of the system, we began filling in the details of what our application would look like. Using the knowledge we gained from prototypes and tests during the Participatory Design workshops, we developed a <a class="text-link" href="https://xd.adobe.com/view/4930a92c-0090-490e-beb7-bc4a235cbef2/">wireframe</a> before moving on to a higher fidelity interactable prototypes.
 			</div>
-		</div>x
+		</div>
 
 		<div id="section18" class="section">
 			<div class="content-wrapper">
-				<h1 id="process-title">
-					<a class="text-link" href="https://dl.acm.org/citation.cfm?id=2940316"> Final Prototype</a>
+				<h1 class="process-title">
+					<a class="text-link" href="https://dl.acm.org/citation.cfm?id=2940316"> Final Prototype.</a>
 				</h1>
 				<p>
 					Click on the above link to interact with our final prototype created in collaboration. 
@@ -339,8 +329,8 @@ Questions: mfern93@gmail.com
 
 		<div id="section19" class="section">
 			<div class="content-wrapper">
-				<h1 id="process-title">
-					Some Thoughts on PD
+				<h1 class="process-title">
+					Reflection on Participatory Design.
 				</h1>
 
 				<div class="process-exp">
@@ -356,7 +346,7 @@ Questions: mfern93@gmail.com
 				<div class="content-wrapper">
 					<h1 class="overview-title">Portfolio</h1>
 
-					<a class="tile-click" href="ubus.html">
+					<a class="tile-click" href="ubus">
 						<div class="portfolio-tile" style="background-image:url('img/ubus/bus_blur.jpg')">
 								<div class='title-position'>
 									<div class="tile-title"><i>Uncertain Bus</i> : User Interface design for smarter decision making.</div>
@@ -364,7 +354,7 @@ Questions: mfern93@gmail.com
 						</div>
 					</a>
 
-					<a class="tile-click" href="cooking-aid.html">
+					<a class="tile-click" href="cooking-aid">
 						<div class="portfolio-tile" style="background-image:url('img/caid/tile-caid.png')">
 								<div class='title-position'>
 									<div class="tile-title"><i>CookingAid</i> : A wearable solution built to assist you in messy cooking situations.</div>

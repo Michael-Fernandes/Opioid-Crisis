@@ -15,20 +15,23 @@ $(document).ready(function() {
       }
     }
   }
+  
 
   $('#fullpage').fullpage({
     sectionsColor: ['#FFFFFF', '#f6faff', '#fcfcfc', 'fffefc','#FFFFFF', '#f6faff', 'smokeSceen', '#F8F8FF', '#F5F5F5',],
-    anchors: ['1stpage', '2ndpage', '3rdPage', '4thpage', '5thpage', '6thpage', '7thpage', '8thpage', '9thpage', '10thpage', '11thpage', '12thpage', '13thpage', '14thpage', '15thpage', '16thpage', '17thpage', '18thpage', '19thpage'],
+    anchors: ['1', '2', '3', '4', '5', '6', '7', '8thpage', '9thpage', '10thpage', '11thpage', '12thpage', '13thpage', '14thpage', '15thpage', '16thpage', '17thpage', '18thpage', '19thpage', '20thpage'],
     //responsiveWidth: 900,
     autoScrolling: false,
     recordHistory: true,
-    lazyLoading: false,
+    lazyLoading: true,
+    fitToSectionDelay: 1000000,
     
     scrollOverflow: false,
     scrollOverflowOptions: {
           click: false
      },
   });
+
 });
 
 // Code borrowed from 
@@ -52,6 +55,29 @@ $(document).ready(function() {
             didScroll = false;
         }
     }, 250);
+    
+    window.addEventListener('load', function() {
+        $(".portfolio-tile").each(function(){
+            var inV = new inView(this);
+            inV.onInView((function() {
+                $(this).addClass("animated slideInUp");
+            }).bind(this));
+        })
+        
+         /*$( "#welcome-city-current" ).slideToggle( "slow", function() {
+            
+          //$("#welcome-city").slideToggle("slow", function(){}) 
+
+          }); */
+
+          $("#welcome-city-current").fadeTo(600, 0, "linear", function() {
+              $(this).css("display", "none");
+                $("#welcome-city").fadeTo(1000, 1, "linear");
+            
+          })
+          
+    }); 
+
 
     function hasScrolled() {
         var st = $(this).scrollTop();
@@ -74,7 +100,7 @@ $(document).ready(function() {
             }
         }
 
-        if(st == 0){
+        if(st == 0 && !$('header').hasClass('slideInDown')){
             $('header').removeClass("slideOutUp").addClass('header-shadow-off slideInDown');
         }
         
@@ -82,6 +108,3 @@ $(document).ready(function() {
     }
 
 }(window.jQuery, window, document));
-
-
-
