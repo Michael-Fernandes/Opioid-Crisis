@@ -36,7 +36,7 @@ body {
 
 
 .overview, .process-exp {
-	font-family: 'Gentium Basic';
+	font-family: 'Open Sans';
 	line-height: 130%;
 }
 
@@ -65,7 +65,7 @@ body {
 	padding: 0 10px 0 10px;
 }
 
-.warddrobe, #header-wrapper, .content-wrapper, #blog-wrapper, .button-container, .overview, .cover-img,.cover-img-long, .cover-width-img, .cover-height, .iframe-wrapper, .iframe-phone, .iframe-prototype, .half-img  {
+.warddrobe, #header-wrapper, .content-wrapper, #blog-wrapper, .button-container, .overview, .cover-img,.cover-img-long, .cover-width-img, .cover-height, .iframe-wrapper, .iframe-phone, .iframe-prototype, .half-img, .centered  {
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -269,13 +269,14 @@ a:hover, .round-button:hover, .portfolio-tile:hover, #header-wrapper>a>img, .but
 }
 
 .tile-title {
+	bottom: -230px;
+	left: 10px;
+	position: relative;
 	font-size:12pt;
 	font-weight: 500;
 	color: white;
-	position: relative;
-	bottom: -230px;
-	left: 10px;
 }
+
 
 .title-position {
 	max-width: 90%;
@@ -534,6 +535,10 @@ header {
     background-position: center 80%;
 }
 
+.section{
+	margin-bottom: 40px !important;
+}
+
 figcaption {
 	display: block;
 	max-width: 90%;
@@ -649,6 +654,8 @@ figcaption {
 	display:block;
 	position: absolute;
 	z-index: 2;
+	width:252.75;
+	height:500.25;
 }
 
 .half-img {
@@ -696,21 +703,21 @@ figcaption {
 	  	margin-right: auto;
 	  	margin-left: auto;
 	  	position: relative;
-
 	}
 
 	.iframe-phone {
-		display: none;
+		/*display: none;*/
+		opacity: 0;
 	}
 
 	.iframe-prototype {
-		margin:0;
-		top: 45.5px;
-		width: 375px;
+		display:block;
 		height: 667px;
+		margin:0;
+		top: -45.5px;
+		width: 375px;
 		margin-left:auto;
 		margin-right:auto;
-		display:block;
 		position: absolute;
 		z-index: 2;
 	}
@@ -850,10 +857,12 @@ figcaption {
 .quote {
 	font-weight: 400;
 	font-style: italic;
-	color:orange;
-	margin: 10px auto 10px auto;
-
+	color: orange;
+	margin: 40px auto 10px auto;
+	width: auto;
+	font-size: 14pt;
 }
+
 .quote-who {
 	font-size:12pt;
 	font-style: italic;
