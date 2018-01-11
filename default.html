@@ -46,11 +46,10 @@ Questions: mfern93@gmail.com
 <body>
 <header class="animated slow-animation">
 	<div id='header-wrapper'>
-		<ul>
+		<ul class="animated">
 			<a href="blog" class="nav-link">
 				<li class="menu-projects">Blog</li>
 			</a>
-		
 			  <a href="#portfolio" class="nav-link" onclick="$.fn.fullpage.moveTo();"><li class="menu-projects">Portfolio</li></a>
 		</ul>
 	</div>
@@ -60,7 +59,7 @@ Questions: mfern93@gmail.com
 	</div>
 	<div id="load"></div>
 
-	<div id="fullpage">
+	<div id="fullpage_home">
 		<div id="welcome-page" class="section">
 			<div class="content-wrapper">
 				<div class="overview welcome-overview">
@@ -71,12 +70,12 @@ Questions: mfern93@gmail.com
 					<span class="ux-name">
 							user experience <br/>
 					</span>
-					<i class="fa fa-map-marker" >  <span id="welcome-city-current" class="map-marker-text" >&nbsp; current city</span><span id="welcome-city" class="map-marker-text">&nbsp;Seattle</span></i><br/>
+					<!-- <i class="fa fa-map-marker" >  <span id="welcome-city-current" class="map-marker-text" >&nbsp; current city</span><span id="welcome-city" class="map-marker-text">&nbsp;Seattle</span></i><br/> -->
 					
 					<br>
 					</br>
 					<span class="welcome-intro">
-							I design mobile app and data experiences by always placing the user at the center of the process. 
+							I am an interaction designer based in seattle. My passions include rapid prototyping, data experiences and design thinking. 
 					</span>
 
 				</br>
@@ -111,7 +110,7 @@ Questions: mfern93@gmail.com
 				<div class="content-wrapper" id="portfolio">
 					<h1 class="overview-title">Portfolio</h1>
 					<a class="tile-click" href="lookbok-prototype">
-						<div class="portfolio-tile" id="caid-tile" style="background-image:url('img/caid/tile-caid.png')">
+						<div class="portfolio-tile" id="caid-tile" style="background-image:url('img/lookbk/lkbk-tile.png')">
 								<div class='title-position'>
 									<div class="tile-title"><i>Lookbook</i> : Rapid prototyping for an ecommerce interactive lookbook. (3mins)</div>
 								</div>
@@ -140,6 +139,11 @@ Questions: mfern93@gmail.com
 								</div>
 						</div>
 					</a>
+				<a href="blog.html" class="text link">
+					<div class="rect-button button">
+						Visit my blog for more.
+					</div>
+				</a>
 
 
 					
@@ -147,13 +151,6 @@ Questions: mfern93@gmail.com
 
 		</div>			
 	</div>
-	<div class="content-wrapper">
-		<a href="blog.html" class="text link">
-			<div class="rect-button button">
-				View Blog for More
-			</div>
-		</a>
 
-	</div>
 </body>
 </html>

@@ -46,7 +46,7 @@ body {
 }
 
 ::selection{
-	background-color: #70DBDB;
+	background-color: orange;
 	color:white;
 }
 
@@ -433,7 +433,7 @@ header {
 
 /* Grid images */
 #grid-1 {
-	background-image:url('../img/cards/surgery_assistant.png');
+	background-image:url('../img/ra/ra-tile.png');
 }
 
 #grid-3 {
@@ -547,10 +547,16 @@ figcaption {
 	font-style: italic;
 }
 
+.caption-small, .caption-big {
+	margin: 0 auto 0 auto;
+}
+
 .caption-small {
 	width: 350px;
-	margin: 0px auto 0 auto;
+}
 
+.caption-big {
+	width: 600px;
 }
 
 #img-fix-center {
@@ -600,11 +606,15 @@ figcaption {
 }
 
 /*/////// Process //////*/
-.cover-img {
+.cover-img, .volunteer-img {
 	display: block;
 	width: 100%;
 	max-width:100%;
 	height: auto;
+}
+
+.volunteer-img {
+	margin-top: 40px;
 }
 
 .cover-img-long {

@@ -17,7 +17,7 @@ $(document).ready(function() {
   }
   
 
-  $('#fullpag').fullpage({
+  $('#fullpage_home').fullpage({
     sectionsColor: ['#FFFFFF', '#f6faff', '#fcfcfc', 'fffefc','#FFFFFF', '#f6faff', 'smokeSceen', '#F8F8FF', '#F5F5F5',],
     anchors: ['1', '2', '3', '4', '5', '6', '7', '8thpage', '9thpage', '10thpage', '11thpage', '12thpage', '13thpage', '14thpage', '15thpage', '16thpage', '17thpage', '18thpage', '19thpage', '20thpage'],
     //responsiveWidth: 900,
