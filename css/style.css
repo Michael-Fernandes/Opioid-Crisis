@@ -6,7 +6,7 @@ html {
 }
 
 body {
-	color: #3F3F3F;
+	color: #323232;
 	font-family: 'Open Sans', sans-serif;
 	height: 100%;
 	margin:0;
@@ -61,28 +61,28 @@ body {
     background:url("https://www.creditmutuel.fr/cmne/fr/banques/webservices/nswr/images/loading.gif") no-repeat center center rgba(0,0,0,0.25)
 }
 /*/////Width //////*/
-#header-wrapper, .content-wrapper, #blog-wrapper {
+.content-wrapper, #blog-wrapper {
 	padding: 0 10px 0 10px;
 }
 
-.warddrobe, #header-wrapper, .content-wrapper, #blog-wrapper, .button-container, .overview, .cover-img,.cover-img-long, .cover-width-img, .cover-height, .iframe-wrapper, .iframe-phone, .iframe-prototype, .half-img, .centered  {
+.warddrobe,.content-wrapper, #blog-wrapper, .button-container, .overview, 
+.cover-img,.cover-img-long, .cover-width-img, .cover-height, .iframe-wrapper, 
+.iframe-phone, .iframe-prototype, .half-img, .centered,.small-exp  {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#header-wrapper {
-	max-width: 800px;
-}
 
 #blog-wrapper {
 	max-width:1000px;
 }
 
 .content-wrapper {
-	max-width: 667px;
+	max-width: 750px;
 }
-.content-wrapper:first-child {
-	margin-top:100px;
+
+#section1{
+	padding-top:50px;
 }
 
 .blog-spacer {
@@ -287,37 +287,6 @@ a:hover, .round-button:hover, .portfolio-tile:hover, #header-wrapper>a>img, .but
 	text-decoration: none;
 }
 
-/******************************Header ******************************/
-header {
-	background-color: white;
-	height: 50px;
-	position: fixed;
-	width: 100%;
-	top: 0px;
-	z-index:9;
-}
-
-.header-wrapper-fix{
-	position: fixed;
-}
-
-.header-wrapper-static{
-	position: static;
-}
-
-.header-shadow {
-	box-shadow: 0px 0px 4px #888888;
-}
-
-.header-shadow-off {
-	box-shadow: 0px 0px 4px #FFFFFF;
-}
-
-.header-spacer {
-	height:50px;
-	width: 100%;
-	z-index:-10;
-}
 
 
 .circle-button {
@@ -367,57 +336,49 @@ header {
 	margin: 0px 40px 20px 0px;
 }
 
-#header-wrapper>a>img {
-	margin-top: 18px;
-	max-height: 30px;
-	max-width: 25%;
-	width: 100px;
+header{
+	background-color: #fcfcfc;
+	color:#302e2d;
 }
 
-#header-wrapper>ul {
-	float: right;
-	height: 50px;
-	margin: 0px;
-	max-width: 70%;
-	width: 100%;
+header>p, #header-nav{
+	margin-top:0;
+	padding: 20px;
 }
 
-#header-wrapper>ul>a {
-	margin-right: 20px;
-}
-#header-wrapper>ul>a>li {
-	float: right;
-	margin-right: 5%;
-	margin-top: ;
+#header-nav{
+	padding-left:0px;
+	position: absolute;
+	left: 0;
+	margin:0;
+	list-style-type: none;
+	width: 200px;
 }
 
-.nav-link {
-	color: black;
+#header-nav>li{
+	float:left;
+	padding-left: 30px;
+}
+
+
+
+.selector{
+	list-style-type:none;
+	text-align: center;
+}
+
+.selector>li{
+	display: inline-block;
+	padding: 0 2.5px 2.5px 2.5px;
+}
+.selector>li>a, .nav-link{
+	color:#302e2d;
 	text-decoration: none;
 }
-
-.nav-link:hover {
-	transition: 0.25s;
-	color: orange;
+.selector>li>a:hover,.nav-link:hover{
+	cursor: pointer;
+	color: SteelBlue;
 }
-
-.nav-link:active {
-	color: white;
-}
-
-#header-wrapper>ul, #summary-wrapper> ul  {
-	list-style-type: none;
-	padding-left: 10px;
-}
-
-#header-wrapper>ul>a>li {
-	height: 40px;
-	float: right;
-	font-size: 15px;
-	margin-left: 25px;
-	margin-top: 15px;
-}
-
 /****** blog *********/
 .box {
 	font-family: "Open Sans";
@@ -594,9 +555,10 @@ figcaption {
 #overview-title, .overview-title /** todo: fix this **/{
 	font-size: 44px;
 	font-weight: 700;
+	padding-top:40px;
+	padding-bottom: 10px;
 	margin-bottom: 0px;
 	line-height: 48px;
-	margin-top: 20px;
 	max-width: 667px;
 }
 
@@ -609,8 +571,9 @@ figcaption {
 .cover-img, .volunteer-img {
 	display: block;
 	width: 100%;
-	max-width:100%;
+	max-width:auto;
 	height: auto;
+	max-height: 100%;
 }
 
 .volunteer-img {
@@ -631,10 +594,9 @@ figcaption {
 }
 
 
-
 .cover-height {
 	display: block;
-	max-height: 600px;
+	max-height: 100vh;
 	height: 100%;
 	width: auto;
 }
@@ -672,7 +634,8 @@ figcaption {
 	width: auto;
 	height: 400px;
 	max-height:80%;
-	display: inline-block;
+	margin-bottom: 20px;
+	display: block;
 }
 
 .process-img-2 {
@@ -744,7 +707,7 @@ figcaption {
 .process-title, .alternating-title {
 	font-size: 34px;
 	font-weight: 700;
-	margin-top: 15px;
+	margin-top: 40px;
 	margin-bottom: 0 !important;
 }
 
@@ -756,14 +719,14 @@ figcaption {
 }
 
 .process-exp {
-	margin-left: auto;
-	margin-right: auto;
+
 	max-width: 667px;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .small-exp {
 	margin: 15px 0 15px;
+	max-width:667px;
 }
 
 .small-ul {
@@ -772,9 +735,12 @@ figcaption {
 }
 
 .scenario {
-	margin:10px 0 0 20px;
-	font-size: 16px;
-	list-style-type: circle;
+	padding: 20px;
+	font-style: oblique;
+}
+
+.scenario>p{
+	margin: 5px;
 }
 
 .process-color {
@@ -934,5 +900,17 @@ figcaption {
 	.wardrobe {
 		display: none;
 	}
+}
 
+/* ubus table */
+table{
+    border-collapse: collapse;
+}
+
+td{
+	padding: 20px;
+}
+
+table, th, td{
+    border: 1px solid black;
 }

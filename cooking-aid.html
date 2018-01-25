@@ -15,10 +15,9 @@ Made by Michael Fernandes with the help of of fullpage scroll and animate javasc
 
 
 	<script src="js/main.js"></script>
-	<script src="js/combined.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="css/combined.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109443170-1"></script>
 	<script>
@@ -34,28 +33,12 @@ Made by Michael Fernandes with the help of of fullpage scroll and animate javasc
 
 
 <body>
-<header class="animated slow-animation">
-	<div id='header-wrapper'>
-		<ul>
-			<a href="blog" class="nav-link"><li class="menu-projects">Blog</li></a>
-			<a href="default" class="nav-link"><li class="menu-projects">Portfolio</li></a>
-		</ul>
-	</div>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109443170-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-109443170-1');
-</script>
-
+<header>
+  	<ul id="header-nav">
+  		<li><a href="default" class="nav-link">Work</a></li>
+  		<li><a href="default#about" class="nav-link">About</a></li>
+	 </ul>
 </header>
-	<div id="load"></div>
-
-	<div <!--id="fullpage" -->>
 		<div id="section1" class="section">
 			<div class="content-wrapper">
 				<h1 class="overview-title">Cooking Aid</h1>
@@ -69,7 +52,7 @@ Made by Michael Fernandes with the help of of fullpage scroll and animate javasc
 		<div id="section2" class="section">
 			<div class='content-wrapper'>
 				<h1 class="overview-title">Overview</h1>
-				<div class="overview">
+				<div >
 					<p class="small-exp">
 						I designed CookingAid to support cooks before, during and after a cooking experience.
 					</p>
@@ -89,7 +72,7 @@ Made by Michael Fernandes with the help of of fullpage scroll and animate javasc
 		<div id="section2" class="section">
 			<div class="content-wrapper">
 				<h1 class="overview-title">Background and Research</h1>
-				<div class="overview">
+				<div>
 					<p class="small-exp">
 						A past exercise in ethnographic research gave me insight into the struggles and pains of home cooks. Inspiring me to create CookingAid.
 					</p>
@@ -98,9 +81,9 @@ Made by Michael Fernandes with the help of of fullpage scroll and animate javasc
 					</p>
 				</div>
 				<ul class='scenario'>
-					<li>Depending on their cooking style, home cooks are either have either high or low context information needs.</li>
-					<li>While cooking a recipe, most home cooks struggle to remember a step(this can be either ingredient related or cooking action)</li>
-					<li>Home chefs participate in additional behaviors beyond cooking including
+					<li>Finding 1~ Depending on their cooking style, home cooks are either have either high or low context information needs.</li>
+					<li>Finding 2 ~ While cooking a recipe, most home cooks struggle to remember a step(this can be either ingredient related or cooking action)</li>
+					<li>Finding 3 ~ Home chefs participate in additional behaviors beyond cooking including
 					socializing, recipe research and diary documentation.</li>
 				</ul>
 			</div>
@@ -145,7 +128,7 @@ Made by Michael Fernandes with the help of of fullpage scroll and animate javasc
 
 		<div id="section2" class="section">
 			<div class="content-wrapper">
-				<h1 class="overview-title">Basic  Structure</h1>
+				<h1 class="overview-title">Information Hierarchy</h1>
 				<div class="process-exp">
 					<p class="small-exp">
 						After selecting the technology, I began structuring the app itself. I started by  brainstorming activities that home cooks do when cooking. Next, I used the following stateflow to map the actions cooks carry out when cooking. 
@@ -153,8 +136,8 @@ Made by Michael Fernandes with the help of of fullpage scroll and animate javasc
 				</div>
 
 				<div content-wrapper>
-					<img class='half-img margined' src="img/caid/activity_brainstorm.jpeg" data-action="zoom">
-					<img class='half-img  margined bordered' src="img/caid/flow.png" data-action="zoom">
+					<img class='half-img' src="img/caid/activity_brainstorm.jpeg" data-action="zoom">
+					<img class='cover-height bordered' src="img/caid/flow.png" data-action="zoom">
 				</div>
 			</div>
 		</div>
@@ -265,6 +248,5 @@ Made by Michael Fernandes with the help of of fullpage scroll and animate javasc
 					</a>
 				</div>
 		</div>
-	</div>
 </body>
 </html>

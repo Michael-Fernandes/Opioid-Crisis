@@ -1,156 +1,232 @@
-<!DOCTYPE html>
-<!--
-This space was built by me, Michael Fernandes, to represent myself in both a professional and personal way. 
+<!doctype html>
 
-It would not be possible without the work done by:
-Fullpagescroll.js ~(written by Álvaro Trigo)
-animate.js ~ (written by  Daniel Eden)
-zoom.js ~ (written by Jack Moore)
+<html lang="en">
+<head>
+  <meta charset="utf-8">
 
-Questions: mfern93@gmail.com
--->
-<html lang='en'>
-	<head>
-	<title> Michael Fernandes | Portfolio </title>
-	<link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
+  <title></title>
+  <meta name="author" content="Michael Fernandes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<meta name="viewport" content="width=device-width"/>
+  <link rel="stylesheet" href="css/main.css">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<script type="text/javascript" src="./js/jquery.lazy.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
 
-	<script src="js/main.js"></script>
-	<script src="js/inview.js"></script>
-	
-	<script src="js/combined.min.js"></script>
-	<link href="css/combined.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-
-	
-
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109443170-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-73790222-1');
-	</script>
-
-
-	</head>
-
-
+</head>
 
 <body>
-<header class="animated slow-animation">
-	<div id='header-wrapper'>
-		<ul class="animated">
-			<a href="blog" class="nav-link">
-				<li class="menu-projects">Blog</li>
-			</a>
-			  <a href="#portfolio" class="nav-link" onclick="$.fn.fullpage.moveTo();"><li class="menu-projects">Portfolio</li></a>
-		</ul>
-	</div>
-</header>
-	<div class="circle-button">
-		<i class="material-icons">vertical_align_top</i>
-	</div>
-	<div id="load"></div>
 
-	<div id="fullpage_home">
-		<div id="welcome-page" class="section">
-			<div class="content-wrapper">
-				<div class="overview welcome-overview">
-					<span class="full-name">
-						Michael Fernandes
-					</span>
-					<br>
-					<span class="ux-name">
-							user experience <br/>
-					</span>
-					<!-- <i class="fa fa-map-marker" >  <span id="welcome-city-current" class="map-marker-text" >&nbsp; current city</span><span id="welcome-city" class="map-marker-text">&nbsp;Seattle</span></i><br/> -->
-					
-					<br>
-					</br>
-					<span class="welcome-intro">
-							I am an interaction designer based in seattle. My passions include rapid prototyping, data experiences and design thinking. 
-					</span>
+  <header>
+  	<ul id="header-nav">
+  		<li><a href="" class="nav-link">Work</a></li>
+  		<li><a href="#about" class="nav-link">About</a></li>
+	 </ul>
+	</header>
 
-				</br>
-			
-			
-					
-				</div>
-
-				<div class="button-container">
-
-					<a href="img/resume.pdf" target="_blank" title="Resume" alt="Resume">
-						<div class="button-wrapper">
-							<i class="fa fa-file-text-o menu-icon" aria-hidden="true" ></i>
-						</div>
-					</a>
-
-					<a class="text-link" href="https://www.linkedin.com/in/mifern/" target="_blank" alt="LinkedIn Profile" title="LinkedIn">
-						<div class="button-wrapper">
-							<i class="fa fa-linkedin menu-icon" aria-hidden="true" ></i>
-						</div>
-					</a>
-				</div>
-				<!--
-				<div class="highlight-button">
-					Blog
-				</div>
-				-->
-			</div>
+	<div class="content-wrapper">
+		<p id="name"> Michael Fernandes</p>
+		<p id="tagline">Inclusive design for the data-driven world.</p>
+		<div id="tagline-long">
+			<ul class="selector">
+				<li><a href="#tongle">Design Research</a>,</li>
+				<li><a href="#lookbook">Rapid Prototyping</a>,</li>
+				<li><a href="#ubus">Data Visualization</a>,</li>
+				<li><a href="#caid">User-Centered</a>,</li>
+				<li>&#38; <a href="#tongle">Value Sensitive</a> Design</li>
+			</ul>
 		</div>
-
-		<div id="section2" class="section">
-				<div class="content-wrapper" id="portfolio">
-					<h1 class="overview-title">Portfolio</h1>
-					<a class="tile-click" href="lookbok-prototype">
-						<div class="portfolio-tile" id="caid-tile" style="background-image:url('img/lookbk/lkbk-tile.png')">
-								<div class='title-position'>
-									<div class="tile-title"><i>Lookbook</i> : Rapid prototyping for an ecommerce interactive lookbook. (3mins)</div>
-								</div>
-						</div>
-					</a>
-					<a class="tile-click" href="cooking-aid">
-						<div class="portfolio-tile" id="caid-tile" style="background-image:url('img/caid/tile-caid.png')">
-								<div class='title-position'>
-									<div class="tile-title"><i>CookingAid</i>: A wearable solution built to assist you in sticky cooking situations. (5mins)</div>
-								</div>
-						</div>
-					</a>
-
-					<a class="tile-click" href="tongle">
-						<div class="portfolio-tile" style="background-image:url('img/tongle/in_context_dark.jpg')">
-								<div class='title-position'>
-									<div class="tile-title"><i>Tongle</i> : User Centered Design for Smart Government. (10mins)</div>
-								</div>
-						</div>
-					</a>
-
-					<a class="tile-click" href="ubus">
-						<div class="portfolio-tile" id="bus-tile" style="background-image:url('img/ubus/bus_blur.jpg')">
-								<div class='title-position'>
-									<div class="tile-title"><i>Uncertain Bus</i> : User Interface design for smarter decision making. (10mins)</div>
-								</div>
-						</div>
-					</a>
-				<a href="blog.html" class="text link">
-					<div class="rect-button button">
-						Visit my blog for more.
-					</div>
-				</a>
-
-
-					
-				</div>
-
-		</div>			
 	</div>
+
+  <div class="section">
+  		<div class="content" id="lookbook">
+	  		<div class='description-wrapper'>  			
+	  			<div class="product-description-bottom">
+	  				<h1 class="description-title">LookBook</h1>
+	  				<div class="description-overview">
+	  					<p>
+	  						Rapid prototyping and testing to evaluate a novel E-commerce UI that allows users to hover to view an item in a wardrobe. 
+	  					</p>
+	  				</div>
+	  				<div class="description-points">
+		  				<div class="description-tags">
+		  					<p>Rapid prototyping, Interaction Design, Front-End Development</p>
+		  				</div>
+		  				<div class="description-length">
+		  					<p>3mins</p>
+		  				</div>
+		  			</div>
+		  			<a href="lookbook" class="tile-click">
+			  			<div class="sq-button lookbook-button">
+			  				Read More
+			  			</div>
+			  		</a>
+	  			</div>
+	  			<div class="img-bottom">
+	  				<img src="img/main.png" class="main-img" id="img-bottom">
+	  			</div>
+  			</div>
+	  	</div>
+  </div>
+
+    <div class="section" id="tongle">
+  		<div class="content" >
+	  		<div class='description-wrapper' id="img-right-wrapper"> 
+	  		 	<div id="img-left last-item">
+	  				<img src="img/tongle_in_context.jpg" class="main-img">
+	  			</div> 			
+	  			<div class="product-description-staggered first-item">
+	  				<h1 class="description-title">Tongle: Inclusive Design</h1>
+	  				<div class="description-overview">
+	  					A Value Sensitive Design project to create a Civil Technology for the citizens of Washington State.
+	  				</div>
+	  				<div class="description-points">
+		  				<div class="description-tags">
+		  					<p>Value Sensitive Design, Design Research, </p>
+		  				</div>
+		  				<div class="description-length">
+		  					<p>6mins</p>
+		  				</div>
+		  			</div>
+		  			<a href="tongle" class="tile-click">
+			  			<div class="sq-button tongle-button">
+			  				Read More
+			  			</div>
+			  		</a>
+	  			</div>
+	  			
+	  		</div>
+	  	</div>
+  </div>
+
+  <div class="section" id="caid">
+  		<div class="content">
+	  		<div class='description-wrapper' id="img-right-wrapper">  			
+	  			<div class="product-description-staggered">
+	  				<h1 class="description-title" >Cooking Aid</h1>
+	  				<div class="description-overview">
+	  					A mobile and wearable application suite that supports Home Chefs in their hobby of cooking. 
+	  				</div>
+	  				<div class="description-points">
+		  				<div class="description-tags">
+		  					<p>Rapid prototyping, User Centered Design, Design Research</p>
+		  				</div>
+		  				<div class="description-length">
+		  					<p>10mins</p>
+		  				</div>
+		  			</div>
+		  			<a href="cooking-aid" class="tile-click">
+			  			<div class="sq-button caid-button">
+			  				Read More
+			  			</div>
+			  		</a>
+	  			</div>
+	  			<div id="img-right">
+	  				<img src="img/tile-caid.png" class="main-img">
+	  			</div>
+	  		</div>
+	  	</div>
+  </div>
+
+  <div class="section" id="ubus">
+  		<div class="content">
+	  		<div class='description-wrapper' id="img-right-wrapper"> 		
+	  			<div class="product-description-middle">
+	  				<h1 class="description-title">Uncertain Bus</h1>
+	  				<div class="description-overview">
+	  					Academic research to examine how to optimally affect Decision Making through Data Visualization.
+	  				</div>
+	  				<div class="description-points">
+		  				<div class="description-tags">
+		  					<p>Design Research, Data Visualization, User-Centered Design, Data-Driven</p>
+		  				</div>
+		  				<div class="description-length">
+		  					<p>10mins</p>
+		  				</div>
+		  			</div>
+		  			<a href="ubus" class="tile-click">
+			  			<div class="sq-button ubus-button">
+			  				Read More
+			  			</div>
+			  		</a>
+			  		<a href="img/ubus/ubus.pdf" target="_blank" title="Paper" alt="Resume" class="tile-click">
+			  			<div class="sq-button ubus-button">
+			  				View CHI '18 Paper
+			  			</div>
+			  		</a>
+		  		</div>
+	  		</div>
+	  	</div>
+  </div>
+
+  <div class="section" id="ubus">
+  		<div class="content">
+	  		<div class='description-wrapper' id="img-right-wrapper"> 		
+	  			<div class="product-description-top">
+	  				<h1 class="description-title">Volunteer, Outreach and Mentorship</h1>
+	  				<div class="description-overview">
+	  				 	Over the last three years, I have taught classes, lead outreach programs, and volunteered at various events in UX and inclusion and tech. 
+	  				</div>
+	  				<div class="description-points">
+		  				<div class="description-length">
+		  					<p>3mins</p>
+		  				</div>
+		  			</div>
+		  			<a href="ubus" class="tile-click">
+			  			<div class="sq-button volunteer-button">
+			  				Read More
+			  			</div>
+			  		</a>
+		  		</div>
+		  		<div id="img-top">
+	  			<img src="img/volunteer.png" class="main-img">
+	  		</div>
+	  		</div>
+	  		
+		  		
+	  	</div>
+  </div>
+
+  <div class="about" id="about">
+  		<div class="content content-wrapper">
+  			<h2 class="description-title">My name is Michael, but who am I anyways?</h2>
+  			
+  			<p class="small-exp">
+  				Thanks for checking my portfolio out this far, here's some more stuff about me.
+  			</p>
+
+  			<h2>Me as an UXer</h2>
+  			<p class="small=exp">
+  				I've been in the UX field since 2015. Since than I have
+  			</p>
+
+  			<p class="small=exp">
+  				In these last few years I have been able to gain experience in data-driven design and inclusive design. Having won awards in both of these fields of work.
+  			</p>
+
+  			<h2>What I'm passionate about</h2>
+  			<p class="small=exp">
+  			In my spare time I'm passionate about Cooking, Health and Fitness, getting outside as much as possible. After work and on weekend mornings you can find me rock climbing, hiking, or cooking a meal for friends and family.
+  			</p>
+
+  			<h2>Lets Connect</h2>
+  			<p class="small=exp">
+  			I am currently looking for job opportunities both freelance and fulltime. If you want to connect, please do. I love coffee, hiking and a good happy hour. 
+  			</p>
+  			<p class="small-exp">
+  				To get in touch email me at mfern93@gmail.com. If you still want to get to know me check out the work I've done volunteering in various inclusion in tech outreach.
+  				
+			<a href="volunteer" class="tile-click">
+	  			<div class="sq-button ubus-button">
+	  				Volunteer Work
+	  			</div>
+	  		</a>
+  			</p>
+  	
+
+  		</div>
+  </div>
+
 
 </body>
 </html>
