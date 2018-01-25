@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+Made by Michael Fernandes with the help of of fullpage scroll and animate javascript libraries.
+
+-->
+<html lang='en'>
+	<head>
+	<title> Michael Fernandes | Blog </title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
+
+	<meta name="viewport" content="width=device-width"/>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<script src="js/main.js"></script>
+	<script src="js/combined.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/combined.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109443170-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-73790222-1');
+	</script>
+</head>
+
+<body>
+<header>
+  	<ul id="header-nav">
+  		<li><a href="default" class="nav-link">Work</a></li>
+  		<li><a href="default#about" class="nav-link">About</a></li>
+	 </ul>
+</header>
+	<div class="content-wrapper section">
+		<div class="blog-spacer"></div>
+		<h1 class="overview-title spaced">
+			Interactive Fashion LookBook Prototype
+		</h1>
+		<div class="process-summary">
+
+			Inspiration  &nbsp;// &nbsp; Design Ideation  &nbsp;//&nbsp; Proof of Concept  &nbsp;// &nbsp; Evaluation  &nbsp;// &nbsp; Design Iteration  &nbsp;// &nbsp; Development
+		</div>
+		<div class="process-exp">
+			<h2 class="process-title">Inspiration</h2>
+			<p class="small-exp">
+				In a discussion with a friend, I generated this idea as a new way to interact with ecommerce websites. In short, the idea is an interactable fashion lookup where a user can hover over an article of clothing and see it appear on the side. 
+			</p>
+			<p class="small-exp">
+				When I attempted to communicate the idea, I became unsure of how effective the interaction might be. It seemed like a good idea in my head but without actually doing it I was unsure how intuitive and effective it would be. 
+			</p>
+			<p class="small-exp">
+				I decided to rapid prototype the idea to quickly get an understanding of the idea.
+			</p>
+			<h2 class="process-title">Design Ideation</h2>
+			<p class="small-exp">
+				The process began by creating quick sketch wireframes. I labeled how the page would work together and identified the minimum components the prototype would need to communicate the design idea.
+			</p>
+				<img src="img/lookbk/quick_sketches.jpg" class='process-img'>
+
+			<h2 class="process-title">Proof of Concept</h2>
+			<p class="small-exp">
+				I selected a single "wardrobe" page and a "quick view" component to prototype using the following tools:
+				 <ul class="small-ul">
+					 <li>SVG code generated in Adobe Illustrator</li>
+					 <li>D3.js, data visualization library</li>
+					 <li>jQuery, javascript library</li>
+				</ul>
+			</p>
+			<p class="small-exp">
+				Using Adobe Illustrator, I outlined articles of clothes and than exported the file to SVG code.
+			</p>
+			<img src="img/lookbk/svg_overlay.png" class="process-img">
+			
+			<p class="small-exp">
+				Inserting the SVG code generated in Illustrator, I used D3.js to add event handling and styling to the svg objects. 
+			</p>
+			<p class="small-exp">
+				Next, I progmatically generated the "Quick View Box" using jQuery.
+			</p>
+
+			<p class="desktop">
+				The overall goal of the prototype was to get a quick idea of how interaction might work. View it below.
+			</p>
+			<p class="mobile"> To use the prototype please visit this page on a desktop. The prototype was meant for a desktop experience. but as you will see below a mobile mockup with a similar type of interaction was mockedup as well.</p>
+		</div>
+	</div>
+	<div class="wardrobe">
+		<iframe id="wardrobe" src="wardrobe.html"   frameborder="0"></iframe>
+	</div>
+	<div class="content-wrapper">
+		<div class="process-exp">
+			<h2 class="process-title">Evaluation</h2>
+			<p class="small-exp">
+				I tested it with a few test users and the result were promising! I found users felt familiar with the prototype and even found a few users were able to identify the need of such a UI within fashon lookbooks.
+			</p>
+			<h2 class="process-title">Design Iteration</h2>
+			<p class="small-exp">
+				With the feedback gathered in the test, I used Adobe XD to rapidly iterate designs. 
+			</p>
+			<p>
+				I next created a series of wireframes and high fidelity mockups to further articulate my design idea.
+			</p>
+			<img src="img/lookbk/wireframe.png" class='cover-img mockup'>
+			<img src="img/lookbk/lkbk_1.png" class='cover-img mockup'>
+
+			<img src="img/lookbk/lkbk_2.png" class='cover-img mockup'>
+			<h2 class="process-title">Development</h2>
+			<p class="small-exp">
+				My plan is to develop a final proof of concept using React and D3. To do this the prototype will be composed of the following components, interactions, and animations.
+			</p>
+		</div>
+
+	</div>
+</body>
+</html>

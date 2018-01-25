@@ -1,0 +1,362 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700|Open+Sans);
+
+/* margin center */
+body{
+	font-family: "Open Sans", 'Roboto', 'Avenir', 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #302e2d;/* black */
+}
+
+
+#name, .content, .description-wrapper, #img-bottom, #tagline, #tagline-long, .main-img, .content-wrapper{
+	margin-left:auto;
+	margin-right: auto;
+}
+
+h1, h2{
+	font-family: "Roboto";
+}
+
+.description-wrapper{
+	height: 100%;
+	padding:0;
+}
+
+#name{
+	padding-top:40px;
+	font-size: 14pt;
+	letter-spacing: 0.025em;
+}
+
+#tagline, #tagline-long, #name, .sq-button{
+	text-align: center;
+}
+
+#tagline{
+	font-size: 20pt;
+}
+
+#tagline-long{
+	margin-bottom: 0;
+	max-width: 500px;
+	font-size: 12pt;
+}
+/* '#f6faff', '#fcfcfc', 'fffefc','#FFFFFF', '#f6faff', 'smokeSceen', '#F8F8FF', '#F5F5F5',],*/
+
+header{
+	background-color: #fcfcfc;
+	color:#302e2d;
+}
+
+header>p, #header-nav{
+	margin-top:0;
+	padding: 10px;
+}
+
+#header-nav{
+	padding-left:0px;
+	position: absolute;
+	left: 0;
+	margin:0;
+	list-style-type: none;
+	width: 200px;
+}
+
+#header-nav>li{
+	float:left;
+	padding-left: 30px;
+	text-decoration: oblique;
+}#header-nav>li>a:hover{
+	cursor: pointer;
+}
+
+.content{
+	opacity: 1;
+	max-width: 1000px;
+	overflow: hidden;
+    position: relative;
+}
+
+.section{
+	clear: both;
+	height: 85vh;
+	max-height: 700px;
+	padding: 0px 20px 20px 20px;
+	overflow: hidden;
+}
+
+/* code from https://stackoverflow.com/questions/4804581/css-expand-float-child-div-height-to-parents-height */
+.section { display: -ms-flex; display: -webkit-flex; display: flex; }
+.section>div { flex:1; }
+
+.small-exp{
+	font-family: "Open Sans" ;
+}
+.main-img{
+	display: block;
+	min-width: 300px;
+	max-width: 400px;
+	height: auto;
+}
+
+.about {
+	padding: 40px;
+}
+
+/* description */
+.product-description-staggered, .product-description-bottom{
+	max-width: 375px;
+	width: 90%;
+	padding: 10px 0 0 0;
+}
+
+.product-description-bottom{
+	position: absolute;
+	top: 7.5vh;
+	left: 15%;
+}
+
+.product-description-middle, .product-description-top{
+	position: absolute;
+	max-width:445px;
+}
+
+.product-description-staggered{
+	color: white;
+}
+
+.product-description-top{
+	margin: 20px;
+	align-self: flex-start;
+}
+
+
+.description-points{
+	display: flex;
+	justify-content: space-between;
+	font-family: "Open Sans";
+}
+
+.description-points>*{
+	font-size: 10pt;
+	max-width: 300px;
+	margin: 0;
+}
+
+.description-length{
+	float: right;
+	padding-right: 30px;
+	bottom: 10pt;
+}
+
+.description-tags{
+	max-width: 200px;
+	font-style: italic;
+}
+
+#img-bottom{
+	position: relative;
+	top: 42.5vh;
+	max-width: 47.5%;
+	display: block;
+}
+
+#img-right-wrapper, #img-left-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+#img-right, #img-left{
+	height: auto !important;
+	display: block;
+	position: relative;
+}
+
+#img-right>img, #img-left>img {
+	width: 100% !important;
+	height: 100%;
+}
+
+#img-left-wrapper{
+	flex-direction: row-reverse;
+}
+
+#img-top{
+	align-self: flex-end;
+}
+
+.product-description-staggered{
+	margin-bottom: 20px;
+}
+
+.description-title{
+	font-weight:500;
+	font-size:24pt;
+	margin:0 auto 0 auto;
+}
+
+.link{
+	text-decoration: none;
+}
+
+.sq-button{
+	border-radius: 2px;
+	color: white;
+	background-color:black;
+	font-size: 14px;
+	padding: 7px 10px 7px 10px;
+	min-width: 85px;
+	width: fit-content;
+}.sq-button:hover{
+	cursor: pointer;
+	color: black;
+}
+
+.caid-button{
+	background-color: orange;
+	border: 2px solid white;
+}.caid-button:hover{
+	color: orange;
+	background-color: white;
+}
+
+.lookbook-button{
+	color: white;
+	background-color: #302e2d; /* black */
+	border: 2px solid #302e2d;
+}.lookbook-button:hover{
+	color: #302e2d;
+	background-color: white;
+}
+
+.tongle-button{
+	background-color: #1EB2A4;
+	border: 2px solid white;
+}.tongle-button:hover{
+	color: #1EB2A4;
+	background-color: white;
+}
+
+.ubus-button{
+	background-color: #302e2d;
+	color: white;
+	float: left;
+	margin-right: 15px;
+	display:inline-block;
+}.ubus-button:hover{
+	color: #302e2d;
+	background-color:white;
+}
+
+.volunteer-button{
+	color: white;
+	background-color: grey;
+}.volunteer-button:hover{
+	color: grey;
+	background-color: white;
+}
+
+
+
+/* It's a hack... to allow for stagger left */
+@media (max-width:895px){
+	.first-item{ order: -1; }
+	.last-item{order: -20;}
+
+	.product-description-bottom{ left:0; }
+}
+
+.section:nth-child(3){
+	background-color: #E8E8E8;
+	padding-bottom: 0;
+	/* MARBLE STYLING
+	background-image: url("../img/lookbk/tile.jpg");
+	background-size: cover;
+	color:white; */
+}
+
+.section:nth-child(4){
+	background-color: #1EB2A4;
+}
+
+.section:nth-child(5){
+	background-color: orange;
+}
+
+.section:nth-child(6){
+	background-color: black;
+	color: white;
+	background-image: url('../img/bus_blur copy.jpg');
+	background-size: cover;
+}
+
+.section:nth-child(7){
+	background-color: #bbf7ef;
+	color: grey;
+	background-size: cover;
+}
+
+.content-wrapper{
+	max-width: 667px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.tile-click{
+	text-decoration: none;
+	color:white;
+}
+
+.selector{
+	list-style-type:none;
+	text-align: center;
+}
+
+.selector>li{
+	display: inline-block;
+	padding: 0 2.5px 2.5px 2.5px;
+}
+.selector>li>a, .nav-link{
+	color:#302e2d;
+	text-decoration: none;
+}
+.selector>li>a:hover,.nav-link:hover{
+	cursor: pointer;
+	color: SteelBlue;
+}
+/* Not sure if I want to do anything fancy here again 
+header {
+	background-color: white;
+	height: 50px;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	z-index:9;
+}
+
+.header-wrapper-fix{
+	position: fixed;
+}
+
+.header-wrapper-static{
+	position: static;
+}
+
+.header-shadow {
+	box-shadow: 0px 0px 4px #888888;
+}
+
+.header-shadow-off {
+	box-shadow: 0px 0px 4px #FFFFFF;
+}
+
+.header-spacer {
+	height:50px;
+	width: 100%;
+	z-index:-10;
+}
+
+*/
