@@ -20,16 +20,12 @@ Questions: mfern93@gmail.com
 
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-	<script src="js/main.js"></script>
-	<script src="js/combined.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="css/combined.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
+	<!-- D3 and ease funcitons -->
  	<script src="https://d3js.org/d3.v4.min.js"></script>
  	<script src="https://d3js.org/d3-ease.v1.min.js"></script>
-
-
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109443170-1"></script>
 	<script>
@@ -49,6 +45,9 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+h1{
+	text-align: center;
+}
 .axisColor line, .axisColor path{
   stroke: #a4a4a4;
 }
@@ -75,55 +74,38 @@ body {
 	text-align: left;
 
 }
+
+.update{
+	background-color: #f2f2f2;
+	padding: 10px;
+	font-size: 1.1em;
+	text-align: center;
+}
+
+*:focus {
+    outline: none;
+}
+
+button:active { 
+    background-color: lightgrey;
+}
 </style>
 
 
 
 <body>
-<header class="animated slow-animation">
-	<div id='header-wrapper'>
-		<ul>
-			<a href="blog" class="nav-link"><li class="menu-projects">Blog</li></a>
-			<a href="default" class="nav-link"><li class="menu-projects">Portfolio</li></a>
-		</ul>
-	</div>
-</header>
-	<div class="content-wrapper">
-		<div class="blog-spacer">
-		</div>
-		<h1 class="overview-title">
-			Dotplots for Decision Making
-		</h1>
-		<div class="overview-exp">
-			Making decisions is hard... dot plots can help! On top of giving a sense of the its shape, dot plots present data in a format that allows people to easily group dots together for quick comparisons and decisions. I made a convenient D3 visualization for dot plots that allows a user to input one-dimensional data and generates a dot plot.
-		</div>
-
+	<h1>Quantile Dotplot Demo</h1>
 		<div class="plot-wrapper">
 		    <div class="plot">
 		    </div>
-		    <input id="updateButton"
+		    <button id="updateButton"
 		    	   class="update"
 		           name="updateButton" 
 		           type="button" 
-		           value="Update"  />
+		           value="Update">
+		        Update new Data
+		    </button>
 	  	</div>
-
-	  	<div class='process-exp'>
-	  	<a href="https://gist.github.com/Michael-Fernandes/f02bdf56aa802f5a18bac2d3b2f3665d" class="text-link">View source code written in D3.js</a>
-	  	</div>
-	  	<div>
-	  		<h1 class="process-title">App Prototype: Whats the Deal?</h1>
-	  		<p>To illustrate a use case of dotplots, I did a quick prototype of an app to help shoppers make buying decisions when shopping. I designed an interface that allows users to look up grocery items and compare the prices for a particular item in their local area. 
-	  	</div>
-
-	  	<h1 class="process-title"> Key Path </h1>
-	  	<img class="cover-img" src="img/dots/key_path.png" data-action="zoom">
-	  	<h1 class="process-title">Design Features</h1>
-	  	<img class="cover-img" src="img/dots/location_collection.png" data-action="zoom">
-	  	<img class="cover-img" src="img/dots/data_entry.png" data-action="zoom">
-	  	<img class="cover-img" src="img/dots/data_analytics.png" data-action="zoom">
-	</div>
-
 </body>
  	 <script src="js/dot.js"></script>
 

@@ -14,7 +14,7 @@
 
 .svg-wrapper{
 	margin: 0 auto 0 auto;
-	max-width: 75%;
+	max-width: 85%;
 }
 
 .svg-wrapper>svg{
@@ -26,6 +26,19 @@
 	z-index: 99;
 	top: -1px;
 	position: sticky;
+}
+
+#desktop, #portfolio-start{
+	display:none;
+}
+
+.mobile, #mobile-hide, #style-hide{
+	display:none;
+}
+
+#svg-wrapper>svg{
+	margin-left:0;
+	display: inline-block;
 }
 
 .nav-color{
@@ -60,6 +73,7 @@
 .orange{
 	background-color: #FC9500;
 }
+
 
 text {
 	-webkit-user-select: none; /* Safari */        
@@ -377,6 +391,7 @@ h3{
 	}
 
 	.svg-wrapper{
-		min-width: 95%;
+		min-width: 100%;
+		margin:-5%;
 	}
 }

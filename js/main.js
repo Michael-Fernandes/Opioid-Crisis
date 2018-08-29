@@ -1,14 +1,5 @@
 $( document ).ready(function() {
-
-	/*
-	console.log("passed");
-	$.ajax({url: "desktop.svg", success: function(result){
-        console.log(result);
-		$('#svg-wrapper').innerHTML(result)
-    }});
-    	console.log("passed2");
-    */
-
+	console.log("log 1")
 	var d = new Date();
 
 	var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
@@ -18,16 +9,17 @@ $( document ).ready(function() {
 	var url = window.location.href;
 
 	isLink = url.split("#");
-
 	if(isLink.length > 1){
 		$("#portfolio-start").show(0);
 	} else{
 		$("#desktop").slideDown(1000, function(){
+			console.log("we made it?")
 			$("#portfolio-start").show(0, function(){
 				console.log("")
 			});
 		});
-	}
+	} 
+
 
 	$("#month").html(month);
 

@@ -34,15 +34,9 @@ p,.content-exp,.content-exp-ragged {
 	color:white;
 }
 
-#desktop, #portfolio-start{
+#mobile-fix-svg{
 	display:none;
 }
-
-.mobile, #mobile-hide, #style-hide{
-	display:none;
-}
-
-
 
 @media only screen and (max-width: 500px) {
 	p{
@@ -357,16 +351,75 @@ header>ul{
 	border: 2px solid #302e2d;
 	border-radius: 5px;
 	width: fit-content;
+	text-align: center;
 }
-.li-button >a>i, .sq-button > i{
+
+.sq-button{/*
+	background-color:black;
+	border-radius: 5px;
+	color: white;
+	font-size: 14px;
+	padding: 25px;
+	min-width: 85px;
+	width: fit-content;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	margin-bottom:10px;
+  	transition: all 0.5s;
+  	text-align: center;*/
+
+	border-radius: 4px;
+    background-color: black;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px 10px 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.sq-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.sq-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+}
+
+.sq-button:hpver{
+	box-shadow: 2px 2px 0px black;
+}
+.sq-button:hover span {
+  padding-right: 15px;
+}
+
+.sq-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.li-button >a>i,{
 	position: relative;
+	display: none;
 }
 
 .li-button:hover{
 	background-color:white;
 }
 
-.li-button:hover a > i, .sq-button:hover i{
+
+.li-button:hover a > i,{
+	display: inline;
 	transition: 0.5s;
 	left: 2.5px;
 }
@@ -384,19 +437,8 @@ header>ul{
 	color:#302e2d;
 }
 
-.sq-button{
-	background-color:black;
-	border-radius: 5px;
-	color: white;
-	font-size: 14px;
-	padding: 7px 10px 7px 10px;
-	min-width: 85px;
-	width: fit-content;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-	margin-bottom:10px;
-}
 
-.sq-button, .li-button{
+.li-button{
 	transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
@@ -846,7 +888,6 @@ img.zoom-img {
 #return-to-top:hover i {
     top: 5px;
 }
-
 
 
 /* Not sure if I want to do anything fancy here again 

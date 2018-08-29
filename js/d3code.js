@@ -2,6 +2,8 @@ $( document ).ready(function() {
 	var comp = document.getElementById("computer").onclick = function(){
 		location.reload();
 	};
+	console.log("log 2")
+	
 	// d3 ish
 	//create a filter
 	var defs = d3.select("svg").append("defs");
