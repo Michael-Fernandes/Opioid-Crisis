@@ -22,26 +22,12 @@ $( document ).ready(function() {
 						});
 					} 
 
-					setDate();
-					interactivity();
+					setCalendarDate();
+					addD3Interactivity();
 			}
 	});
 
-
-		/*
-				  	let isLink = url.split("#");
-					if(isLink.length > 1){
-						$("#portfolio-start").show(0);
-					} else{
-						$("#desktop").slideDown(550, function(){
-							console.log("we made it?")
-							$("#portfolio-start").show(0, function(){
-								console.log("")
-							});
-						});
-					}  */
-
-	  // ===== Scroll to Top ==== 
+	//Scroll to top when clicked
 	$(window).scroll(function() {
 	    if ($(this).scrollTop() >= 50) {   
 	        $('#return-to-top').fadeIn(500);   
@@ -55,16 +41,12 @@ $( document ).ready(function() {
 	    }, 150);
 	});
 
-	//window.sr = ScrollReveal();
-	//sr.reveal('.animate');
-
 	$(".link").on("click", function(){
 		$("#wholepage").fadeOut('slow', function() {
 			document.location = "default.html"
 		});
 	});
 
-	interactivity();
 });
 
 function isMobile() {
@@ -78,7 +60,7 @@ function about(){
 	 $("html").show("slide", { direction: "left" }, 1000);
 }
 
-function setDate(){
+function setCalendarDate(){
 	const d = new Date();
 
 	const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
@@ -88,11 +70,7 @@ function setDate(){
 	$("#date").html(date).attr("text-anchor", "middle");
 }
 
-function interactivity(){
-	//Initiated interactivity with svg.
-	
-	// d3 ish
-	//create a filter
+function addD3Interactivity(){
 	var defs = d3.select("svg").append("defs");
 
 	var filter = defs.append("filter")
