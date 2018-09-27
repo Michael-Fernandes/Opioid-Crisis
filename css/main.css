@@ -46,6 +46,10 @@ p,.content-exp,.content-exp-ragged {
 	#tagline-front{
 		font-size:14pt !important;
 	}
+
+	.madeby{
+		font-size: 9px;
+	}
 }
 
 .description-wrapper{
@@ -219,7 +223,6 @@ header>ul{
 /* description */
 .product-description-staggered, .product-description-bottom{
 	max-width: 400px;
-	width: 90%;
 	padding: 10px 0 0 0;
 	margin-bottom: 20px;
 }
@@ -354,19 +357,7 @@ header>ul{
 	text-align: center;
 }
 
-.sq-button{/*
-	background-color:black;
-	border-radius: 5px;
-	color: white;
-	font-size: 14px;
-	padding: 25px;
-	min-width: 85px;
-	width: fit-content;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-	margin-bottom:10px;
-  	transition: all 0.5s;
-  	text-align: center;*/
-
+.sq-button{
 	border-radius: 4px;
     background-color: black;
     border: none;
@@ -396,9 +387,6 @@ header>ul{
   transition: 0.5s;
 }
 
-.sq-button:hpver{
-	box-shadow: 2px 2px 0px black;
-}
 .sq-button:hover span {
   padding-right: 15px;
 }
@@ -406,6 +394,10 @@ header>ul{
 .sq-button:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+.sq-button:hover{
+	background-color:#191919;
 }
 
 .li-button >a>i,{
