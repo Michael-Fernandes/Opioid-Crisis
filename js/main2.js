@@ -15,9 +15,7 @@ $( document ).ready(function() {
 						$("#portfolio-start").show(0);
 					} else{
 						$("#desktop").slideDown(550, function(){
-							console.log("we made it?")
 							$("#portfolio-start").show(0, function(){
-								console.log("")
 							});
 						});
 					} 
