@@ -27,26 +27,26 @@ $( document ).ready(function() {
 			}
 	});
 
-	//Scroll to top when clicked
-	$(window).scroll(function() {
-	    if ($(this).scrollTop() >= 50) {   
-	        $('#return-to-top').fadeIn(500);   
-	    } else {
-	        $('#return-to-top').fadeOut(350);  
-	    }
-	});
-	$('#return-to-top').click(function() {  
-	    $('body,html').animate({
-	        scrollTop : 0                 
-	    }, 150);
-	});
+});
 
-	$(".link").on("click", function(){
-		$("#wholepage").fadeOut('slow', function() {
-			document.location = "default.html"
-		});
-	});
+//Scroll to top when clicked
+$(window).scroll(function() {
+	if ($(this).scrollTop() >= 50) {   
+		$('#return-to-top').fadeIn(500);   
+	} else {
+		$('#return-to-top').fadeOut(350);  
+	}
+});
+$('#return-to-top').click(function() {  
+	$('body,html').animate({
+		scrollTop : 0                 
+	}, 150);
+});
 
+$(".link").on("click", function(){
+	$("#wholepage").fadeOut('slow', function() {
+		document.location = "default.html"
+	});
 });
 
 function isMobile() {
