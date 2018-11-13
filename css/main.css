@@ -880,38 +880,3 @@ img.zoom-img {
 #return-to-top:hover i {
     top: 5px;
 }
-
-
-/* Not sure if I want to do anything fancy here again 
-header {
-	background-color: white;
-	height: 50px;
-	position: fixed;
-	width: 100%;
-	top: 0px;
-	z-index:9;
-}
-
-.header-wrapper-fix{
-	position: fixed;
-}
-
-.header-wrapper-static{
-	position: static;
-}
-
-.header-shadow {
-	box-shadow: 0px 0px 4px #888888;
-}
-
-.header-shadow-off {
-	box-shadow: 0px 0px 4px #FFFFFF;
-}
-
-.header-spacer {
-	height:50px;
-	width: 100%;
-	z-index:-10;
-}
-
-*/
