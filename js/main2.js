@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 	var url = window.location.href;
 	$.ajax({
-	    url: isMobile ? "phone.svg": "desktop.svg" ,
+	    url: isMobile ? "desktop.svg" : "phone.svg" ,
 	    dataType: 'html',
 	    type: 'GET',
 	    success: function(data) { 
