@@ -7,7 +7,7 @@ $( document ).ready(function() {
 		svgUrl = "desktop.svg"
 	}
 	$.ajax({
-	    url: isMobile ? "desktop.svg" : "phone.svg" ,
+	    url: svgUrl ,
 	    dataType: 'html',
 	    type: 'GET',
 	    success: function(data) { 
