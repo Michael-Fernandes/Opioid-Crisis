@@ -1,5 +1,11 @@
 $( document ).ready(function() {
-	var url = window.location.href;
+	var url = window.location.href, 
+		svgUrl;
+	if(isMobile()){
+		svgUrl = "phone.svg"
+	}else{
+		svgUrl = "desktop.svg"
+	}
 	$.ajax({
 	    url: isMobile ? "desktop.svg" : "phone.svg" ,
 	    dataType: 'html',
