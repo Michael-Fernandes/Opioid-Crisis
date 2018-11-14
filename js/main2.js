@@ -5,7 +5,7 @@ $( document ).ready(function() {
 		svgUrl = "phone.svg"
 	}else{
 		svgUrl = "desktop.svg"
-	}
+	}/*
 	$.ajax({
 	    url: svgUrl ,
 	    dataType: 'html',
@@ -25,7 +25,19 @@ $( document ).ready(function() {
 					setCalendarDate();
 					addD3Interactivity();
 			}
-	})
+	})*/
+	let isLink = url.split("#");
+	if(isLink.length > 1){
+		$("#portfolio-start").show(0);
+	} else{
+		$("#desktop").slideDown(550, function(){
+			$("#portfolio-start").show(0, function(){
+			});
+		});
+	} 
+
+	setCalendarDate();
+	addD3Interactivity();
 
 	$(".nav-left").click( function(event){
 		event.preventDefault();
