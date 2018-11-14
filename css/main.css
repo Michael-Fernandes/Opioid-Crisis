@@ -880,3 +880,23 @@ img.zoom-img {
 #return-to-top:hover i {
     top: 5px;
 }
+
+
+.text-context{
+	opacity:0;
+	animation-fill-mode: forwards;
+	animation: titleContextAnimation;
+	animation-duration: 3s;
+}
+
+@keyframes titleContextAnimation {
+	0% {
+		opacity:0;
+		transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
