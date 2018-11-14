@@ -882,17 +882,21 @@ img.zoom-img {
 }
 
 
-.text-context{
-	opacity:0;
+#text-context{
+	opacity:1;
 	animation-fill-mode: forwards;
 	animation: titleContextAnimation;
-	animation-duration: 3s;
+	animation-duration: 2s;
 }
 
 @keyframes titleContextAnimation {
 	0% {
 		opacity:0;
-		transform: translateY(20px);
+		transform: translateY(-20px);
+	}
+	50% {
+		opacity:0;
+		transform: translateY(-20px);
 	}
 
 	100% {
