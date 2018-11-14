@@ -414,7 +414,7 @@
                     <circle class="cls-12" cx="334.4" cy="350.38" r="3" />
                     <circle class="cls-12" cx="342.1" cy="357.58" r="3" />
                 </g>
-                <g id="time" title="Productivity Vis" class="clickable-hover">
+                <g id="time" title="ProductivityVis.com" class="clickable-hover">
                     <line class="cls-15" x1="573.14" y1="171.13" x2="579.8" y2="179.29" />
                     <line class="cls-15" x1="539.2" y1="171.3" x2="532.54" y2="179.46" />
                     <line class="cls-14" x1="570.37" y1="118.22" x2="575.74" y2="107.36" />
