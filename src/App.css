@@ -1,0 +1,8 @@
+.App {
+  display:flex;
+}
+
+.Chart-Wrapper > div{
+  display:inline-block;
+  margin: 0 auto 0 auto;
+}

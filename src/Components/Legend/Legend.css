@@ -1,0 +1,19 @@
+.LegendDisplay{
+    border: 1px solid #f2f2f2;
+    display:inline-block;
+    height: 500px;
+    min-height: 200px;
+    overflow-y: scroll;    
+    width: 200px;
+}
+
+
+.dot{
+    color: white;
+    fill:white;
+}
+
+.countryNameList{
+    padding:1.5px;
+    cursor: pointer;
+}
