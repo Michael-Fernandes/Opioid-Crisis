@@ -24,7 +24,7 @@ export default class Header extends Component {
     render() {
         return (
         <div className="Header">
-            <h2>Opoid Crisis</h2>    
+            <h1>Opoid Crisis</h1><h2>Global Burden of Disease</h2>   
             <div onClick={this.share}>Share!</div>
             <div className={this.state.copied ? "copied": "noCopy"}>
                 Copied to clipboard
