@@ -35,8 +35,6 @@ class Chart extends Component {
         var x = d3.scaleTime().range([0, width]);
         var y = d3.scaleLinear().range([height, 0]);
 
-        
-
         let svg = d3.select(fauxDiv).append("svg")
                     .attr("width", width + margin.left + margin.right)
                     .attr("height", height + margin.top + margin.bottom)
@@ -46,21 +44,28 @@ class Chart extends Component {
 
         let parseYear = d3.timeParse("%Y");
         // Scale the range of the data
-        let sample = data['Canada']["Both"];
-        x.domain(d3.extent(sample, function(d) { return parseYear(d.year) }));
+        x.domain(d3.extent([1989, 2018], function(d) { return parseYear(d) }));
         y.domain([0, d3.max(getDomain(activeData), function(d) { return d.val; })]);
 
-        // define the line
-        let valueline = (val) =>{ 
+        let valueline = (valueType) =>{ 
             return d3.line()
                     .x(function(d) { return x(new Date(d.year, 1, 1)); })
-                    .y(function(d) { return y(d[val]); }); 
+                    .y(function(d) { return y(d[valueType]); }); 
         }
 
-        let div = d3.select("#root").append("div")
+        let div = d3.select(".Chart-Wrapper").append("div")
             .attr("class", "tooltip")
             .style("opacity", 0);
-            
+        
+        // Add the X Axis
+        svg.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .call( d3.axisBottom(x).ticks(5).tickSizeOuter(0) );
+
+        // Add the Y Axis
+        svg.append("g")
+            .call( d3.axisLeft(y).ticks(6).tickSizeOuter(0) );
+
         for( let countryData of activeData ){
             let linePlot = svg.append("g")
             let cdBoth = countryData.data["Both"].sort(function(a, b){return a.year - b.year}) ;
@@ -86,8 +91,8 @@ class Chart extends Component {
                     d3.select(this).attr("r", 10);
                     div.transition()
                       .duration(200)
-                      .style("opacity", 1);
-                    div.html( getTool(d) )
+                      .style("opacity", 0.9);
+                    div.html( getTool(d, countryData.name) )
                       .style("left", (d3.event.pageX) +5 + "px")
                       .style("top", (d3.event.pageY - 28) + "px"); })
                 .on("mouseout", function(d) {
@@ -95,16 +100,6 @@ class Chart extends Component {
                           .duration(500)
                           .style("opacity", 0); });       
         }
-
-        // Add the X Axis
-        svg.append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .call( d3.axisBottom(x).ticks(5).tickSizeOuter(0) );
-
-        // Add the Y Axis
-        svg.append("g")
-            .call( d3.axisLeft(y).ticks(6).tickSizeOuter(0) );
-
         return fauxDiv;
     }
 
@@ -117,15 +112,15 @@ class Chart extends Component {
     }
 }
 
-function getTool(d){
+function getTool(d, name){
     let {year, val, upper, lower} = d;
     val = val.toFixed(2);
     upper = upper.toFixed(2);
     lower = lower.toFixed(2);
-    console.log(year);
+    console.log(d);
     return (
-        "<span><span><b>" + year + " </b></span><br /><span>Value: " + val + "</span><br /><span>Upper: " + upper + "</span><br /><span>Lower: " + lower + "</span></span>"
-    )
+        "<span><span><b>" +  name + "(" + year + ")</b></span><br /><span>Value: " + val + "</span><br /><span>Upper: " + upper + "</span><br /><span>Lower: " + lower + "</span></span>"
+    ) 
 }
 
 // data transformatiuon helper functions

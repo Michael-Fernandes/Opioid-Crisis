@@ -1,71 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import data from "./Resources/data.json";
-import Legend from "./Components/Legend/Legend";
-import Chart from "./Components/Chart";
-import Header from "./Components/Page/Header";
-import Footer from "./Components/Page/Footer";
-
-import "./Components/Chart/Chart.css"
-
-const getActiveFromUrl =() =>{
-  let activeUrl = "active="
-  let index = window.location.href.search("active") + activeUrl.length;
-  let activeCountries = decodeURIComponent(window.location.href.slice(index - 1));
-  return activeCountries.split(",");
-}
-
-const initActive = (countries) => {
-  let d = []
-  let urlActive = getActiveFromUrl();
-  for( let name of countries.sort() ){
-    let active = urlActive.includes(name);
-    d.push({
-          name,
-          active,
-    })
-  }
-  return d
-}
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Main from "./Main"
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = { countries : initActive(Object.keys(data)),}
-    this.toggleActive = this.toggleActive.bind(this)
-    this.getActive = this.getActive.bind(this);
-  }
-
-  toggleActive(country){
-    let countries = this.state.countries;
-
-    let selectedCountry = countries[ countries.findIndex(elem => elem.name == country) ]
-    let newActive = countries.filter(elm => elm.name !== country);
-
-    let toggledActive = !selectedCountry.active;
-    newActive.push({name:country, active:toggledActive})
-
-    this.setState({countries: newActive.sort((a, b) =>  a.name.localeCompare(b.name) )})
-  }
-
-  getActive(){
-    return this.state.countries.filter(el => el.active === true)
-  }
-
   render() {
     return (
-      <div className="App">
-        <Header getActive={this.getActive}/>
-        <div className="content">
-          <div className="Chart-Wrapper">
-            <Chart countries={this.state.countries}/>
-            <Legend countries={this.state.countries}
-                    toggleActive={this.toggleActive}/>
-          </div>
-        </div>
-        <Footer />
-      </div>
+      <Router basename={process.env.PUBLIC_URL}>
+          <Route path="/" component={Main} />
+      </Router>
     );
   }
 }

@@ -4,12 +4,11 @@
 
 div.tooltip {
     background: white;
-    border: 1px solid grey;
-    box-shadow: 1px 2px 8px;
-    height: 70px;
+    box-shadow: 1px 1px 3px grey;
+    height: auto;
     font: 12px sans-serif;
     position: absolute;
-    width: 70px;
+    width: 100px;
     padding: 5px;
     pointer-events: none;
   }

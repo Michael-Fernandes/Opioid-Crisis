@@ -1,0 +1,23 @@
+.copied{
+    display:inline-block;
+}
+
+.Footer, .Header{
+    max-width: 1200px;
+    margin: 0 auto 0 auto;
+}
+
+.noCopy{
+    position: relative;
+    display:none;
+    animation: slideOut 3s;
+}
+
+@keyframes slideout {
+    0% {
+        top:0px;
+    }
+    100% {
+        top:-20px;
+    }
+}
