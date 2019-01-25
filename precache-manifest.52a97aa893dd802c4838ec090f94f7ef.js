@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "fdfa340d4f8f2cf4ab00",
-    "url": "/Opioid-Crisis/static/css/main.cc17bc2f.chunk.css"
+    "revision": "af588c43e877b916db4a",
+    "url": "/Opioid-Crisis/static/css/main.70270377.chunk.css"
   },
   {
-    "revision": "fdfa340d4f8f2cf4ab00",
-    "url": "/Opioid-Crisis/static/js/main.fdfa340d.chunk.js"
+    "revision": "af588c43e877b916db4a",
+    "url": "/Opioid-Crisis/static/js/main.af588c43.chunk.js"
   },
   {
     "revision": "b3ea98c7f13e68c7640e",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/Opioid-Crisis/static/media/logo.7173f73d.svg"
   },
   {
-    "revision": "43d27ce4becf5ceec39452c6b28f344b",
+    "revision": "27546300f902a161dde26291b8eb6d77",
     "url": "/Opioid-Crisis/index.html"
   }
 ];
