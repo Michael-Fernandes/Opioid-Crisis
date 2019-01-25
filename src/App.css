@@ -1,5 +1,5 @@
-.App {
-  display:flex;
+.App > .content{
+  padding: 20px;
 }
 
 .Chart-Wrapper > div{

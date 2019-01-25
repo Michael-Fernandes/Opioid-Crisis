@@ -10,14 +10,14 @@ reader = csv.DictReader( f, fieldnames = ( "measure_id","measure_name","location
 
 # Parse the CSV into JSON  
 rows = [ row for row in reader ]
-out = json.dumps( rows)  
+out = json.dumps( rows )  
 
 d = {}
 for row in rows[1:]: 
     country = row['location_name']
     if(country not in d):
         d[country] = {'Both':[], 'Male':[], 'Female':[]}
-    d[country][row['sex_name']].append( {'year':int(row['year']), 'val':float(row['val']) })
+    d[country][row['sex_name']].append( {'year': int(row['year']), 'val': float(row['val']), 'upper':float(row['upper']), 'lower': float(row['lower'])} )
 
 with open('data.json', 'w') as fp:
     json.dump(d, fp)

@@ -18,43 +18,46 @@ export default class Legend extends Component {
         this.toggleActive = this.toggleActive.bind(this);
         this.isSearching = this.isSearching.bind(this);
         this.searchChange = this.searchChange.bind(this)
+        this.filterCountries = this.filterCountries.bind(this)
     }
 
     toggleActive(country){
         this.props.toggleActive(country);
-        this.setState({isSearching:false, search:""})
+        this.setState({ isSearching:false, search:"" })
     }
 
     isSearching(){
-        this.setState({isSearching: ! this.state.isSearching})
+        this.setState({ isSearching: !this.state.isSearching })
     }
 
     searchChange(event){
-        let isSearching = false;
-        if(this.state.search.length){
-            isSearching = true;
-        }
+        let isSearching = this.state.search.length ? true : false;
         this.setState({ search: event.target.value, isSearching:isSearching })
+    }
+
+    filterCountries(countries){
+        return countries.filter(elem => elem.name.toLowerCase().search(this.state.search.toLowerCase()) >= 0 )
     }
 
     render() {
         let { search, isSearching } = this.state;
         let { countries } = this.props;
         let activeCountries = getActive(countries);
-
+        window.c = countries;
         return (
             <div className="LegendDisplay">
-                <div className="Search">
+                
+                <Active isSearching={isSearching} 
+                        activeCountries={activeCountries}
+                        toggleActive={this.toggleActive} />
+                <div className="search">
                     <input type="text" placeholder="search" 
                                        value={this.state.search}  
                                        onChange={this.searchChange} />
                 </div>
-                <Active isSearching={isSearching} 
-                        activeCountries={activeCountries}
-                        toggleActive={this.toggleActive} />
-
+                
                 <CountryList isSearching={isSearching} 
-                             countries={countries} 
+                             countries={this.filterCountries(countries)} 
                              toggleActive={this.toggleActive}/> 
             </div>
         )

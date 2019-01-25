@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import * as d3 from 'd3'
 import * as ReactFauxDOM from 'react-faux-dom'
 import data from "../Resources/data.json"
@@ -9,7 +9,7 @@ class Chart extends Component {
         super(props);
 
         this.makeD3 = this.makeD3.bind(this);
-        this.getActive = this.getActive.bind(this)
+        this.getActive = this.getActive.bind(this);
     }
 
     getActive(){
@@ -17,7 +17,7 @@ class Chart extends Component {
         let active = countries.filter(el => el.active === true); // I have no idea but this call drops data.....
         return active;
     }
-
+    
     makeD3(){
         let fauxDiv = ReactFauxDOM.createElement('div');  
         
@@ -51,19 +51,49 @@ class Chart extends Component {
         y.domain([0, d3.max(getDomain(activeData), function(d) { return d.val; })]);
 
         // define the line
-        let valueline = d3.line()
-            .x(function(d) { return x(new Date(d.year, 1, 1)); })
-            .y(function(d) { return y(d.val); });
+        let valueline = (val) =>{ 
+            return d3.line()
+                    .x(function(d) { return x(new Date(d.year, 1, 1)); })
+                    .y(function(d) { return y(d[val]); }); 
+        }
 
-        for( let countryData of activeData){
-            svg.append("path")
-                .datum(countryData.data)
+        let div = d3.select("#root").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+            
+        for( let countryData of activeData ){
+            let linePlot = svg.append("g")
+            let cdBoth = countryData.data["Both"].sort(function(a, b){return a.year - b.year}) ;
+            
+            linePlot.append("path")
+                .datum(cdBoth)
                 .attr("class", "line")
-                .attr("d",valueline)
-                .attr("stroke-width", "2px")
+                .attr("d",valueline("val"))
+                .attr("stroke-width", "2.5px")
                 .attr("stroke", colors[countryData.name])
                 .attr('color', colors[countryData.name])
-                .attr("fill", 'none');
+                .attr("fill", 'none')
+
+            linePlot.selectAll(".linePlotPoint").data(cdBoth)
+                .enter().append("circle") // Uses the enter().append() method
+                .attr("class", "linePlotPoint") // Assign a class for styling
+                .attr("cx", function(d, i) { return x(new Date(d.year, 1, 1)) })
+                .attr("cy", function(d) { return y(d.val) })
+                .attr("r", 3)
+                .attr("stroke", colors[countryData.name])
+                .attr("fill", colors[countryData.name])
+                .on("mouseover", function(d) {
+                    d3.select(this).attr("r", 10);
+                    div.transition()
+                      .duration(200)
+                      .style("opacity", 1);
+                    div.html( getTool(d) )
+                      .style("left", (d3.event.pageX) +5 + "px")
+                      .style("top", (d3.event.pageY - 28) + "px"); })
+                .on("mouseout", function(d) {
+                        div.transition()
+                          .duration(500)
+                          .style("opacity", 0); });       
         }
 
         // Add the X Axis
@@ -87,18 +117,29 @@ class Chart extends Component {
     }
 }
 
+function getTool(d){
+    let {year, val, upper, lower} = d;
+    val = val.toFixed(2);
+    upper = upper.toFixed(2);
+    lower = lower.toFixed(2);
+    console.log(year);
+    return (
+        "<span><span><b>" + year + " </b></span><br /><span>Value: " + val + "</span><br /><span>Upper: " + upper + "</span><br /><span>Lower: " + lower + "</span></span>"
+    )
+}
+
+// data transformatiuon helper functions
 const getDataFor = (country) =>{
     return { 
         name:country.name, 
-        data:data[[country.name]]['Both'].sort(function(a, b){return a.year - b.year}) 
+        data:data[[country.name]]
     }
-
 }
 
 const getDomain = (countries) =>{
     let d = [{val:3.0}]
     for(let c of countries){
-        d = d.concat(c.data);
+        d = d.concat(c.data['Both']);
     }
     return d
 }
@@ -112,79 +153,3 @@ const getDataActive = (countries) =>{
 }
 
 export default ReactFauxDOM.withFauxDOM(Chart);
-
-// makeD4(){
-//     let fauxDiv = ReactFauxDOM.createElement('div');  
-
-//     // Set the margins
-//     var margin = {top: 60, right: 100, bottom: 20, left: 80},
-//     width = 850 - margin.left - margin.right,
-//     height = 370 - margin.top - margin.bottom;
-
-//     let parseYear = d3.timeParse("%Y")
-//     let formatYear = d3.timeFormat("%Y");
-//     console.log(d3.scaleTime.domain([parseYear("1990"),parseYear("2017")]));
-//     // Set the ranges
-//     var x = d3.scaleTime().domain([parseYear("1990"),parseYear("2017")]).range([0, width]);
-//     var y = d3.scaleLinear().range([height, 0]);
-
-//     // Define the line
-//     var valueLine = d3.line()
-//     .x(function(d) { return x(d.Month); })
-//     .y(function(d) { return y(+d.Sales); })
-
-//     // Create the svg canvas in the "graph" div
-//     var svg = d3.select(fauxDiv)
-//                     .append("svg")
-//                     .style("width", width + margin.left + margin.right + "px")
-//                     .style("height", height + margin.top + margin.bottom + "px")
-//                     .attr("width", width + margin.left + margin.right)
-//                     .attr("height", height + margin.top + margin.bottom)
-//                     .append("g")
-//                     .attr("transform","translate(" + margin.left + "," + margin.top + ")")
-//                     .attr("class", "svg");
-    
-//     // Scale the range of the data
-//     x.domain(d3.extent(data, function(d) { return d.year; }));
-//     y.domain([0, d3.max(data, function(d) { return d.val; })]);
-
-//     // Set up the x axis
-//     var xaxis = svg.append("g")
-//         .attr("transform", "translate(0," + height + ")")
-//         .attr("class", "x axis")
-//         .call(d3.axisBottom(x)
-//             .ticks(d3.timeMonth)
-//             .tickSize(0, 0)
-//             .tickSizeInner(0)
-//             .tickPadding(10));
-
-//     // Add the Y Axis
-//     var yaxis = svg.append("g")
-//         .attr("class", "y axis")
-//         .call(d3.axisLeft(y)
-//             .ticks(5)
-//             .tickSizeInner(0)
-//             .tickPadding(6)
-//             .tickSize(0, 0));
-
-//     // yaxis.select(".domain").style("display","none")
-
-//     // Add a label to the y axis
-//     svg.append("text")
-//         .attr("transform", "rotate(-90)")
-//         .attr("y", 0 - 60)
-//         .attr("x", 0 - (height / 2))
-//         .attr("dy", "1em")
-//         .style("text-anchor", "middle")
-//         .text("Deaths per Thousand")
-//         .attr("class", "y axis label");
-
-//     // Draw the line
-//     svg.append("path")
-//         .data([data])
-//         .attr("class", "line")
-//         .attr("d", valueLine);
-//     console.log(data)
-
-//     return fauxDiv;
-// }

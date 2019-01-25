@@ -8,22 +8,23 @@ const Active = (props) => {
         props.toggleActive(country);
     }
 
-    if(activeCountries.length && !isSearching){
-        return (
-            <div className="legendActive"> 
-                {activeCountries.map( (el, index) => { 
-                    let name = el.name;
-                    return(
-                    <div className="countryNameList" key={index} onClick={() => {toggleActive(el.name) }}>
-                        <span><ActiveIcon active={el.active} name={name} style={{padding:"0px 5px 0px 0px"}}/></span>
-                        <span>{name}</span>
-                    </div>) 
-                })}
-                <hr />
-            </div>
-        )
-    } 
-    return null;
+    
+    return (
+        <div className="legendActive"> 
+            <p className="legendTitle">Legend </p>
+            { activeCountries.length && !isSearching 
+                ? activeCountries.map( (el, index) => { 
+                let name = el.name;
+                return(
+                <div className="countryNameList" key={index} onClick={() => {toggleActive(el.name) }}>
+                    <span><ActiveIcon active={el.active} name={name} style={{padding:"0px 5px 0px 0px"}}/></span>
+                    <span>{name}</span>
+                </div>) 
+            })
+            : null}
+            <hr />
+        </div>
+    )
 };
 
 export default Active;
