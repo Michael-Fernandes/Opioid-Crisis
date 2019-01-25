@@ -4,31 +4,35 @@ const blocks = ["--", "EU (European Union)", "AU (African Union)", "USAN (Union 
 export default class CountryBlock extends Component {
   constructor(props){
       super(props);
-
-      this.state = {
-          selected:"--",
-      }
+      this.state = { selected:"--" };
 
       this.onSelect = this.onSelect.bind(this);
   }
 
   onSelect(event){
     let { selectBlock } = this.props;
-    fetch("https://restcountries.eu/rest/v2/regionalbloc/" + event.target.value.split(" ")[0])
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(json) {
-            selectBlock(json.map(el => el.name));
-        }).catch((err) => console.log(err) );
+    const code = event.target.value.split(" ")[0];
+    if(code !== "--"){
+        fetch("https://restcountries.eu/rest/v2/regionalbloc/" + code)
+            .then(function(response) {
+                return response.json();
+            }).then(function(json) {
+                selectBlock(json.map(el => el.name));
+            }).catch((err) => console.log(err) );
+    } else {
+        selectBlock([]);
+    }
 
     this.setState({selected: event.target.value});
   }
 
   render() {
     return (
-        <div>
-            <select value={this.state.selected} onChange={this.onSelect}>
+        <div className="selectBlockWrapper">
+            <label style={{display:'block', "fontWeight":"600"}}>
+                CountryBlocks
+            </label>
+            <select value={this.state.selected} onChange={this.onSelect} className="selectBlock">
                 {blocks.map((elem, index) => <option value={elem} key={index}>{elem}</option> )}
             </select>
         </div>

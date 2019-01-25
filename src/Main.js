@@ -60,18 +60,25 @@ class App extends Component {
   }
 
   render() {
+    
     return (
         <div className="App">
             <Header getActive={this.getActive}
                     selectBlock={this.selectBlock}/>
-                <div className="content">
+              <div className="content">
+                <div >
+                  <CountryBlock selectBlock={this.props.selectBlock}/>
+                  
+                  <div className="Chart-Wrapper">
+                    <div className="chart-content">
+                      <Chart countries={this.state.countries}/>
+                      <Legend countries={this.state.countries}
+                              toggleActive={this.toggleActive}/>
+                    </div>
+                  </div>
 
-                <div className="Chart-Wrapper">
-                    <Chart countries={this.state.countries}/>
-                    <Legend countries={this.state.countries}
-                            toggleActive={this.toggleActive}/>
                 </div>
-                </div>
+              </div>
             <Footer />
         </div>
     );

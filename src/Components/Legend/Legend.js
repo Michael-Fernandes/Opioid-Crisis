@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import Active from "./Active"
 import CountryList from "./CountryList"
+import Search from "./Search"
 import "./Legend.css"
-
-const getActive = (countries) => {
-    return countries.filter(el => el.active === true)
-}
 
 export default class Legend extends Component {
     constructor(props){
@@ -17,8 +14,13 @@ export default class Legend extends Component {
 
         this.toggleActive = this.toggleActive.bind(this);
         this.isSearching = this.isSearching.bind(this);
-        this.searchChange = this.searchChange.bind(this)
-        this.filterCountries = this.filterCountries.bind(this)
+        this.searchChange = this.searchChange.bind(this);
+        this.filterCountries = this.filterCountries.bind(this);
+        this.getActive = this.getActive.bind(this);
+    }
+
+    getActive(countries){
+        return countries.filter(el => el.active === true)
     }
 
     toggleActive(country){
@@ -30,9 +32,9 @@ export default class Legend extends Component {
         this.setState({ isSearching: !this.state.isSearching })
     }
 
-    searchChange(event){
+    searchChange(value){
         let isSearching = this.state.search.length ? true : false;
-        this.setState({ search: event.target.value, isSearching:isSearching })
+        this.setState({ search: value, isSearching:isSearching })
     }
 
     filterCountries(countries){
@@ -42,23 +44,20 @@ export default class Legend extends Component {
     render() {
         let { search, isSearching } = this.state;
         let { countries } = this.props;
-        let activeCountries = getActive(countries);
-        window.c = countries;
+        let activeCountries = this.getActive(countries);
+
         return (
             <div className="LegendDisplay">
-                
                 <Active isSearching={isSearching} 
                         activeCountries={activeCountries}
                         toggleActive={this.toggleActive} />
-                <div className="search">
-                    <input type="text" placeholder="search" 
-                                       value={this.state.search}  
-                                       onChange={this.searchChange} />
-                </div>
-                
+
+                <Search search={search}
+                        onChange={this.searchChange} />
+
                 <CountryList isSearching={isSearching} 
                              countries={this.filterCountries(countries)} 
-                             toggleActive={this.toggleActive}/> 
+                             toggleActive={this.toggleActive} /> 
             </div>
         )
     }
