@@ -3,11 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import data from "./Resources/data.json";
 import Legend from "./Components/Legend/Legend";
-import Chart from "./Components/Chart";
+import Chart from "./Components/Chart/Chart";
 import Header from "./Components/Page/Header";
 import Footer from "./Components/Page/Footer";
 import CountryBlock from "./Components/Chart/CountryBlock"
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import "./Components/Chart/Chart.css"
 
 const getActiveFromUrl =() =>{
@@ -67,7 +66,7 @@ class App extends Component {
                     selectBlock={this.selectBlock}/>
               <div className="content">
                 <div >
-                  <CountryBlock selectBlock={this.props.selectBlock}/>
+                  <CountryBlock selectBlock={this.selectBlock}/>
                   
                   <div className="Chart-Wrapper">
                     <div className="chart-content">

@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
-import * as d3 from 'd3'
-import * as ReactFauxDOM from 'react-faux-dom'
-import data from "../Resources/data.json"
-import colors from "../Resources/colors.json"
+import React, { Component } from 'react';
+import * as d3 from 'd3';
+import * as ReactFauxDOM from 'react-faux-dom';
+import data from "../../Resources/data.json";
+import colors from "../../Resources/colors.json";
+import sizeMe from "react-sizeme";
 
 class Chart extends Component {
     constructor(props){
@@ -24,29 +25,23 @@ class Chart extends Component {
     }
 
     makeD3(){
-        // If I had more time I would change this implementation too:
-        // (1) To intialize all the things that stay the same in componentWillMount
-        // (2) Create a function to handle Y axis update with transition
-        // (3) Dynamically add and remove line plots as clicked
-        //
-        // That said, right now the render speed is pretty good, 
-        // I've never done this type of interaction before.
-
+        // React Faux Dom wasn't the best choice for this project, because of the updates
+        // I needed to make.
         let fauxDiv = ReactFauxDOM.createElement('div');  
-    
-        //  TODO: dynamically add new data
-        let activeNames = this.getActive();
-        let activeData = getDataActive(activeNames)
+       
+
+        const activeNames = this.getActive();
+        const activeData = getDataActive(activeNames)
         
         // set the dimensions and margins of the graph
-        var margin = {top: 20, right: 20, bottom: 30, left: 37.5},
-        width = 925 - margin.left - margin.right, // ~16:9
-        height = 540 - margin.top - margin.bottom;
-
+        const margin = {top: 20, right: 20, bottom: 30, left: 37.5},
+            height = 540 - margin.top - margin.bottom;
+        //let width = console.log(this.props.size.width);
+        const width = 940 - margin.right - margin.left;
         // parse the date / time
         // set the ranges
-        var x = d3.scaleTime().range([0, width]);
-        var y = d3.scaleLinear().range([height, 0]);
+        const x = d3.scaleTime().range([0, width]);
+        const y = d3.scaleLinear().range([height, 0]);
 
         let svg = d3.select(fauxDiv).append("svg")
                     .attr("width", width + margin.left + margin.right)
@@ -54,20 +49,21 @@ class Chart extends Component {
                     .append("g")
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        let parseYear = d3.timeParse("%Y");
-        let domain = [1989, 2018];
+        const parseYear = d3.timeParse("%Y");
+        const domain = [1989, 2018];
         x.domain(d3.extent(domain, function(d) { return parseYear(d) }));
         y.domain([0, d3.max(getDomain(activeData), function(d) { return d.val; })]);
 
-        let valueline = (valueType) =>{ 
+        // Accepts "upper", "lower", "val"
+        const valueline = (valueType) =>{ 
             return d3.line()
                     .x(function(d) { return x(new Date(d.year, 1, 1)); })
                     .y(function(d) { return y(d[valueType]); }); 
         }
 
         let div = d3.select(".Chart-Wrapper").append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
+                        .attr("class", "tooltip")
+                        .style("opacity", 0);
         
         // Add the X Axis
         svg.append("g")
@@ -87,46 +83,44 @@ class Chart extends Component {
                 .attr("text-anchor", "middle")
                 .attr("font-size", "1.5em")
                 .text("Fatalities per 100,000 Capita");;
+        
+        svg.selectAll(".tick > text")
+                .attr("font-size", "1.25em")
 
         for( let countryData of activeData ){
-            let cd = this.getDataFor( countryData );
-            console.log(cd)
+            const cd = this.getDataFor( countryData );
+            
             let linePlot = svg.append("g").attr("class", "linePlot");
             
             linePlot.append("path")
-                .datum( cd )
-                .attr("class", "line")
-                .attr("d",valueline("val"))
-                .attr("stroke-width", "2.5px")
-                .attr("stroke", colors[countryData.name])
-                .attr('color', colors[countryData.name])
-                .attr("fill", 'none')
+                        .datum( cd )
+                        .attr("class", "line")
+                        .attr("d",valueline("val"))
+                        .attr("stroke-width", "2.5px")
+                        .attr("stroke", colors[countryData.name])
+                        .attr('color', colors[countryData.name])
+                        .attr("fill", 'none')
 
             linePlot.selectAll(".linePlotPoint").data( cd )
-                .enter().append("circle") 
-                .attr("class", "linePlotPoint")
-                .attr("cx", function(d, i) { return x(new Date(d.year, 1, 1)) })
-                .attr("cy", function(d) { return y(d.val) })
-                .attr("r", 3)
-                .attr("stroke", colors[countryData.name])
-                .attr("fill", colors[countryData.name])
-                .on("mouseover", function(d) {
-                    div.transition() 
-                      .duration(200)
-                      .style("opacity", 0.9);
-                    div.html( getTool(d, countryData.name) )
-                      .style("left", (d3.event.pageX) +5 + "px")
-                      .style("top", (d3.event.pageY - 28) + "px"); })
-                .on("mouseout", function(d) {
-                        div.transition()
-                          .duration(500)
-                          .style("opacity", 0); });       
-        }
-
-        svg.selectAll(".tick > text")
-            .attr("font-size", "1.25em")
-
-        svg.selectAll("text");
+                        .enter().append("circle") 
+                        .attr("class", "linePlotPoint")
+                        .attr("cx", function(d, i) { return x(new Date(d.year, 1, 1)) })
+                        .attr("cy", function(d) { return y(d.val) })
+                        .attr("r", 3)
+                        .attr("stroke", colors[countryData.name])
+                        .attr("fill", colors[countryData.name])
+                        .on("mouseover", function(d) {
+                            div.transition() 
+                                .duration(200)
+                                .style("opacity", 0.9);
+                            div.html( getTool(d, countryData.name) )
+                                .style("left", (d3.event.pageX) +5 + "px")
+                                .style("top", (d3.event.pageY - 28) + "px"); })
+                        .on("mouseout", function(d) {
+                                div.transition()
+                                    .duration(500)
+                                    .style("opacity", 0); });       
+            }
 
         return fauxDiv;
     }
