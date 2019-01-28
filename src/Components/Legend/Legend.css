@@ -1,5 +1,3 @@
-
-
 .LegendDisplay{
     position:relative;
     border: 1px solid #ededed;
@@ -9,8 +7,8 @@
     width: 200px;
     overflow:scroll;
     margin-top:20px;
-
 }
+
 @media all and (max-width: 750px) {
     .LegendDisplay{
         border: 1px solid #ededed;
@@ -46,9 +44,6 @@ hr{
 .dot{
     color: white;
     fill:white;
-}
-.countryList{
-    overflow: scroll; 
 }
 
 .countryNameList{
