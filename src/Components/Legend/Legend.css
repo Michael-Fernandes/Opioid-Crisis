@@ -15,20 +15,11 @@
     .LegendDisplay{
         border: 1px solid #ededed;
         display:flex !important;
-        flex-flow: column wrap;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
         max-height: 200px;
         width: 100%;
         margin-top:20px;
-    }
-
-    .legendDisplay > *, .legendDisplay > * > *{
-        display:inline-block;
-    }
-
-    
-
-    .countryList{
-        overflow-x: scroll; 
     }
 }
 

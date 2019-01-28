@@ -1,5 +1,6 @@
 import React from 'react';
-import ActiveIcon from "./ActiveIcon"
+import ActiveIcon from "./ActiveIcon";
+import Search from "./Search";
 
 const CountryList = (props) => {
     const {active, isSearching, countries} = props;
@@ -10,6 +11,8 @@ const CountryList = (props) => {
 
     return (
             <div className="countryList">
+                <Search search={props.search}
+                        onChange={props.searchChange} />
                 { countries.map( (el, index) => {
                     let name = el.name;
                     return(

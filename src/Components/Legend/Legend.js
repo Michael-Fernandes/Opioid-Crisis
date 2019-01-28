@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Active from "./Active"
 import CountryList from "./CountryList"
-import Search from "./Search"
 import "./Legend.css"
 
 export default class Legend extends Component {
@@ -52,18 +51,11 @@ export default class Legend extends Component {
                         activeCountries={activeCountries}
                         toggleActive={this.toggleActive} />
 
-                <Search search={search}
-                        onChange={this.searchChange} />
-
-                <CountryList isSearching={isSearching} 
+                <CountryList search={search}
+                             onChange={this.searchChange}
+                             isSearching={isSearching} 
                              countries={this.filterCountries(countries)} 
                              toggleActive={this.toggleActive} /> 
-{/*                              
-                <SearchAndCountryList isSearching={isSearching} 
-                             countries={this.filterCountries(countries)} 
-                             toggleActive={this.toggleActive}
-                             search={search}
-                             onChange={this.searchChange}/> */}
             </div>
         )
     }
