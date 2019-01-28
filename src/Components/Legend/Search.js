@@ -6,11 +6,11 @@ const Search = (props) => {
     }
 
     return (
-        <div className="search">
+        <span className="search">
             <input type="text" placeholder="search" 
                     value={props.search}  
                     onChange={onChange} />
-        </div>
+        </span>
     );
 };
 

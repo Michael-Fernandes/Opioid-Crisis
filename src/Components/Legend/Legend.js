@@ -58,6 +58,12 @@ export default class Legend extends Component {
                 <CountryList isSearching={isSearching} 
                              countries={this.filterCountries(countries)} 
                              toggleActive={this.toggleActive} /> 
+{/*                              
+                <SearchAndCountryList isSearching={isSearching} 
+                             countries={this.filterCountries(countries)} 
+                             toggleActive={this.toggleActive}
+                             search={search}
+                             onChange={this.searchChange}/> */}
             </div>
         )
     }

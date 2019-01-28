@@ -1,3 +1,5 @@
+
+
 .LegendDisplay{
     position:relative;
     border: 1px solid #ededed;
@@ -8,6 +10,26 @@
     overflow:scroll;
     margin-top:20px;
 
+}
+@media all and (max-width: 750px) {
+    .LegendDisplay{
+        border: 1px solid #ededed;
+        display:flex !important;
+        flex-flow: column wrap;
+        max-height: 200px;
+        width: 100%;
+        margin-top:20px;
+    }
+
+    .legendDisplay > *, .legendDisplay > * > *{
+        display:inline-block;
+    }
+
+    
+
+    .countryList{
+        overflow-x: scroll; 
+    }
 }
 
 .legendTitle{
@@ -37,6 +59,7 @@ hr{
 .countryList{
     overflow: scroll; 
 }
+
 .countryNameList{
     padding:1.5px;
     cursor: pointer;
@@ -45,3 +68,5 @@ hr{
     line-height: 12px;
     text-overflow: ellipsis;
 }
+
+

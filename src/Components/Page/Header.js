@@ -23,12 +23,12 @@ export default class Header extends Component {
     render() {
         return (
             <div className="Header">
-                <div className="headerWrapper"><h1>Opoid Crisis</h1><h2>Global Burden of Disease</h2> </div>  
+                <div className="headerWrapper"><h1>Opioid Crisis</h1><h2>Global Burden of Disease</h2> </div>  
 
                 <button onClick={this.share} className="shareBttn">Share View</button>
 
                 <div className={this.state.copied ? "copied": "copied noCopy"}>
-                    Chart View <br/>Copied to clipboard!
+                    Chart View Copied to clipboard!
                 </div>
             </div>
         )

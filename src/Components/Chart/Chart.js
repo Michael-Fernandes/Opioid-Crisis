@@ -8,10 +8,12 @@ import sizeMe from "react-sizeme";
 class Chart extends Component {
     constructor(props){
         super(props);
+        this.state = { innerWidth: window.innerWidth }
 
         this.makeD3 = this.makeD3.bind(this);
         this.getActive = this.getActive.bind(this);
         this.getDataFor = this.getDataFor.bind(this);
+        this.updateDimensions = this.updateDimensions.bind(this);
     }
 
     getActive(){
@@ -24,11 +26,18 @@ class Chart extends Component {
         return country['data'][[gender]].sort(function(a, b){return a.year - b.year});
     }
 
+    updateDimensions(){
+        this.setState({innerWidth: window.innerWidth})
+    }
+    
+    componentDidMount() {
+        window.addEventListener("resize", this.updateDimensions);
+    }
+
     makeD3(){
-        // React Faux Dom wasn't the best choice for this project, because of the updates
-        // I needed to make.
+        const innerWidth = this.state.innerWidth;
+        console.log(innerWidth);
         let fauxDiv = ReactFauxDOM.createElement('div');  
-       
 
         const activeNames = this.getActive();
         const activeData = getDataActive(activeNames)
@@ -36,8 +45,15 @@ class Chart extends Component {
         // set the dimensions and margins of the graph
         const margin = {top: 20, right: 20, bottom: 30, left: 37.5},
             height = 540 - margin.top - margin.bottom;
-        //let width = console.log(this.props.size.width);
-        const width = 940 - margin.right - margin.left;
+        
+        let width;
+        if(innerWidth > 1150){
+            width = 940 - margin.right - margin.left;
+        } else if(innerWidth > 750){
+            width = innerWidth - 232 - margin.right - margin.left;
+        } else {
+            width = innerWidth - margin.right - margin.left;
+        }
         // parse the date / time
         // set the ranges
         const x = d3.scaleTime().range([0, width]);
@@ -168,4 +184,4 @@ const getDataActive = (countries) =>{
     return activeData;
 }
 
-export default ReactFauxDOM.withFauxDOM(Chart);
+export default sizeMe()(ReactFauxDOM.withFauxDOM(Chart));

@@ -9,12 +9,11 @@ const CountryList = (props) => {
     }
 
     return (
-        <div>
             <div className="countryList">
                 { countries.map( (el, index) => {
                     let name = el.name;
                     return(
-                        <div className="countryNameList" key={index} onClick={() => {toggleActive(name) }}>
+                        <div className="countryNameList mobileName" key={index} onClick={() => {toggleActive(name) }}>
                             <span><ActiveIcon active={el.active} name={el.name}/></span> 
                             <span> {name} </span>
                         </div>
@@ -22,7 +21,6 @@ const CountryList = (props) => {
                 }) }
                 <hr />
             </div>
-        </div>
     )
 };
 

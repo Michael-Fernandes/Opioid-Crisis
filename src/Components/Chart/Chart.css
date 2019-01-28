@@ -15,6 +15,7 @@
 
 .Chart-Wrapper>div{
     display:flex;
+    flex-flow: row wrap;
     align-items:top;
     margin: auto;
 }
@@ -37,7 +38,7 @@ div.tooltip {
     width: 100px;
     padding: 5px;
     pointer-events: none;
-  }
+}
 
 .domain{
     stroke-width: 1.5px;
