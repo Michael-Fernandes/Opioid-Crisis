@@ -39,7 +39,6 @@
 
     .countryNameList, .legendTitle{
         width: 175px;
-        border: 2px solid orange;
         max-width: 48vw;
     }
 }
