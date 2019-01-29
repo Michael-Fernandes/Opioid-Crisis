@@ -36,7 +36,6 @@ class Chart extends Component {
 
     makeD3(){
         const innerWidth = this.state.innerWidth;
-        console.log(innerWidth);
         let fauxDiv = ReactFauxDOM.createElement('div');  
 
         const activeNames = this.getActive();
@@ -44,15 +43,20 @@ class Chart extends Component {
         
         // set the dimensions and margins of the graph
         const margin = {top: 20, right: 20, bottom: 30, left: 37.5},
-            height = 540 - margin.top - margin.bottom;
+              padding = 10;
         
-        let width;
+        
+        let width, height;
+
         if(innerWidth > 1150){
             width = 940 - margin.right - margin.left;
-        } else if(innerWidth > 750){
+            height = 540 - margin.top - margin.bottom;
+        } else if(innerWidth < 1150 && innerWidth >= 750 ){
             width = innerWidth - 232 - margin.right - margin.left;
+            height = 540 - margin.top - margin.bottom - padding;
         } else {
-            width = innerWidth - margin.right - margin.left;
+            width = innerWidth - margin.right - margin.left - padding;
+            height = 440 - margin.top - margin.bottom;
         }
         // parse the date / time
         // set the ranges

@@ -9,23 +9,39 @@
     margin-top:20px;
 }
 
+.legendTitle{
+    font-weight: 700;
+    margin: 0;
+    padding:0px;
+    text-align: center;
+}
+
+.countryNameList{
+    padding:1.5px;
+    cursor: pointer;
+    width: 200px;
+    margin:2px;
+    line-height: 12px;
+    text-overflow: ellipsis;
+}
+
+
 @media all and (max-width: 750px) {
     .LegendDisplay{
         border: 1px solid #ededed;
-        display:flex !important;
+        display: flex !important;
         flex-flow: row wrap;
         justify-content: space-evenly;
         max-height: 200px;
         width: 100%;
         margin-top:20px;
     }
-}
 
-.legendTitle{
-    font-weight: 700;
-    margin: 0;
-    padding:0px;
-    text-align: center;
+    .countryNameList, .legendTitle{
+        width: 175px;
+        border: 2px solid orange;
+        max-width: 48vw;
+    }
 }
 
 hr{
@@ -45,14 +61,4 @@ hr{
     color: white;
     fill:white;
 }
-
-.countryNameList{
-    padding:1.5px;
-    cursor: pointer;
-    width: 200px;
-    margin:2px;
-    line-height: 12px;
-    text-overflow: ellipsis;
-}
-
 
