@@ -3,7 +3,7 @@ import ActiveIcon from "./ActiveIcon";
 import Search from "./Search";
 
 const CountryList = (props) => {
-    const {active, isSearching, countries} = props;
+    const {active, isSearching, countries, onChange, search} = props;
 
     const toggleActive =(country) =>{ 
         props.toggleActive(country) 
@@ -11,8 +11,8 @@ const CountryList = (props) => {
 
     return (
             <div className="countryList">
-                <Search search={props.search}
-                        onChange={props.searchChange} />
+                <Search search={search}
+                        onChange={onChange} />
                 { countries.map( (el, index) => {
                     let name = el.name;
                     return(
