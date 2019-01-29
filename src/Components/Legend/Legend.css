@@ -3,9 +3,7 @@
     border: 1px solid #ededed;
     display:inline-block;
     height: 500px;
-    min-height: 200px;   
     width: 200px;
-    overflow:scroll;
     margin-top:20px;
 }
 
@@ -17,7 +15,9 @@
 }
 
 .countryNameList{
-    padding:1.5px;
+    overflow: scroll;
+    max-height:200px;
+    padding: 3px;
     cursor: pointer;
     width: 200px;
     margin:2px;
@@ -25,31 +25,31 @@
     text-overflow: ellipsis;
 }
 
+.search{
+    width:200px;
+}
 
 @media all and (max-width: 750px) {
     .LegendDisplay{
         border: 1px solid #ededed;
         display: flex !important;
-        flex-flow: row wrap;
         justify-content: space-evenly;
-        max-height: 200px;
-        width: 100%;
+        max-height: 150px;
+        width: 95%;
         margin-top:20px;
-        margin-right: 10px;
+        overflow-x:hidden;
     }
 
-    .countryNameList, .legendTitle{
-        width: 175px;
+    .countryNameList, .legendTitle, .search{
+        width: 170px;
         max-width: 48vw;
+        overflow:hidden;
     }
 }
 
 hr{
     margin-left: 10%;
     margin-right: 10%;
-}
-.search{
-    width:200px;
 }
 
 .search > input{

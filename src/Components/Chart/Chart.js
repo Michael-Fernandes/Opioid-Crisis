@@ -42,8 +42,8 @@ class Chart extends Component {
         const activeData = getDataActive(activeNames)
         
         // set the dimensions and margins of the graph
-        const margin = {top: 20, right: 20, bottom: 30, left: 37.5},
-              padding = 10;
+        const margin = {top: 10, right: 25, bottom: 30, left: 37.5},
+              padding = 2.5;
         
         
         let width, height;
@@ -55,8 +55,8 @@ class Chart extends Component {
             width = innerWidth - 232 - margin.right - margin.left;
             height = 540 - margin.top - margin.bottom - padding;
         } else {
-            width = innerWidth - margin.right - margin.left - padding;
-            height = 440 - margin.top - margin.bottom;
+            width = innerWidth - margin.right - margin.left;
+            height = 390 - margin.top - margin.bottom;
         }
         // parse the date / time
         // set the ranges
@@ -90,7 +90,7 @@ class Chart extends Component {
             .attr("transform", "translate(0," + height + ")")
             .call( d3.axisBottom(x).ticks(5).tickSizeOuter(0).tickSize(0) )
             .append("text")
-                .attr('transform', "translate(" +width / 2 + "," + 30 + ")")
+                .attr('transform', "translate(" +width / 2 + "," + 27.5 + ")")
                 .attr("font-size", "1.5em")
                 .attr("text-anchor", "middle")
                 .text("Year");
@@ -99,7 +99,7 @@ class Chart extends Component {
         svg.append("g")
             .call( d3.axisLeft(y).ticks(6).tickSizeOuter(0).tickSize(0) )
             .append("text")
-                .attr('transform', "translate(" + -25 + "," + height / 2 + ") rotate(-90)")
+                .attr('transform', "translate(" + -27 + "," + height / 2 + ") rotate(-90)")
                 .attr("text-anchor", "middle")
                 .attr("font-size", "1.5em")
                 .text("Fatalities per 100,000 Capita");;

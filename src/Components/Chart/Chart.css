@@ -50,10 +50,8 @@ text {
     color: #343d47;
 }
 
-.selectBlock{
+.selectDropdown{
+    margin:5px;
     padding: 2px;
-}
-
-.selectBlockWrapper{
-    padding-top: 20px;
+    float: left;
 }
