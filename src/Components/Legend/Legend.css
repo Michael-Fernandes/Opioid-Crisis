@@ -16,7 +16,7 @@
 }
 
 .countryNameList{
-    overflow: scroll;
+    overflow-y: scroll;
     max-height:200px;
     padding: 3px;
     cursor: pointer;
