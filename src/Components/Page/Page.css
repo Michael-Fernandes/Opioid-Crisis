@@ -17,18 +17,22 @@
 h1, h2{
     margin: 0px 0px 0px 0px;
 }
-h2{
-    text-decoration: italic;
+
+h2 {
+    text-decoration: italic; 
+    font-weight: 500;
 }
 
 .shareBttn{
     position: absolute;
     top: 10px;
     right: 10px;
+    padding: 5px;
     font-size: 1em;
     color: black;
     background-color: rgb(254, 214, 0);
-    border-radius: 3px;
+    border-radius: 4px;
+    border-color: none;
 }
 
 .shareBttn:focus{
@@ -42,10 +46,10 @@ h2{
 
 .copied{
     background-color: rgb(254, 214, 0);
-    border: 1px solid grey;
-    border-radius: 3px;
-    color: black;
-    left:40%;
+    border: 1px solid #f2f2f2;
+    border-radius: 6px;
+    color: #161616;
+    left: 40%;
     font-size:1em;
     font-weight:500;
     padding: 10px;
@@ -53,4 +57,5 @@ h2{
     top: 10px;
     right: 50%;
     width: 300px;
+    text-align: center;
 }

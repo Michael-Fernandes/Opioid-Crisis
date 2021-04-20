@@ -1,33 +1,33 @@
 .LegendDisplay{
-    position:relative;
+    position: relative;
     border: 1px solid #ededed;
-    display:inline-block;
+    display: inline-block;
     height: 500px;
     width: 200px;
-    margin-top:20px;
-    overflow:scroll;
+    margin-top: 20px;
+    overflow: scroll;
 }
 
 .legendTitle{
     font-weight: 700;
     margin: 0;
-    padding:0px;
+    padding: 0px;
     text-align: center;
 }
 
 .countryNameList{
     overflow-y: scroll;
-    max-height:200px;
+    max-height: 200px;
     padding: 3px;
     cursor: pointer;
     width: 200px;
-    margin:2px;
+    margin: 2px;
     line-height: 12px;
     text-overflow: ellipsis;
 }
 
 .search{
-    width:200px;
+    width: 200px;
 }
 
 @media all and (max-width: 750px) {
@@ -37,14 +37,14 @@
         justify-content: space-evenly;
         max-height: 150px;
         width: 95%;
-        margin-top:20px;
-        overflow-x:hidden;
+        margin-top: 20px;
+        overflow-x: hidden;
     }
 
     .countryNameList, .legendTitle, .search{
         width: 170px;
         max-width: 48vw;
-        overflow:hidden;
+        overflow: hidden;
     }
 }
 

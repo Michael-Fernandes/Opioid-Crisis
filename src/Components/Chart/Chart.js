@@ -4,7 +4,7 @@ import * as ReactFauxDOM from 'react-faux-dom';
 import data from "../../Resources/data.json";
 import colors from "../../Resources/colors.json";
 import sizeMe from "react-sizeme";
-
+import './Chart.css';
 class Chart extends Component {
     constructor(props){
         super(props);
@@ -18,7 +18,7 @@ class Chart extends Component {
 
     getActive(){
         let countries = this.props.countries;
-        let active = countries.filter(el => el.active === true); // I have no idea but this call drops data.....
+        let active = countries.filter(el => el.active === true); 
         return active;
     }
 
@@ -99,10 +99,10 @@ class Chart extends Component {
         svg.append("g")
             .call( d3.axisLeft(y).ticks(6).tickSizeOuter(0).tickSize(0) )
             .append("text")
-                .attr('transform', "translate(" + -27 + "," + height / 2 + ") rotate(-90)")
+                .attr('transform', "translate(" + -30 + "," + height / 2 + ") rotate(90)")
                 .attr("text-anchor", "middle")
                 .attr("font-size", "1.5em")
-                .text("Fatalities per 100,000 Capita");;
+                .text("Deaths per 100,000");;
         
         svg.selectAll(".tick > text")
                 .attr("font-size", "1.25em")
@@ -115,7 +115,7 @@ class Chart extends Component {
             linePlot.append("path")
                         .datum( cd )
                         .attr("class", "line")
-                        .attr("d",valueline("val"))
+                        .attr("d", valueline("val"))
                         .attr("stroke-width", "2.5px")
                         .attr("stroke", colors[countryData.name])
                         .attr('color', colors[countryData.name])

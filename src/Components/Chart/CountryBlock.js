@@ -39,7 +39,7 @@ export default class CountryBlock extends Component {
   onSelect(event){
     let { selectBlock } = this.props;
     const code = event.target.value.split(" ")[0];
-    if(code !== "--"){
+    if (code !== "--"){
         fetch("https://restcountries.eu/rest/v2/regionalbloc/" + code)
             .then(function(response) {
                 return response.json();
@@ -64,7 +64,7 @@ export default class CountryBlock extends Component {
     });
 
     for(let i = 0; i < selectedAbv.length; i++){
-        if(countryAbv.indexOf(selectedAbv[i]) !== -1){
+        if (countryAbv.indexOf(selectedAbv[i]) !== -1){
             selectedCountries.push(Countries[selectedAbv[i]].name);
         } 
     }
@@ -76,7 +76,7 @@ export default class CountryBlock extends Component {
   onSelectTop(event){
     if(event.target.value == "Top 10 Highest"){
         this.props.selectBlock(highest);
-    }else if(event.target.value == "Top 10 Lowest"){
+    } else if(event.target.value == "Top 10 Lowest"){
         this.props.selectBlock(lowest);
     } else{
         this.selectBlock("--")

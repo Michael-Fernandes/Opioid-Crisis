@@ -23,7 +23,7 @@ export default class Header extends Component {
     render() {
         return (
             <div className="Header">
-                <div className="headerWrapper"><h1>Opioid Crisis</h1><h2>Global Burden of Disease</h2> </div>  
+                <div className="headerWrapper"><h1>Opioid Deaths around the Globe</h1><h2>An app that demos imperative coding in component react.</h2> </div>  
 
                 <button onClick={this.share} className="shareBttn">Share View</button>
 
