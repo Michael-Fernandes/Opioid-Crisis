@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Opioid-Crisis/precache-manifest.11bf942b56173764c42f9f9a9cbee488.js"
+  "/Opioid-Crisis/precache-manifest.7cffe0ba4bc95e62f298dbff4aed831e.js"
 );
 
 workbox.clientsClaim();
